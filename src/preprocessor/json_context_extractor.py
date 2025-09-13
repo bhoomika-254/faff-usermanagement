@@ -512,16 +512,22 @@ IMPORTANT:
 Review and deduplicate the following memory facts for user {user_id}.
 
 INSTRUCTIONS:
-1. Remove duplicates keeping only the highest confidence version for each unique fact. 
-2. If duplicates have identical confidence scores, merge their evidence lists into one comprehensive fact.
-3. Maintain the 4-layer structure (Layer1: Basic Personal Info, Layer2: Documents, Layer3: Relationships, Layer4: Preferences).
-4. Do not add, remove, or modify any actual data values - simply reorganize and deduplicate.
-5. CRITICAL: Preserve ALL evidence snippets exactly as given in the input. DO NOT replace snippets with "No snippet available" or any placeholder text.
-6. Return ONLY a valid JSON with no additional text or explanation.
+1. PHONE NUMBER DEDUPLICATION: If there are multiple phone numbers for the same person, keep ONLY the one with the highest confidence score. Different formats of the same number (+91 prefix vs without) should be considered duplicates.
+2. ADDRESS DEDUPLICATION: If there are multiple addresses for the same person, keep ONLY the one with the highest confidence score. Similar addresses should be considered duplicates.
+3. EMAIL DEDUPLICATION: If there are multiple emails, keep all distinct email addresses as people often have multiple emails.
+4. GENERAL RULE: For all other fact types, remove duplicates keeping only the highest confidence version for each unique fact.
+5. If duplicates have identical confidence scores, merge their evidence lists into one comprehensive fact.
+6. Maintain the 4-layer structure (Layer1: Basic Personal Info, Layer2: Documents, Layer3: Relationships, Layer4: Preferences).
+7. Do not add, remove, or modify any actual data values - simply reorganize and deduplicate.
+8. CRITICAL: Preserve ALL evidence snippets exactly as given in the input. DO NOT replace snippets with "No snippet available" or any placeholder text.
+9. Return ONLY a valid JSON with no additional text or explanation.
 
 IMPORTANT: Your response must be ONLY the deduplicated JSON data with nothing else. Do not include any explanations, markdown formatting, or text outside the JSON. Return the JSON directly with all evidence snippets preserved exactly as provided.
 
 When processing evidence, maintain the exact field names as provided in input (message_id and either 'snippet' or 'message_snippet').
+
+PHONE NUMBER DEDUPLICATION EXAMPLE:
+These are 3 different phone numbers for the same person. Keep ONLY the highest confidence one: "9870781578" (confidence: 0.95)
 
 Input facts: {json.dumps(facts_by_layer, indent=2)}
 """
@@ -532,14 +538,14 @@ Input facts: {json.dumps(facts_by_layer, indent=2)}
             
             # Verify we got a valid response
             if not deduplicated_data:
-                print("⚠️ No valid data from LLM deduplication. Falling back to original data.")
-                return extracted_data
+                print("⚠️ No valid data from LLM deduplication. Applying fallback deduplication.")
+                return self._apply_fallback_deduplication(extracted_data, user_id)
                 
             # Verify that we have all the expected layers
             missing_layers = set(extracted_data.keys()) - set(deduplicated_data.keys())
             if missing_layers:
-                print(f"⚠️ LLM response is missing layers: {missing_layers}. Falling back to original data.")
-                return extracted_data
+                print(f"⚠️ LLM response is missing layers: {missing_layers}. Applying fallback deduplication.")
+                return self._apply_fallback_deduplication(extracted_data, user_id)
             
             print(f"\n🔍 LLM deduplication complete for {user_id}")
             
@@ -549,8 +555,8 @@ Input facts: {json.dumps(facts_by_layer, indent=2)}
             
             # Safety check - if LLM removed all facts, something went wrong
             if after_count == 0 and before_count > 0:
-                print("⚠️ LLM deduplication removed ALL facts! Falling back to original data.")
-                return extracted_data
+                print("⚠️ LLM deduplication removed ALL facts! Applying fallback deduplication.")
+                return self._apply_fallback_deduplication(extracted_data, user_id)
                 
             print(f"   Facts before: {before_count}, after: {after_count}, removed: {before_count - after_count}")
             
@@ -599,15 +605,126 @@ Input facts: {json.dumps(facts_by_layer, indent=2)}
             return result
         except Exception as e:
             print(f"⚠️ Error during LLM deduplication: {e}")
-            print("Falling back to basic deduplication")
-            
-            # Apply basic deduplication per layer
-            result = {}
-            for layer, nodes in extracted_data.items():
-                result[layer] = self._deduplicate_facts(nodes)
+            print("Applying fallback deduplication to ensure duplicates are removed")
+            return self._apply_fallback_deduplication(extracted_data, user_id)
+
+    def _apply_fallback_deduplication(self, extracted_data: Dict, user_id: str) -> Dict:
+        """Apply rule-based deduplication when LLM deduplication fails
+        
+        This ensures that deduplication ALWAYS happens, even if LLM fails.
+        """
+        print(f"\n🔧 Applying fallback deduplication for {user_id}")
+        
+        result = {}
+        total_removed = 0
+        
+        for layer, nodes in extracted_data.items():
+            if not nodes:
+                result[layer] = []
+                continue
                 
-            print(f"Applied basic deduplication: {sum(len(nodes) for nodes in extracted_data.values())} → {sum(len(nodes) for nodes in result.values())} nodes")
-            return result
+            # Apply rule-based deduplication with special handling for phone numbers
+            deduplicated_nodes = self._deduplicate_facts_enhanced(nodes, layer)
+            result[layer] = deduplicated_nodes
+            
+            removed_count = len(nodes) - len(deduplicated_nodes)
+            total_removed += removed_count
+            
+            if removed_count > 0:
+                print(f"   {layer}: {len(nodes)} → {len(deduplicated_nodes)} facts (removed {removed_count} duplicates)")
+        
+        before_count = sum(len(nodes) for nodes in extracted_data.values())
+        after_count = sum(len(nodes) for nodes in result.values())
+        
+        print(f"   Facts before: {before_count}, after: {after_count}, removed: {total_removed}")
+        print(f"✅ Fallback deduplication complete for {user_id}")
+        
+        return result
+    
+    def _deduplicate_facts_enhanced(self, facts: List[Dict], layer: str) -> List[Dict]:
+        """Enhanced rule-based deduplication with special handling for different fact types"""
+        if not facts:
+            return []
+        
+        deduped = []
+        
+        # Group facts by type for specialized deduplication
+        facts_by_type = {}
+        for fact in facts:
+            fact_type = fact['detail']['type']
+            if fact_type not in facts_by_type:
+                facts_by_type[fact_type] = []
+            facts_by_type[fact_type].append(fact)
+        
+        # Apply type-specific deduplication rules
+        for fact_type, type_facts in facts_by_type.items():
+            if fact_type == 'phone_number':
+                # For phone numbers: keep only the highest confidence one
+                deduplicated = self._deduplicate_phone_numbers(type_facts)
+            elif fact_type in ['address', 'email']:
+                # For addresses and emails: more sophisticated deduplication
+                deduplicated = self._deduplicate_contact_info(type_facts, fact_type)
+            else:
+                # For other types: use standard fuzzy matching
+                deduplicated = self._deduplicate_facts(type_facts)
+            
+            deduped.extend(deduplicated)
+        
+        return deduped
+    
+    def _deduplicate_phone_numbers(self, phone_facts: List[Dict]) -> List[Dict]:
+        """Keep only the highest confidence phone number"""
+        if not phone_facts:
+            return []
+        
+        # Sort by confidence (highest first)
+        sorted_phones = sorted(phone_facts, key=lambda x: x['confidence'], reverse=True)
+        
+        # Keep only the highest confidence phone number
+        best_phone = sorted_phones[0]
+        
+        print(f"      Phone deduplication: {len(phone_facts)} → 1 (kept highest confidence: {best_phone['detail']['value']})")
+        
+        return [best_phone]
+    
+    def _deduplicate_contact_info(self, contact_facts: List[Dict], fact_type: str) -> List[Dict]:
+        """Deduplicate addresses/emails with fuzzy matching"""
+        if not contact_facts:
+            return []
+        
+        deduped = []
+        
+        for fact in contact_facts:
+            fact_value = fact['detail']['value'].lower().strip()
+            is_duplicate = False
+            
+            for existing in deduped:
+                existing_value = existing['detail']['value'].lower().strip()
+                
+                # For emails: exact match after normalization
+                if fact_type == 'email':
+                    if fact_value == existing_value:
+                        is_duplicate = True
+                        break
+                
+                # For addresses: fuzzy matching
+                elif fact_type == 'address':
+                    if (fact_value == existing_value or 
+                        fuzz.ratio(fact_value, existing_value) > 85):
+                        is_duplicate = True
+                        # Keep the one with higher confidence
+                        if fact["confidence"] > existing["confidence"]:
+                            deduped.remove(existing)
+                            deduped.append(fact)
+                        break
+            
+            if not is_duplicate:
+                deduped.append(fact)
+        
+        if len(contact_facts) != len(deduped):
+            print(f"      {fact_type} deduplication: {len(contact_facts)} → {len(deduped)}")
+        
+        return deduped
 
     async def process_json(self, input_json: List[Dict], user_id: str, force_reprocess: bool = False) -> Dict:
         """Process the JSON: chunk messages, call LLM for each chunk, merge and store results"""
@@ -621,22 +738,21 @@ Input facts: {json.dumps(facts_by_layer, indent=2)}
         
         # Flatten messages, preserving order and adding metadata
         all_messages = []
-        message_id = 0  # Sequential ID for each message
         for conv_idx, conv in enumerate(input_json):
             for query in conv.get("user_queries", []):
                 query = query.copy()
                 query["sender"] = "User"
                 query["conversation_id"] = conv_idx
-                query["id"] = str(message_id)  # Add sequential ID
+                # Preserve original message_id, use as id for processing
+                query["id"] = query.get("message_id", f"unknown_user_{conv_idx}")
                 all_messages.append(query)
-                message_id += 1
             for reply in conv.get("team_replies", []):
                 reply = reply.copy()
                 reply["sender"] = "Team"
                 reply["conversation_id"] = conv_idx
-                reply["id"] = str(message_id)  # Add sequential ID
+                # Preserve original message_id, use as id for processing
+                reply["id"] = reply.get("message_id", f"unknown_team_{conv_idx}")
                 all_messages.append(reply)
-                message_id += 1
 
         print(f"Processing {len(all_messages)} messages for user {user_id}")
         
@@ -713,20 +829,19 @@ Input facts: {json.dumps(facts_by_layer, indent=2)}
         
         # Flatten messages, preserving order
         all_messages = []
-        message_id = 0  # Sequential ID for each message
         for conv in input_data:
             for query in conv.get("user_queries", []):
                 query = query.copy()
                 query["sender"] = "User"
-                query["id"] = str(message_id)  # Add sequential ID
+                # Preserve original message_id, use as id for processing
+                query["id"] = query.get("message_id", "unknown_user")
                 all_messages.append(query)
-                message_id += 1
             for reply in conv.get("team_replies", []):
                 reply = reply.copy()
                 reply["sender"] = "Team"
-                reply["id"] = str(message_id)  # Add sequential ID
+                # Preserve original message_id, use as id for processing
+                reply["id"] = reply.get("message_id", "unknown_team")
                 all_messages.append(reply)
-                message_id += 1
         
         # Filter out messages that were used in the original (rejected) extraction
         filtered_messages = [

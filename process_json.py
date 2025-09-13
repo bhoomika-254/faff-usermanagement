@@ -6,9 +6,10 @@ Usage: python process_json.py
 
 import json
 import os
+import asyncio
 from src.preprocessor.json_context_extractor import JSONContextExtractor
 
-def main():
+async def main():
     input_folder = "input_jsons"
     input_files = [
         "RahulSingh.json",
@@ -35,10 +36,10 @@ def main():
         user_id = filename.split(".")[0]
 
         # Process the JSON and store in DB
-        extractor.process_json(input_data, user_id)
+        await extractor.process_json(input_data, user_id)
         print(f"Finished processing {input_path}")
 
     print("All files processed.")
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

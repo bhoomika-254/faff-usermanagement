@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button, Badge, Spinner, Alert, Row, Col, Modal, ButtonGroup } from 'react-bootstrap';
-import { FaCheck, FaTimes, FaEye, FaUser, FaLayerGroup } from 'react-icons/fa';
+import { Card, Button, Badge, Spinner, Alert, Row, Col, Modal, ButtonGroup, Form } from 'react-bootstrap';
+import { FaCheck, FaTimes, FaEye, FaUser, FaLayerGroup, FaFilter } from 'react-icons/fa';
 import { memoryAPI } from '../services/api';
 
 const PendingUpdates = () => {
   const [updates, setUpdates] = useState([]);
+  const [allUpdates, setAllUpdates] = useState([]); // Store all updates for client-side filtering
   const [summary, setSummary] = useState(null);
   const [totalPending, setTotalPending] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -13,10 +14,17 @@ const PendingUpdates = () => {
   const [showEvidenceModal, setShowEvidenceModal] = useState(false);
   const [selectedEvidence, setSelectedEvidence] = useState([]);
   const [selectedLayer, setSelectedLayer] = useState(null);
+  const [selectedName, setSelectedName] = useState('');
+  const [availableNames, setAvailableNames] = useState([]);
 
   useEffect(() => {
     fetchPendingUpdates();
   }, [selectedLayer]);
+
+  useEffect(() => {
+    // Filter updates when selectedName changes
+    filterUpdates();
+  }, [selectedName, allUpdates]);
 
   const fetchPendingUpdates = async () => {
     try {
@@ -25,14 +33,29 @@ const PendingUpdates = () => {
       
       // Handle new API response structure
       if (response.data && response.data.updates) {
-        setUpdates(response.data.updates);
+        const fetchedUpdates = response.data.updates;
+        setAllUpdates(fetchedUpdates);
         setSummary(response.data.summary);
         setTotalPending(response.data.total_pending);
+        
+        // Extract unique names
+        const names = [...new Set(fetchedUpdates.map(update => update.user_id))].sort();
+        setAvailableNames(names);
+        
+        // Apply name filter
+        filterUpdatesFromData(fetchedUpdates);
       } else {
         // Fallback for old API structure
-        setUpdates(Array.isArray(response.data) ? response.data : []);
+        const fetchedUpdates = Array.isArray(response.data) ? response.data : [];
+        setAllUpdates(fetchedUpdates);
         setSummary(null);
-        setTotalPending(Array.isArray(response.data) ? response.data.length : 0);
+        setTotalPending(fetchedUpdates.length);
+        
+        // Extract unique names
+        const names = [...new Set(fetchedUpdates.map(update => update.user_id))].sort();
+        setAvailableNames(names);
+        
+        filterUpdatesFromData(fetchedUpdates);
       }
     } catch (err) {
       setError('Failed to load pending updates');
@@ -40,6 +63,20 @@ const PendingUpdates = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const filterUpdates = () => {
+    filterUpdatesFromData(allUpdates);
+  };
+
+  const filterUpdatesFromData = (updatesData) => {
+    let filtered = updatesData;
+    
+    if (selectedName && selectedName !== '') {
+      filtered = filtered.filter(update => update.user_id === selectedName);
+    }
+    
+    setUpdates(filtered);
   };
 
   const handleApprove = async (updateId) => {
@@ -109,7 +146,11 @@ const PendingUpdates = () => {
   return (
     <div>
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1>Pending Updates ({totalPending}){selectedLayer ? ` - ${selectedLayer}` : ''}</h1>
+        <h1>
+          Pending Updates ({updates.length})
+          {selectedLayer && ` - ${selectedLayer}`}
+          {selectedName && ` - ${selectedName}`}
+        </h1>
         <Button variant="outline-primary" onClick={fetchPendingUpdates}>
           Refresh
         </Button>
@@ -139,6 +180,48 @@ const PendingUpdates = () => {
               </Button>
             ))}
           </ButtonGroup>
+        </Card.Body>
+      </Card>
+
+      {/* Name Filter */}
+      <Card className="mb-4">
+        <Card.Header>
+          <h5 className="mb-0">
+            <FaFilter className="me-2" />
+            Filter by Name
+          </h5>
+        </Card.Header>
+        <Card.Body>
+          <Row>
+            <Col md={6}>
+              <Form.Select
+                value={selectedName}
+                onChange={(e) => setSelectedName(e.target.value)}
+                aria-label="Filter by name"
+              >
+                <option value="">All Names ({allUpdates.length} updates)</option>
+                {availableNames.map(name => {
+                  const count = allUpdates.filter(update => update.user_id === name).length;
+                  return (
+                    <option key={name} value={name}>
+                      {name} ({count} updates)
+                    </option>
+                  );
+                })}
+              </Form.Select>
+            </Col>
+            <Col md={6}>
+              {selectedName && (
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => setSelectedName('')}
+                >
+                  <FaTimes className="me-1" />
+                  Clear Name Filter
+                </Button>
+              )}
+            </Col>
+          </Row>
         </Card.Body>
       </Card>
 

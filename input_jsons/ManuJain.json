@@ -2,17 +2,21 @@
     {
         "user_queries": [
             {
+                "message_id": "OuU.76beY_dJIQ-klcBq53kJuFsOg-1ikP3gg",
                 "message": "I am available now"
             },
             {
+                "message_id": "OuU.76beY_dJIQ-glcBq53kJuFsOg",
                 "message": "I am available now"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P52273rKcrbiSA-0nMBq53kJuFsOg-1h2QV5A",
                 "message": "thanks, sharing an otp in 1-2 mins"
             },
             {
+                "message_id": "P52273rKcrbiSA-wnMBq53kJuFsOg",
                 "message": "thanks, sharing an otp in 1-2 mins"
             }
         ]
@@ -20,98 +24,117 @@
     {
         "user_queries": [
             {
+                "message_id": "Ou22TuBUlxIpiQ-koIBq53kJuFsOg-1ikP3gg",
                 "message": "Do u need any documents to change the address?"
             },
             {
+                "message_id": "Ou22TuBUlxIpiQ-goIBq53kJuFsOg",
                 "message": "Do u need any documents to change the address?"
             }
         ],
         "team_replies": [
             {
-                "message": "Hey, we tried doing all 4 registrations simultaneously, but it’s showing an error. Hence we will have to do it one by one \nAlso once we log in with one Aadhaar ID, we need to complete that update first; otherwise, the session expires and logs out automatically. We also need an address proof document for verification, and once we log in, we will get to know exactly which document needs to be submitted.",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"Ou22TuBUlxIpiQ-koIBq53kJuFsOg-1ikP3gg\", \"quoted_type\": \"text\", \"quoted_author\": \"919811907080\", \"quoted_content\": {\"body\": \"Do u need any documents to change the address?\"}, \"forwarding_score\": 0}"
+                "message_id": "P9Q8x2rx3SEhAw-0kIBq53kJuFsOg-1h2QV5A",
+                "message": "Hey, we tried doing all 4 registrations simultaneously, but it’s showing an error. Hence we will have to do it one by one \nAlso once we log in with one Aadhaar ID, we need to complete that update first; otherwise, the session expires and logs out automatically. We also need an address proof document for verification, and once we log in, we will get to know exactly which document needs to be submitted."
             },
             {
-                "message": "Hey, we tried doing all 4 registrations simultaneously, but it’s showing an error. Hence we will have to do it one by one \nAlso once we log in with one Aadhaar ID, we need to complete that update first; otherwise, the session expires and logs out automatically. We also need an address proof document for verification, and once we log in, we will get to know exactly which document needs to be submitted.",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"Ou22TuBUlxIpiQ-goIBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919811907080\", \"quoted_content\": {\"body\": \"Do u need any documents to change the address?\"}, \"forwarding_score\": 0}"
+                "message_id": "P9Q8x2rx3SEhAw-wkIBq53kJuFsOg",
+                "message": "Hey, we tried doing all 4 registrations simultaneously, but it’s showing an error. Hence we will have to do it one by one \nAlso once we log in with one Aadhaar ID, we need to complete that update first; otherwise, the session expires and logs out automatically. We also need an address proof document for verification, and once we log in, we will get to know exactly which document needs to be submitted."
             }
         ]
     },
     {
         "user_queries": [
             {
-                "message": "@919811897969 can u give the address proof document",
-                "context": "{\"mentions\": [\"919811897969\"], \"forwarded\": false, \"quoted_id\": null, \"quoted_type\": null, \"quoted_author\": null, \"quoted_content\": null, \"forwarding_score\": 0}"
+                "message_id": "OnUiiQrWJFKwZA-kgEBq53kJuFsOg-1ikP3gg",
+                "message": "@919811897969 can u give the address proof document"
             },
             {
-                "message": "@919811897969 can u give the address proof document",
-                "context": "{\"mentions\": [\"919811897969\"], \"forwarded\": false, \"quoted_id\": null, \"quoted_type\": null, \"quoted_author\": null, \"quoted_content\": null, \"forwarding_score\": 0}"
+                "message_id": "OnUiiQrWJFKwZA-ggEBq53kJuFsOg",
+                "message": "@919811897969 can u give the address proof document"
             },
             {
+                "message_id": "OrGTjDfeLiUYmA-kq4Bq53kJuFsOg-1ikP3gg",
                 "message": "No manu not this"
             },
             {
+                "message_id": "OrGTjDfeLiUYmA-gq4Bq53kJuFsOg",
                 "message": "No manu not this"
             },
             {
+                "message_id": "OiIaz1MPCk.AxQ-kjYBq53kJuFsOg-1ikP3gg",
                 "message": "F tower deed"
             },
             {
+                "message_id": "OiIaz1MPCk.AxQ-gjYBq53kJuFsOg",
                 "message": "F tower deed"
             },
             {
+                "message_id": "Opy0ADGMreSmwg-krUBq53kJuFsOg-1ikP3gg",
                 "message": "With both our names"
             },
             {
+                "message_id": "Opy0ADGMreSmwg-grUBq53kJuFsOg",
                 "message": "With both our names"
             },
             {
+                "message_id": "OksIYgU.yWkh.g-kpEBq53kJuFsOg-1ikPunE",
                 "message": "Address proof for new address"
             },
             {
+                "message_id": "OksIYgU.yWkh.g-gpEBq53kJuFsOg",
                 "message": "Address proof for new address"
             },
             {
+                "message_id": "OuUH60.chueRuQ-kvUBq53kJuFsOg-1ikPunE",
                 "message": "Pls update address on Aadhar"
             },
             {
+                "message_id": "OuUH60.chueRuQ-gvUBq53kJuFsOg",
                 "message": "Pls update address on Aadhar"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P5KpMjb8ZeJltg-0tQBq53kJuFsOg-1h2QV5A",
                 "message": "sure!"
             },
             {
+                "message_id": "P5KpMjb8ZeJltg-wtQBq53kJuFsOg",
                 "message": "sure!"
             },
             {
-                "message": "@919811907080 can we get otp for one of the aadhar right now, as we will have to work on it one by one",
-                "context": "{\"mentions\": [\"919811907080\"], \"forwarded\": false, \"quoted_id\": null, \"quoted_type\": null, \"quoted_author\": null, \"quoted_content\": null, \"forwarding_score\": 0}"
+                "message_id": "PzaN.uDzCr8h3A-0vEBq53kJuFsOg-1h2QV5A",
+                "message": "@919811907080 can we get otp for one of the aadhar right now, as we will have to work on it one by one"
             },
             {
-                "message": "@919811907080 can we get otp for one of the aadhar right now, as we will have to work on it one by one",
-                "context": "{\"mentions\": [\"919811907080\"], \"forwarded\": false, \"quoted_id\": null, \"quoted_type\": null, \"quoted_author\": null, \"quoted_content\": null, \"forwarding_score\": 0}"
+                "message_id": "PzaN.uDzCr8h3A-wvEBq53kJuFsOg",
+                "message": "@919811907080 can we get otp for one of the aadhar right now, as we will have to work on it one by one"
             }
         ]
     },
     {
         "user_queries": [
             {
+                "message_id": "Og0afzHENIY6.w-khcBq53kJuFsOg-1ikP3gg",
                 "message": "Yes pls"
             },
             {
+                "message_id": "Og0afzHENIY6.w-ghcBq53kJuFsOg",
                 "message": "Yes pls"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P2iH1oQAxSD0ew-0gABq53kJuFsOg-1h2QV5A",
                 "message": "shared just now"
             },
             {
+                "message_id": "Pwtfh4au.EDegw-0u8Bq53kJuFsOg-1h2QV5A",
                 "message": "Hey we are sharing one now again"
             },
             {
+                "message_id": "Pwtfh4au.EDegw-wu8Bq53kJuFsOg",
                 "message": "Hey we are sharing one now again"
             }
         ]
@@ -119,17 +142,21 @@
     {
         "user_queries": [
             {
+                "message_id": "OrqdwEzxWeMl9A-koEBq53kJuFsOg-1ikP3gg",
                 "message": "816472 is OTP for Aadhaar (XX0342) (valid for 10 mins) at UIDAI Internal. Send SMS to 1947/visit uidai.gov.in to lock/unlock your biometrics -UIDAI"
             },
             {
+                "message_id": "OrqdwEzxWeMl9A-goEBq53kJuFsOg",
                 "message": "816472 is OTP for Aadhaar (XX0342) (valid for 10 mins) at UIDAI Internal. Send SMS to 1947/visit uidai.gov.in to lock/unlock your biometrics -UIDAI"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P5UwvlBMRPwjRw-0tIBq53kJuFsOg-1h2QV5A",
                 "message": "Hey the otp validity is only 30 sec, and for now the site is showing us to generate otp in a little while. If possible can we call you today evening to get it. apologies for the inconvenience"
             },
             {
+                "message_id": "P5UwvlBMRPwjRw-wtIBq53kJuFsOg",
                 "message": "Hey the otp validity is only 30 sec, and for now the site is showing us to generate otp in a little while. If possible can we call you today evening to get it. apologies for the inconvenience"
             }
         ]
@@ -137,55 +164,67 @@
     {
         "user_queries": [
             {
+                "message_id": "Oiixjye.VZg96Q-kocBq53kJuFsOg-1ikP3gg",
                 "message": "No problem atall"
             },
             {
+                "message_id": "Oiixjye.VZg96Q-gocBq53kJuFsOg",
                 "message": "No problem atall"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Oi2HsFHo_AqxrQ-kiQBq53kJuFsOg-1f8nh3U",
                 "message": "Hey, we tried logging in again, but it’s showing ‘OTP generating session expired.’ We’ll keep trying, and if it works, we’ll inform you. If it doesn’t, we will try again tomorrow."
             },
             {
+                "message_id": "Oi2HsFHo_AqxrQ-giQBq53kJuFsOg",
                 "message": "Hey, we tried logging in again, but it’s showing ‘OTP generating session expired.’ We’ll keep trying, and if it works, we’ll inform you. If it doesn’t, we will try again tomorrow."
             },
             {
+                "message_id": "PsoNzeFobkDjn3E-0uwBq53kJuFsOg-1h2QV5A",
                 "message": "Morning greetings from team faff 🌅\n\nCurrent tasks we're working on:\n1. Aadhar address change : we tried logging, and it’s showing ‘OTP generating session expired We will try again tomorrow. And we'll update you\n\nLet us know if there's anything else we can help you with?"
             },
             {
+                "message_id": "PsoNzeFobkDjn3E-wuwBq53kJuFsOg",
                 "message": "Morning greetings from team faff 🌅\n\nCurrent tasks we're working on:\n1. Aadhar address change : we tried logging, and it’s showing ‘OTP generating session expired We will try again tomorrow. And we'll update you\n\nLet us know if there's anything else we can help you with?"
             },
             {
-                "message": "hi @919811907080 can we call you for the otp right now?",
-                "context": "{\"mentions\": [\"919811907080\"], \"forwarded\": false, \"quoted_id\": null, \"quoted_type\": null, \"quoted_author\": null, \"quoted_content\": null, \"forwarding_score\": 0}"
+                "message_id": "P6NZtdQNXsR4ng-0t0Bq53kJuFsOg-1h2QV5A",
+                "message": "hi @919811907080 can we call you for the otp right now?"
             },
             {
-                "message": "hi @919811907080 can we call you for the otp right now?",
-                "context": "{\"mentions\": [\"919811907080\"], \"forwarded\": false, \"quoted_id\": null, \"quoted_type\": null, \"quoted_author\": null, \"quoted_content\": null, \"forwarding_score\": 0}"
+                "message_id": "P6NZtdQNXsR4ng-wt0Bq53kJuFsOg",
+                "message": "hi @919811907080 can we call you for the otp right now?"
             }
         ]
     },
     {
         "user_queries": [
             {
+                "message_id": "Om5Js3bd3ceOIA-kgUBq53kJuFsOg-1ikP3gg",
                 "message": "Yes pls"
             },
             {
+                "message_id": "Om5Js3bd3ceOIA-ggUBq53kJuFsOg",
                 "message": "Yes pls"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OlK.01Dc2kzJlg-km8Bq53kJuFsOg-1f8nh3U",
                 "message": "Sure, calling you now."
             },
             {
+                "message_id": "OlK.01Dc2kzJlg-gm8Bq53kJuFsOg",
                 "message": "Sure, calling you now."
             },
             {
+                "message_id": "P6RBuMjsKXPMwg-0h8Bq53kJuFsOg-1h2QV5A",
                 "message": "Hi can you confirm if the residential proof you shared is mentioned here"
             },
             {
+                "message_id": "P6RBuMjsKXPMwg-wh8Bq53kJuFsOg",
                 "message": "Hi can you confirm if the residential proof you shared is mentioned here"
             }
         ]
@@ -193,19 +232,21 @@
     {
         "user_queries": [
             {
-                "message": "This one",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"XuaWcU60z7c9EQ-ko8Bq53kJuFsOg-1ikPunE\", \"quoted_type\": \"documentWithCaption\", \"quoted_author\": \"919811897969\", \"quoted_content\": {\"id\": \"media_init\", \"sha256\": \"UERKcWg5VkF3V29NQ3h2OVBCUjJwSmNtQVpvZ29jZ2hzWStPMzJOMm9LST0=\", \"caption\": \"F1702 La Lagune_0001\", \"preview\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wgARCABIADMDASIAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAAIDAQQG/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAA+jcEMdxy+lAjs9MljH1B0HOVgXNYHpRoUDmWmBv5PTgXvNgEyHZDoOA//8QAFBEBAAAAAAAAAAAAAAAAAAAAQP/aAAgBAgEBPwAn/8QAFBEBAAAAAAAAAAAAAAAAAAAAQP/aAAgBAwEBPwAn/8QAKRAAAgIBAwMCBgMAAAAAAAAAAQIAEQMSITEQIkEyUQQTUmFxgRQjU//aAAgBAQABPwCzcd9ClqJqfP2HYd4M9nZGmPMXvtIo1CXLbGpQ9ofX6q+05b1bTNjytkJVu37TCaUKQfyYq7nummvPQqpeyd4qiiLuHtba9pdsOZjfKPitOn+v3jeOjLb3EGxEZCvDQDURfMVQOI3QrfBqaD9UdaFl6iBS1B7M0H6jAnuSeh4mtg0J1qQy7RDoawIuVmHgRCxHdX66HiBu6qBh9J/E4NQYSeWEUaRXR+J5MDEqRVbTEFbJRgxqDfVrI2iAm7FQLXkmMundAAYr0Ldv1DmxjlxP5OH/AEWf//4AAwD/2Q==\", \"filename\": \"F1702 La Lagune_0001.pdf\", \"file_name\": \"F1702 La Lagune_0001.pdf\", \"file_size\": 4450374, \"mime_type\": \"application/pdf\", \"page_count\": 16}, \"forwarding_score\": 0}"
+                "message_id": "OkuYblSpHcT_nQ-kqwBq53kJuFsOg-1ikP3gg",
+                "message": "This one"
             },
             {
-                "message": "This one",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"XuaWcU60z7c9EQ-go8Bq53kJuFsOg\", \"quoted_type\": \"document\", \"quoted_author\": \"919811897969\", \"quoted_content\": {\"id\": \"media_init\", \"sha256\": \"PDJqh9VAwWoMCxv9PBR2pJcmAZogocghsY+O32N2oKI=\", \"caption\": \"F1702 La Lagune_0001\", \"filename\": \"F1702 La Lagune_0001.pdf\", \"file_name\": \"F1702 La Lagune_0001.pdf\", \"file_size\": 4450374, \"mime_type\": \"application/pdf\", \"page_count\": 16}, \"forwarding_score\": 0}"
+                "message_id": "OkuYblSpHcT_nQ-gqwBq53kJuFsOg",
+                "message": "This one"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P8XcGFzxhSy2SQ-0nQBq53kJuFsOg-1h2QV5A",
                 "message": "We wanted to check if the one you shared is listed in the above list, as we were unable to locate it in the list. Kindly let us know"
             },
             {
+                "message_id": "P8XcGFzxhSy2SQ-wnQBq53kJuFsOg",
                 "message": "We wanted to check if the one you shared is listed in the above list, as we were unable to locate it in the list. Kindly let us know"
             }
         ]
@@ -213,30 +254,37 @@
     {
         "user_queries": [
             {
+                "message_id": "Oht5WnKC8azS4w-krUBq53kJuFsOg-1ikP3gg",
                 "message": "Can u call"
             },
             {
+                "message_id": "Oht5WnKC8azS4w-grUBq53kJuFsOg",
                 "message": "Can u call"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P7FsA_y52v4o2w-0h4Bq53kJuFsOg-1h2QV5A",
                 "message": "sure"
             },
             {
+                "message_id": "P7FsA_y52v4o2w-wh4Bq53kJuFsOg",
                 "message": "sure"
             },
             {
+                "message_id": "PspLOa9jnaP8Lcc-0p0Bq53kJuFsOg-1h2QV5A",
                 "message": "Hope you have a nice day! We're always available to help you save your time and energy 😀\n\nCurrent tasks we're working on:\n1. Cotact NJE Wealth customer care regarding an error : We contacted NJ E-Wealth regarding re-KYC status, confirmed account reactivation will take T+1 working day after approval, will follow up if not activated by Thursday morning.\n2. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n\nLet us know if there's anything else we can help you with?"
             },
             {
+                "message_id": "PspLOa9jnaP8Lcc-wp0Bq53kJuFsOg",
                 "message": "Hope you have a nice day! We're always available to help you save your time and energy 😀\n\nCurrent tasks we're working on:\n1. Cotact NJE Wealth customer care regarding an error : We contacted NJ E-Wealth regarding re-KYC status, confirmed account reactivation will take T+1 working day after approval, will follow up if not activated by Thursday morning.\n2. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n\nLet us know if there's anything else we can help you with?"
             },
             {
-                "message": "Hey, we will need this info to proceed with the task",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PrBE_OKIrxA1iyo-gnYBq53kJuFsOg\", \"quoted_type\": \"image\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"id\": \"media_init\", \"width\": 935, \"height\": 855, \"sha256\": \"MUFmV1ZZTWRMdHVUUXVVR3E2WVo3cXNZYStjaTdncEVZeVFtZ1dpMnNyWT0=\", \"caption\": \"Hi, we would need the Application number for both\", \"file_size\": 83457, \"mime_type\": \"image/jpeg\"}, \"forwarding_score\": 0}"
+                "message_id": "P4i3NP98PkyeDw-wjoBq53kJuFsOg",
+                "message": "Hey, we will need this info to proceed with the task"
             },
             {
+                "message_id": "OtjtvBEEOGN5nA-gpMBq53kJuFsOg",
                 "message": "Got it. We will check with them for this and update you with the next steps."
             }
         ]
@@ -244,21 +292,25 @@
     {
         "user_queries": [
             {
+                "message_id": "OjlTIEhQLPNLbA-gioBq53kJuFsOg",
                 "message": "Hi need a table for 10 people on Friday 9 pm"
             },
             {
-                "message": "If you can pls coordinate",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OgpHvm6hgDkwjg-guMBq53kJuFsOg\", \"quoted_type\": \"image\", \"quoted_author\": \"919811897969\", \"quoted_content\": {\"id\": \"media_init\", \"width\": 738, \"height\": 1600, \"sha256\": \"SUt3N2JMa25uT0ZxbmE0czAzZi9RbVRoc2pWNDh4cTg4eEJaSFFoTjMvVT0=\", \"preview\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wgARCABIAEgDASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAAMBAgQFBv/EABgBAQEBAQEAAAAAAAAAAAAAAAABAgME/9oADAMBAAIQAxAAAADvzVY+VMoZSIZNbAAJrmznTlcDJgCCS4Bz8XfT2zyK980TRe3z6z3aoBoeDMZLtrlLH3tnh9ccVuMIOaEtJA14AmhgaykA/8QAHREAAgEEAwAAAAAAAAAAAAAAAREAAgMQIBMwUv/aAAgBAgEBPwCPppuoJTmHnZjUZ//EABoRAQACAwEAAAAAAAAAAAAAAAEAEQISMCH/2gAIAQMBAT8A5JNeeR5cC4lM/8QALxAAAgECAwUHBAMBAAAAAAAAAQIAAxEEEiEFEyJRUxAVMTJBYXEUIzORQ1KBY//aAAgBAQABPwCsxDC1/wDIguL5yPaZNfyQrc+e0Cf9JmHMQG/h21zxgaaiKouVsL+msNJzbhH7goIfEG/zBRQc/wBzcJyiIEFl7aqBmBLhfmCmQb70Tdv1YEf1qTI/VgRh41Lzdt1Zumv+WICosWvNo4WvXr03ptwj0vKOBxbVqgqsRTPhYw0XCKoGaw5ynSctxrYfMOGQm5LfufTpa1zb5n0ya6tr7wYZBbU6e8SmqG4vNqNiRUXc5stvSK+NvrvLRnxduE1LxXx2YefxlPyDPfN6xy4bhAKymXLcYsPaP4cF7ylmza9hqMK+TLw85aaQ4yoMeKG6OT+00lhN4d9ky6c+zvbHddp3tjuu0G1sdmH32j7WxpJG/a07yxnXaJtbGggb9rRtr44MfvtO98d12ne+O67T0npF8RFpPVqlaaljyEpbGxtT+LKPeYnC1MJiBSqWze0fzHtppnbLBhiQbMNI1I021mGr1aGJzUTZzpK2N2hfK9Yj4ju71b1GLNzMRFeo2Y2EWhSJtn/2VkCPZTcc5//+AAMA/9k=\", \"file_size\": 109815, \"mime_type\": \"image/jpeg\"}, \"forwarding_score\": 0}"
+                "message_id": "OiAztRafuAmrNQ-gm4Bq53kJuFsOg",
+                "message": "If you can pls coordinate"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrAYFnLAxzbBwwI-grABq53kJuFsOg",
                 "message": "Sure, doing now"
             },
             {
+                "message_id": "PrAh6AZzNqrYWuE-gikBq53kJuFsOg",
                 "message": "Hi, we are coordinating for the booking and will update you in next 15 minutes"
             },
             {
+                "message_id": "PrCl_kgJrGGOE0k-gtgBq53kJuFsOg",
                 "message": "Hi, we called them but couldn't connect. Please allow us some more time and we'll update you by 7 PM"
             }
         ]
@@ -266,14 +318,17 @@
     {
         "user_queries": [
             {
+                "message_id": "OvDpgfnM5KNUVw-guoBq53kJuFsOg",
                 "message": "No worrkes it’s on Friday"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrC8QGGxV7SrfMg-gsoBq53kJuFsOg",
                 "message": "Hi, your reservation has been confirmed for 10 people at 9 PM on Friday, 18th July, under your name and contact number.\n\nA few important points to note:\n\n- The table will be held for up to 15 minutes after your reservation time.\n\n- Guests below the age of 25 will not be served liquor, as per policy. Please ensure all members of your group meet this requirement.\n\n- In line with government regulations, last orders for food and drinks will be taken at 12:30 AM, and we request that the premises be vacated by 12:55 AM.\n\n- A 10% discretionary staff contribution will be added to your bill.\n\nWishing you a great Friday evening!"
             },
             {
+                "message_id": "Psr7mvTrX_k17KA-wukBq53kJuFsOg",
                 "message": "We're glad to hear this and open to your feedback. How can we improve your experience?"
             }
         ]
@@ -281,15 +336,17 @@
     {
         "user_queries": [
             {
-                "message": "New task \n1. Pls call them and follow up",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"Oog79_9q3tOUvg-gnoBq53kJuFsOg\", \"quoted_type\": \"image\", \"quoted_author\": \"919811897969\", \"quoted_content\": {\"id\": \"media_init\", \"width\": 738, \"height\": 1600, \"sha256\": \"R1d1MGRjSnF6VDRkU3d2czNjRlFKUkFRdEoyQ002SkNLZzR4WG93b1FFRT0=\", \"preview\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wgARCABIAEgDASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAECAwYEBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAADLPXazFulxbDFsPOkW6Pm+lKV0Gk4yaxlc5tAjoud6QyTJCRO1LnMAjqOW+6e14x7HjHsr5YPiIFahAAEhYH//xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAECAQE/AE//xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAEDAQE/AE//xAAwEAABAgIIBQMDBQAAAAAAAAABAAIDEQQSEyExM1NxFBUyUaFBUpEFIEIQIiNhcv/aAAgBAQABPwBuBV7otbtgr5f2hP1+1yDaxkMSuBpGmVwFI0yuApGmVwFI0yuApGmVwFI0yuApGmU5tUyOIULMZunPewNqtrCV6MWLIkQ8PRW8W6UEppJaCRI/qcCo5/mfuoeazcIvLWtkJ3K1dOVVWrvZ5Vq6fQjFcPw8oRXn8PKBJYZiSjZz91CzWbhRBcy6d3dd/wBo+UR2b5R/yPlEDGr5UISdMNu7zTuk7KNnv3ULNZuE9pc1shO5WbvYPlWbp9AVkfRg+VZu9gUIEAzbJO6Tso2e/dQs1m4TekbfcSC0yUbPfumENiNJwBQ+p0UNAtPRczomouZ0TUXM6JqLmdE1FzOiai5lRACBEUQh0VzhgSiqiqBVAqgVQKoFUQX//gADAP/Z\", \"file_size\": 60919, \"mime_type\": \"image/jpeg\"}, \"forwarding_score\": 0}"
+                "message_id": "OisY2ZHwWevHmQ-ggEBq53kJuFsOg",
+                "message": "New task \n1. Pls call them and follow up"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OvAo.qLgSH7IfQ-gnUBq53kJuFsOg",
                 "message": "Sure, let us follow up with them on this and update you by 12 PM."
             },
             {
+                "message_id": "PsprOGWw4T2BoRw-wmYBq53kJuFsOg",
                 "message": "Hope you have a nice day! We're always available to help you save your time and energy 😀\n\nCurrent tasks we're working on:\n1. Cotact NJE Wealth customer care regarding an error : We contacted NJ E-Wealth regarding re-KYC status, confirmed account reactivation will take T+1 working day after approval, will follow up if not activated by Thursday morning.\n\nTasks we need your input on:\n1. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n\nLet us know if there's anything else we can help you with?"
             }
         ]
@@ -297,14 +354,17 @@
     {
         "user_queries": [
             {
+                "message_id": "OkA0h0TOaeWpuA-gl8Bq53kJuFsOg",
                 "message": "What’s the location of the Friday bar"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OlhzAFHp6FQT9Q-gs4Bq53kJuFsOg",
                 "message": "Sharing the location here: https://maps.app.goo.gl/WC6EY7V7eCic7cvj7"
             },
             {
+                "message_id": "OqYtANKhSSjP1A-glUBq53kJuFsOg",
                 "message": "We got in touch with NJ E-Wealth customer service and followed up regarding the issue. We highlighted the delay in resolution and emphasized the urgency from our end.\n\nThey’ve requested a _screenshot of the error_, which we’ve already shared with them via email. If you're facing any other issues, please do share those screenshots as well so we can forward them too. They’ve assured us that they’ll get back with a resolution soon, and we’ll keep you updated as soon as we hear from them."
             }
         ]
@@ -312,16 +372,17 @@
     {
         "user_queries": [
             {
-                "message": "Ok",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OqYtANKhSSjP1A-glUBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"We got in touch with NJ E-Wealth customer service and followed up regarding the issue. We highlighted the delay in resolution and emphasized the urgency from our end.\\n\\nThey’ve requested a _screenshot of the error_, which we’ve already shared with them via email. If you're facing any other issues, please do share those screenshots as well so we can forward them too. They’ve assured us that they’ll get back with a resolution soon, and we’ll keep you updated as soon as we hear from them.\"}, \"forwarding_score\": 0}"
+                "message_id": "Ogjit29DLnFd4w-gkwBq53kJuFsOg",
+                "message": "Ok"
             }
         ],
         "team_replies": [
             {
-                "message": "Yes, that email was shared with you just so we could forward the screenshots. Since we already had the screenshot with us, we went ahead and shared it directly from our end using her email address. There's no other significance to that email - just for reference.",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OkN4orSp0i4dLA-gm0Bq53kJuFsOg\", \"quoted_type\": \"image\", \"quoted_author\": \"919811897969\", \"quoted_content\": {\"id\": \"media_init\", \"width\": 738, \"height\": 1600, \"sha256\": \"MTBBc0RGZUpMSXRwT0FoUEhHamJWOTh1eU14ZU1lN0hQSTVCcTh0V0FDbz0=\", \"caption\": \"Just got this mail\", \"preview\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wgARCABIAEgDASIAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAAMBAgQG/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAA+jnXCag4y4jlxjRKNoHVY9HoeepQABKR6nm5PW8o9Ty9l2CcbRNzRmtOe+aFQcSAAB0Fwf/EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AT//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AT//EAC4QAAEDAgMGBgEFAAAAAAAAAAEAAhEDIRIxkRMiQVGBoSAyM0JScWEQMGLR8P/aAAgBAQABPwCo17huOwlYK2GNoJWzrRG0WzrWiosFWPURp1rRURZVj1EadbhUTZAuZKc5rfMYW1Z8gtrT+QQqMJgOBPirzhEAH7WEgAim3VMY11qjGjqhTpNIIAHJYm8wg4HIjwVxIG7iRZB9Enqi3IbE6rCTANMwMrplJrnmWEfmU2ixhkAz+7WFhn0V+TtUQZ46q4+R6og/y1QnKHaq8+7VMc4Hyk9U0ki4hV8hl1XD23Vst2UQBfd1UcSGjqiDOTUYPx1VJ2AxIhAgiRkq1gP6U/nsoi89kL8eyubT2RP+hH77JjmOthv9IAAQFWBIEAn6RDsociHcnINdGTlhdOTkGujJyAcPa5Uy4Hynr+n//gADAP/Z\", \"file_size\": 144113, \"mime_type\": \"image/jpeg\"}, \"forwarding_score\": 0}"
+                "message_id": "OvzrxwcOY3PmOg-gmMBq53kJuFsOg",
+                "message": "Yes, that email was shared with you just so we could forward the screenshots. Since we already had the screenshot with us, we went ahead and shared it directly from our end using her email address. There's no other significance to that email - just for reference."
             },
             {
+                "message_id": "Pso8J2V5BAfrVVo-wjwBq53kJuFsOg",
                 "message": "Hey Manu Jain, Your subscription will expire in 7 days. We will send the renewal link soon, but until then how can we help you?"
             }
         ]
@@ -329,12 +390,13 @@
     {
         "user_queries": [
             {
-                "message": "Pls auto renew you have the balance already",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"Pso8J2V5BAfrVVo-wjwBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919619000208\", \"quoted_content\": {\"body\": \"Hey Manu Jain, Your subscription will expire in 7 days. We will send the renewal link soon, but until then how can we help you?\"}, \"forwarding_score\": 0}"
+                "message_id": "OiuTa6psqfF5OQ-gh8Bq53kJuFsOg",
+                "message": "Pls auto renew you have the balance already"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Ol23a9YRrH_DrQ-gmsBq53kJuFsOg",
                 "message": "Hey, we have to maintain the wallet and subscription seperately therefore can't use them for each other. Can you please renew using the Razorpay link which will be generated as your subscription ends?\n\nWe're happy to return the wallet whenever you ask for it."
             }
         ]
@@ -342,17 +404,21 @@
     {
         "user_queries": [
             {
+                "message_id": "OhkrvtkohQpuNA-glwBq53kJuFsOg",
                 "message": "Yes pls also send renewal link for 3 months"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Ot0Lyp2uZqMBMA-giQBq53kJuFsOg",
                 "message": "Sure, the renewal link is automated and should get generated within the next 3 days and you can make the quarterly payment for this."
             },
             {
+                "message_id": "PsouOK2cM.hEilw-wk0Bq53kJuFsOg",
                 "message": "Good morning 🌻\n\nHow can we help you today?\n\nCurrent tasks we're working on:\n1. Cotact NJE Wealth customer care regarding an error : We followed up with NJ E-Wealth regarding trading access after re-KYC completion, shared error screenshots with customer service, and awaiting their resolution on the ongoing trading restriction issue.\n\nTasks we need your input on:\n1. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n\nHope you have a nice day :)"
             },
             {
+                "message_id": "PsohB_sLP0ZHTj0-wrQBq53kJuFsOg",
                 "message": "Sending good wishes for the new day, virtual coffee and a reminder that we're here to help with your chores :)\n\nCurrent tasks we're working on:\n1. Cotact NJE Wealth customer care regarding an error : We followed up with NJ E-Wealth regarding trading access after re-KYC completion, shared error screenshots with customer service, and awaiting their resolution on the ongoing trading restriction issue.\n\nTasks we need your input on:\n1. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n\nHope you have a nice day :)"
             }
         ]
@@ -360,31 +426,35 @@
     {
         "user_queries": [
             {
+                "message_id": "OsRVsji85szEvw-grsBq53kJuFsOg",
                 "message": "Pls share my invite code with me ? I want to send some friends"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Oj3CfYwnVTyfNQ-gkMBq53kJuFsOg",
                 "message": "$refer"
             },
             {
+                "message_id": "PsrXemSlTdCaBx8-wmkBq53kJuFsOg",
                 "message": "Wohooo! Thanks for supporting us and helping us grow. Only you can invite your friends to join faff. You can share the link below with your friends to reach out to us: \n\nhttps://invite.faffit.com/qg7vth"
             },
             {
-                "message": "Sure, please share the details and we can help you with this.",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OlB9ei0BPXbJBg-gpoBq53kJuFsOg\", \"quoted_type\": \"voice\", \"quoted_author\": \"919811897969\", \"quoted_content\": {\"id\": \"media_init\", \"sha256\": \"gsPrCJeokJF42a/MJDK060BP50Vz17+yfM/4koMCUeo=\", \"seconds\": 15, \"file_size\": 37459, \"mime_type\": \"audio/ogg; codecs=opus\"}, \"forwarding_score\": 0}"
+                "message_id": "OvuFhgI0PiRy4Q-gsIBq53kJuFsOg",
+                "message": "Sure, please share the details and we can help you with this."
             }
         ]
     },
     {
         "user_queries": [
             {
-                "message": "Sri Lankan airlines",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OvuFhgI0PiRy4Q-gsIBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"Sure, please share the details and we can help you with this.\"}, \"forwarding_score\": 0}"
+                "message_id": "OjXEMM6v_KK_Ig-gjEBq53kJuFsOg",
+                "message": "Sri Lankan airlines"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OodDQTDtzP7JSA-gtEBq53kJuFsOg",
                 "message": "Got it."
             }
         ]
@@ -392,20 +462,25 @@
     {
         "user_queries": [
             {
+                "message_id": "Ohap_QXVvo2OiA-gtwBq53kJuFsOg",
                 "message": "Manu.intouch@gmail.com"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OmHM4prnPRliMA-gs8Bq53kJuFsOg",
                 "message": "Got it. Please allow us time until 1:30PM while we can check on this and update you."
             },
             {
+                "message_id": "Oh1QjAwuVefcVw-gkEBq53kJuFsOg",
                 "message": "Hey, we followed up with NJ E-Wealth regarding your query. They’ve confirmed that your Capital Market Segment account was *reactivated yesterday at 5:30 PM*. As per their policy, *trading is restricted for 24 hours after reactivation*.\n\nSince the weekend is non-trading, you’ll be able to start trading from *Monday*. Rest assured, the account is active and ready to go!"
             },
             {
+                "message_id": "Og5qPBKn5Qn7VQ-ghsBq53kJuFsOg",
                 "message": "As requested, here’s a quick summary of the process to join SriLankan Airlines’ FlySmiLes frequent flyer program:\n\nProcess to Join FlySmiLes:\n- Visit the sign-up page:https://www.flysmiles.com/flysmiles/register\n- Fill in the registration form with the required details .\n- Submit and verify via email to activate your account.\n- Your FlySmiLes number will be generated, which you can use while booking to earn miles.\n\nPlease share the following so we can assist you with the registration:\n- passport details\n- City\n- Mobile Number\n\nPlease share it so we can proceed with the process."
             },
             {
+                "message_id": "PsoH3QycHcWzCJ0-wo8Bq53kJuFsOg",
                 "message": "Morning greetings from team faff 🌅\n\nCurrent tasks we're working on:\n1. Cotact NJE Wealth customer care regarding an error : We confirmed with NJ E-Wealth that your Capital Market Segment account was reactivated, trading will be available from Monday due to the mandatory 24-hour restriction period after reactivation, and we will follow up if any issues persist.\n\nTasks we need your input on:\n1. Make Srilankan Airlines frequent flyer program : We have requested few details to proceed further.\n2. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n\nLet us know if there's anything else we can help you with?"
             }
         ]
@@ -413,42 +488,51 @@
     {
         "user_queries": [
             {
+                "message_id": "Oi4KG.LomYmQhA-grUBq53kJuFsOg",
                 "message": "What details pending for Sri Lankan"
             }
         ],
         "team_replies": [
             {
-                "message": "We would require all these documents for this.",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"Og5qPBKn5Qn7VQ-ghsBq53kJuFsOg\", \"quoted_type\": \"link_preview\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"url\": \"https://www.flysmiles.com/flysmiles/register\", \"body\": \"As requested, here’s a quick summary of the process to join SriLankan Airlines’ FlySmiLes frequent flyer program:\\n\\nProcess to Join FlySmiLes:\\n- Visit the sign-up page:https://www.flysmiles.com/flysmiles/register\\n- Fill in the registration form with the required details .\\n- Submit and verify via email to activate your account.\\n- Your FlySmiLes number will be generated, which you can use while booking to earn miles.\\n\\nPlease share the following so we can assist you with the registration:\\n- passport details\\n- City\\n- Mobile Number\\n\\nPlease share it so we can proceed with the process.\", \"title\": \"FlySmiLes\"}, \"forwarding_score\": 0}"
+                "message_id": "OsJB_GnLSjViFw-giABq53kJuFsOg",
+                "message": "We would require all these documents for this."
             }
         ]
     },
     {
         "user_queries": [
             {
+                "message_id": "OlXqMZCG5qhAag-ggQBq53kJuFsOg",
                 "message": "New task"
             },
             {
+                "message_id": "OuME4lhafbmC.g-gv8Bq53kJuFsOg",
                 "message": "Pls find a caterer with wood fired pizza for a party of 20 people in gurgaon (only kids) vegetarian it’s on 20th September for lunch \nMenu \n1. Wood fired live pizza \n2. ⁠pasta \n3. ⁠French fries"
             },
             {
+                "message_id": "Oo7JbyWl3DfaVA-guoBq53kJuFsOg",
                 "message": "Pls share some options"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrAe6awzyw_dAQs-gkwBq53kJuFsOg",
                 "message": "Sure, we will start our search today and will reach out to a few vendors. Please allow us time till tomorrow, and we will get back to you with an update."
             },
             {
+                "message_id": "PsrKrNpE39.wEqk-wlsBq53kJuFsOg",
                 "message": "Hope you have a nice day! We're always available to help you save your time and energy 😀\n\nCurrent tasks we're working on:\n1. Cotact NJE Wealth customer care regarding an error : We confirmed with NJ E-Wealth that your Capital Market Segment account was reactivated, trading will be available from Monday due to the mandatory 24-hour restriction period after reactivation, and we will follow up if any issues persist.\n2. Find a caterer with wood fired pizza for a party : We have logged this and will start work on it first thing in the morning.\n\nTasks we need your input on:\n1. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n2. Make Srilankan Airlines frequent flyer program : We have requested few details to proceed further.\n\nLet us know if there's anything else we can help you with?"
             },
             {
+                "message_id": "PrBgYxxEM77r7rg-giEBq53kJuFsOg",
                 "message": "Thank you, we will proceed and update you on this by tomorrow."
             },
             {
+                "message_id": "PspBQx4quRCQR_k-wjoBq53kJuFsOg",
                 "message": "Thank you for your payment. Your quarterly plan has been activated."
             },
             {
+                "message_id": "OlGs8eew64x28w-gi8Bq53kJuFsOg",
                 "message": "Please let us know how you would like us to assist you this week 🙂"
             }
         ]
@@ -456,27 +540,33 @@
     {
         "user_queries": [
             {
-                "message": "Pending tasks",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PsrKrNpE39.wEqk-wlsBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919619000208\", \"quoted_content\": {\"body\": \"Hope you have a nice day! We're always available to help you save your time and energy 😀\\n\\nCurrent tasks we're working on:\\n1. Cotact NJE Wealth customer care regarding an error : We confirmed with NJ E-Wealth that your Capital Market Segment account was reactivated, trading will be available from Monday due to the mandatory 24-hour restriction period after reactivation, and we will follow up if any issues persist.\\n2. Find a caterer with wood fired pizza for a party : We have logged this and will start work on it first thing in the morning.\\n\\nTasks we need your input on:\\n1. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\\n2. Make Srilankan Airlines frequent flyer program : We have requested few details to proceed further.\\n\\nLet us know if there's anything else we can help you with?\"}, \"forwarding_score\": 0}"
+                "message_id": "Ou5FAZ8euynbjA-gvoBq53kJuFsOg",
+                "message": "Pending tasks"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OkiYSzT0JtDhgw-gvMBq53kJuFsOg",
                 "message": "Got it. We will work on all of this task and update you on this today."
             },
             {
+                "message_id": "Psoit1AeN6KZ.AA-wv8Bq53kJuFsOg",
                 "message": "Good morning 🌻\n\nHow can we help you today?\n\nCurrent tasks we're working on:\n1. Cotact NJE Wealth customer care regarding an error : We confirmed with NJ E-Wealth that your Capital Market Segment account was reactivated, trading will be available from Monday due to the mandatory 24-hour restriction period after reactivation, and we will follow up if any issues persist.\n2. Find a caterer with wood fired pizza for a party : We have shortlisted a few Catering Services, we will check with them on Pricing and update you by Monday.\n3. Make Srilankan Airlines frequent flyer program : We have requested few details to proceed further.\n\nTasks we need your input on:\n1. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n\nHope you have a nice day :)"
             },
             {
+                "message_id": "PsqI4TvcKtqvmao-wrABq53kJuFsOg",
                 "message": "We've created a Sri Lankan Airlines frequent flyer miles account for you. You should have received an email for activating the account. Can you just confirm with us?"
             },
             {
+                "message_id": "PspY9cl0vWYzEik-wtUBq53kJuFsOg",
                 "message": "Hey, just following up on the NJ E-Wealth account reactivation - you should be able to start trading from Monday. Please let us know if everything’s working fine now. If you're still facing any issues, we’ll go ahead and follow up with them for you!"
             },
             {
+                "message_id": "PrDvzOpI4s_czHU-giwBq53kJuFsOg",
                 "message": "Hey, we found two Catering Options:\n\n1) Soho Pizzeria\nSpecialist in: Neapolitan Pizzas | Pastas | Kids Party Menu\nPrice: Not shared yet. We’ve followed up multiple times but are still awaiting a response.\nLink: https://www.instagram.com/sohopizzeria.india/?hl=en\n\n2) CherishX\nPrice: They have a fixed menu and standard pricing. However, since our requirement is customized, they mentioned they’ll share the pricing and details soon.\nLink: https://cherishx.com/"
             },
             {
+                "message_id": "PsqUcK1z0UAz7io-wtEBq53kJuFsOg",
                 "message": "Sending good wishes for the new day, virtual coffee and a reminder that we're here to help with your chores :)\n\nCurrent tasks we're working on:\n1. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n\nTasks we need your input on:\n1. Find a caterer with wood fired pizza for a party : We have shortlisted a few Catering Services, we will check with them on Pricing and update you by Tuesday.\n2. Cotact NJE Wealth customer care regarding an error : We followed up regarding your NJ E-Wealth account access, confirmed trading should be available now after the reactivation period, and await your confirmation that everything is working as expected.\n3. Make Srilankan Airlines frequent flyer program : We've received your passport details and created a FlySmiLes frequent flyer account with Sri Lankan Airlines, awaiting your confirmation of the activation email to proceed further.\n\nHope you have a nice day :)"
             }
         ]
@@ -484,17 +574,21 @@
     {
         "user_queries": [
             {
+                "message_id": "OgbEE8UEX.rwew-gsgBq53kJuFsOg",
                 "message": "3. Is done"
             },
             {
+                "message_id": "OsLKadyJ9C7QJQ-guUBq53kJuFsOg",
                 "message": "Can you help me with a dog cake ; it’s my dog birthday today something small"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PsrBtzNJtD7IGd8-wm8Bq53kJuFsOg",
                 "message": "We're all celebrating here at faffHQ today because you have finished 15 tasks with faff. We are always keen to know how we can improve, so please feel free to share your feedback. We are glad to be serving you!"
             },
             {
+                "message_id": "OvpNW.4u9qGSEg-gmQBq53kJuFsOg",
                 "message": "Got it. Let us check with vendors nearby and share few options for this by 4PM. Let us know when you would require the cake to be delivered."
             }
         ]
@@ -502,16 +596,17 @@
     {
         "user_queries": [
             {
-                "message": "Today 7 pm",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OvpNW.4u9qGSEg-gmQBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"Got it. Let us check with vendors nearby and share few options for this by 4PM. Let us know when you would require the cake to be delivered.\"}, \"forwarding_score\": 0}"
+                "message_id": "OuXfpqok7rJtMA-goIBq53kJuFsOg",
+                "message": "Today 7 pm"
             },
             {
-                "message": "Veg pls",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OnnHdCv4sdjpZw-gi4Bq53kJuFsOg\", \"quoted_type\": \"documentWithCaption\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"id\": \"media_init\", \"sha256\": \"NXVZdmM1dk1zTmRZREl0cWFXOVBQYlozZnVSbXdQZzFSRFhxVVRTZ2tvVT0=\", \"caption\": \"Hey, we have spoken to a few vendors, and most of them require at least 24 hours' notice. However, we found one vendor who can deliver within 4–5 hours. The price and menu details are below:\\n\\n1. Pawsh Pampering Cakery – Pet Bakery\\n- Contact: 09717099771\\n\\n- 300g Celebration Cake:\\n• Veg: ₹700\\n• Non-Veg: ₹900\", \"preview\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wgARCABIACgDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAIDBAEF/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAIDBAEF/9oADAMBAAIQAxAAAAD0+9kA2XQnKAWiUEjrhtzOlQsaMMoaVTVlejcqClfPqj5Z2o+GytoOls3Ogrc4AIAc/8QAHBEAAgIDAQEAAAAAAAAAAAAAAAECEQMSITET/9oACAECAQE/AJSojkVWxEopybPmqIeDdM2IeEl0ojxGvbNOUY4aqrP/xAAeEQABBAIDAQAAAAAAAAAAAAABAAIDERIhECJBMv/aAAgBAwEBPwBrW0nx7ocRfIBTh7akHZRSYgWdIyjwlSG3Epm28P25ZapZlSOyNr//xAAnEAACAgEDBAEEAwAAAAAAAAABAgADEQQSIRMxQVFxFCIykWGB4f/aAAgBAQABPwBiQcSzaEye0Fo37JkkxeIcMM+ZZUe5z7lTHqE9/QgLcBwcwRUYoSI6v0doI3H3NJprqrtzLxGUuQeDiOhTk+ZU4WklmA/mW0i4qxtAwPBn0zedUf3NKi0sxN4bPsy4hqwQciJSt9ADds54l1Gmrs2u7Annv2iV6TndcTg+50NJZkK5ziWjpadEU5lRZaxtTMs2WEF6wTBXTg5pWIK1bK1jJGMTUZwuVwfRldq107mzjMtvoOBu2n4jW0qfzb9SvVaYKOTn3iXOloV05EqYLwexmoSh7izO4PoCGjTE561w/qUDTVWKwZz45HEsKlvtxiIAxIY4mSIGIP8Akd2PGBj4g4n//gADAP/Z\", \"filename\": \"Menu Pawsh Pampering Cakery.pdf[1]_20250722_144949_397_cgtfatoi.pdf\", \"file_name\": \"Menu Pawsh Pampering Cakery.pdf[1]_20250722_144949_397_cgtfatoi.pdf\", \"file_size\": 9111318, \"mime_type\": \"application/pdf\", \"page_count\": 5}, \"forwarding_score\": 0}"
+                "message_id": "Oq_CtJe.0F_VWQ-gj0Bq53kJuFsOg",
+                "message": "Veg pls"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrDzdUHROYaMMCk-giMBq53kJuFsOg",
                 "message": "Please let us know what flavour and how many grams you want the cake in."
             }
         ]
@@ -519,15 +614,17 @@
     {
         "user_queries": [
             {
-                "message": "Peanut butter apple cinamon 300gms",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PrDzdUHROYaMMCk-giMBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"Please let us know what flavour and how many grams you want the cake in.\"}, \"forwarding_score\": 0}"
+                "message_id": "Ol7sHyOimmyLuA-gu0Bq53kJuFsOg",
+                "message": "Peanut butter apple cinamon 300gms"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OrM4e8XbwYWVQg-ggwBq53kJuFsOg",
                 "message": "Got it."
             },
             {
+                "message_id": "Psqh98HFpLX6tVg-wh4Bq53kJuFsOg",
                 "message": "Hey vendor need a few details regarding the pet so  Kindly share these details :\n\n- Name & Age of the pet :\n- Breed :  \n- Colour preference: \n- Shape (Paw or circle):   \n- Message on the cake : \n- Time of delivery: \n- Address:\n- Any food allergies:"
             }
         ]
@@ -535,11 +632,13 @@
     {
         "user_queries": [
             {
+                "message_id": "OnelQl5_uxkVaA-gjwBq53kJuFsOg",
                 "message": "Benji \n5 years \nBeagle \n7 pm / 22nd July \nF 1702 la Lagune apartments golf course road gurgaon"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Ot30D2AfCePg8Q-gssBq53kJuFsOg",
                 "message": "Got it. We will inform this to the vendor."
             }
         ]
@@ -547,12 +646,13 @@
     {
         "user_queries": [
             {
-                "message": "Approved",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OrYOwFsOj7kw3w-giwBq53kJuFsOg\", \"quoted_type\": \"documentWithCaption\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"id\": \"media_init\", \"sha256\": \"ZWxGVCsySytFWkNFNmdFRVgwNEtxaGIxeFY0QSsyWFMrYXYzb2grdWdmVT0=\", \"caption\": \"Hey, the cake price is 700rs, excluding the porter charges, and we have shared the invoice. Kindly confirm to go ahead and place the order\", \"preview\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wgARCABIADgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAIDAQb/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAA9JGmFX3lHFRFuhlsMNLGU7jjoAAAAAAAAAAAA//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AJ//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AJ//EACUQAAICAQIEBwAAAAAAAAAAAAABAhESAzETITJSIkFCUFFiof/aAAgBAQABPwCTxV1ZxvqLWt0oszl2Mzl2Mzl2Mi21zVD2YuH5xZCMLyS5mfhuhSVb0Tavq3Iql8j2JT1PTAz1b6ELKtkT0890PQi3bX6JUkva/wD//gADAP/Z\", \"filename\": \"Invoice-pawsh pampering_20250722_154403_765_mb4cpbpm.pdf\", \"file_name\": \"Invoice-pawsh pampering_20250722_154403_765_mb4cpbpm.pdf\", \"file_size\": 23260, \"mime_type\": \"application/pdf\", \"page_count\": 1}, \"forwarding_score\": 0}"
+                "message_id": "Ovy.3ESeoQbSzA-gikBq53kJuFsOg",
+                "message": "Approved"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OgXkVZJM9R54Lg-gkcBq53kJuFsOg",
                 "message": "Got it. We have made the payment and confirmed the order for this."
             }
         ]
@@ -560,17 +660,21 @@
     {
         "user_queries": [
             {
+                "message_id": "OtWtmE3izHHh3g-gr8Bq53kJuFsOg",
                 "message": "Tom table for 5 pls book lair Basant Lok 630 pm"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Oj0fC93VvH9rKg-glABq53kJuFsOg",
                 "message": "Sure, let us check for the availability and book the reservation."
             },
             {
+                "message_id": "PsrkYp81XkGZfv4-wlQBq53kJuFsOg",
                 "message": "Hey, we have booked a table for you at Lair, Basant Lok, for 5 people at *6:30 PM tomorrow*!\n\nLet us know if you need any further help. Happy to help!"
             },
             {
+                "message_id": "PsqT6lJtvfcRofY-wnMBq53kJuFsOg",
                 "message": "Hey, this is just a reminder regarding the Aadhar address change. In our previous conversation, you mentioned that you would share the tax document, so once you share it, we can proceed."
             }
         ]
@@ -578,23 +682,25 @@
     {
         "user_queries": [
             {
-                "message": "Document",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PsqT6lJtvfcRofY-wnMBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919619000208\", \"quoted_content\": {\"body\": \"Hey, this is just a reminder regarding the Aadhar address change. In our previous conversation, you mentioned that you would share the tax document, so once you share it, we can proceed.\"}, \"forwarding_score\": 0}"
+                "message_id": "Ok9zllyCTj4f3A-gjsBq53kJuFsOg",
+                "message": "Document"
             },
             {
-                "message": "Ignore it",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"Ok9zllyCTj4f3A-gjsBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919811897969\", \"quoted_content\": {\"body\": \"Document\"}, \"forwarding_score\": 0}"
+                "message_id": "OidVTgQJoSKOSw-gtcBq53kJuFsOg",
+                "message": "Ignore it"
             },
             {
-                "message": "This is cancelled",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PsrkYp81XkGZfv4-wlQBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919619000208\", \"quoted_content\": {\"body\": \"Hey, we have booked a table for you at Lair, Basant Lok, for 5 people at *6:30 PM tomorrow*!\\n\\nLet us know if you need any further help. Happy to help!\"}, \"forwarding_score\": 0}"
+                "message_id": "OihgBo4AifZ71Q-ggUBq53kJuFsOg",
+                "message": "This is cancelled"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrADjcXLYZ0kLc8-gsQBq53kJuFsOg",
                 "message": "Got it."
             },
             {
+                "message_id": "PsqD3EFfnnJ9PJU-wswBq53kJuFsOg",
                 "message": "Morning greetings from team faff 🌅\n\nTasks we need your input on:\n1. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n2. Find a caterer with wood fired pizza for a party : We have shortlisted a few Catering Services, we will check with them on Pricing and update you by Wednesday.\n\nLet us know if there's anything else we can help you with?"
             }
         ]
@@ -602,24 +708,29 @@
     {
         "user_queries": [
             {
-                "message": "This gas bill needs to be changed to new owner",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OkyfuMhEhdPxDg-gl0Bq53kJuFsOg\", \"quoted_type\": \"image\", \"quoted_author\": \"919811897969\", \"quoted_content\": {\"id\": \"media_init\", \"width\": 1200, \"height\": 1600, \"sha256\": \"NihO7wLxoz5ihvOgonS/ZAzUNQ9dcNTf7T33++KvjE8=\", \"caption\": \"Honey the gas bill is still under Gurleen kaur\", \"preview\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wgARCABIADYDASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAAMBAgUEBv/EABcBAAMBAAAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAALM6+WW6Ys0N5mB54DHX0ud3cO2bmKe1YQ9GGNMdNnN0+faJi8NRNbhmAZXrocjWJCQkAMsoRehQBKWDFJCKSBL/AP/EABwRAQABBAMAAAAAAAAAAAAAAAEAEBEgMQISIf/aAAgBAgEBPwAraFXeHI9wdzsy7Faf/8QAGhEAAQUBAAAAAAAAAAAAAAAAAQAQESAxEv/aAAgBAwEBPwB5oMoMoMXKgKA3/8QAJhAAAgECBAYDAQAAAAAAAAAAAQIAAxEEEiExBRMiQVFhMkJxgf/aAAgBAQABPwDDYZqFLlt2MDm9rRHfLosDMTqs570zbLcRwK+HY2sbRtGI8GVhufcsNrym1tICNSJ1FTrKTlBpr6mJ0rvYd5WHRGuH3lN7aWvMwzeoEBGkHyImMGXFVP2OxNJSd7RvlEbTaZgE1AvFqEW1iOGOk4mMuLPuYoWuBKKVOac4NoigbCOOsQBfEWwbScYvzlI7iYr5GC57Rb+I6FjvOV7MRMs45pyzMUeoxTC9jvA2u5gJPeC/mcePRTlQ5r+ZymgpETIfMAtCZxo5igEOOoD7iNxLDr9o3F6A2BMbjS/Wmf7G4tVPxUCPjq9Td7fkZmc3Yk/s//4AAwD/2Q==\", \"file_size\": 283494, \"mime_type\": \"image/jpeg\"}, \"forwarding_score\": 0}"
+                "message_id": "OkkzXBmHLBxz7A-gv0Bq53kJuFsOg",
+                "message": "This gas bill needs to be changed to new owner"
             },
             {
+                "message_id": "OrfYP4U94hJ6Jg-giYBq53kJuFsOg",
                 "message": "New owner is me and ruchika : we had submitted affidavit and documents earlier too"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Os20__XQzrGWQw-gl4Bq53kJuFsOg",
                 "message": "Got it. Let us contact them regarding this and check with them for the further procedure for this and update you by 12PM."
             },
             {
+                "message_id": "PspVjlCDyCnWRqE-wvgBq53kJuFsOg",
                 "message": "Hi, we tried calling customer support, but they weren’t answering our calls. We finally reached their office number, but they said they weren’t aware of the issue and asked us to call the support team tomorrow at 9 AM.\n\nPlease allow us time till 10:30 AM, and we’ll update you as soon as we hear back."
             },
             {
+                "message_id": "UHJCYzA2ZjdEZU11TmlVLQ-AnoBq53kJuFsOg",
                 "message": "Hey, just an update regarding the catering option from CherishX —\n\n\nThey’ve informed us that they do not offer firewood pizza. A previous employee had mentioned otherwise, but after checking with their team, it turns out there was a misunderstanding — the employee was referring to something else.\n\n\nAs of now, we haven’t come across many catering options that offer live firewood pizza, but we’re still looking and will update you on this by tomorrow."
             },
             {
+                "message_id": "PsqOApMgEVJMXLo-wgoBq53kJuFsOg",
                 "message": "Hope you have a nice day! We're always available to help you save your time and energy 😀\n\nCurrent tasks we're working on:\n1. Name change for the gas bill : We have logged this and will start work on it first thing in the morning.\n\nTasks we need your input on:\n1. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n2. Find a caterer with wood fired pizza for a party : We've contacted multiple caterers including Soho Pizzeria and CherishX, found most don't offer wood-fired pizza service, and we're continuing our search for suitable options, will update you by Thursday.\n\nLet us know if there's anything else we can help you with?"
             }
         ]
@@ -627,11 +738,13 @@
     {
         "user_queries": [
             {
+                "message_id": "OuoS5cPErO4.eg-gjEBq53kJuFsOg",
                 "message": "https://nykaa.com@nykeeh.cyou?id=250724011228"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PsoY3kQflFAJdME-wtUBq53kJuFsOg",
                 "message": "Hi, we tried calling them a few times and were finally able to get through. They asked us to share the slip that was given to you during the name change process. Once the documents and affidavit are submitted, they’ll look into the delay and try to expedite the process.\n\nPlease share a photo of the slip so we can check and get back to you"
             }
         ]
@@ -639,20 +752,25 @@
     {
         "user_queries": [
             {
+                "message_id": "T3JRZGMzbTVzOWxVcXctZw-AooBq53kJuFsOg",
                 "message": "Hi pls get me an appointment at Truefit gk2 today for royal shave at 215 pm"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PsovFkGhmKTY72A-wm4Bq53kJuFsOg",
                 "message": "Good morning 🌻\n\nHow can we help you today?\n\nTasks we need your input on:\n1. Find a caterer with wood fired pizza for a party : We've contacted multiple caterers including Soho Pizzeria and CherishX, found most don't offer wood-fired pizza service, and we're continuing our search for suitable options, will update you by Friday.\n2. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n3. Name change for the gas bill : We have logged this and will start work on it first thing in the morning.\n\nHope you have a nice day :)"
             },
             {
+                "message_id": "UHJDUFJ4ZmU2MzlLVk1ZLQ-AjUBq53kJuFsOg",
                 "message": "Hi,\n\nJust an update: We spoke to the team today, and they mentioned they’ve been busy with an event for the past few days, which is why they weren’t answering our calls earlier. They confirmed that they will share the code with us by tomorrow.\n\nAs we mentioned, there aren’t many options available for Firewood Beta Live at the moment, but we’re continuing to explore more vendors. In the meantime, if you know any vendors, please share their details with us—we’ll be happy to coordinate on that as well."
             },
             {
+                "message_id": "Psry2KfSdahnw5w-wgwBq53kJuFsOg",
                 "message": "Sending good wishes for the new day, virtual coffee and a reminder that we're here to help with your chores :)\n\nCurrent tasks we're working on:\n1. Find a caterer with wood fired pizza for a party : We've contacted multiple caterers including Soho Pizzeria and CherishX, found most don't offer wood-fired pizza service, and we're continuing our search for suitable options, will update you by Saturday.\n\nTasks we need your input on:\n1. Name change for the gas bill : We managed to get through to them after a few attempts. They’ve asked for a photo of the slip given during the name change process. Once we share the documents and affidavit, they’ll review the delay and try to expedite it.\n\nPlease send us a clear photo of the slip so we can proceed.\n2. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n\nHope you have a nice day :)"
             },
             {
+                "message_id": "PsofA7_k0PJtaqQ-wl0Bq53kJuFsOg",
                 "message": "Morning greetings from team faff 🌅\n\nCurrent tasks we're working on:\n1. Find a caterer with wood fired pizza for a party : We've contacted multiple caterers including Soho Pizzeria and CherishX, found most don't offer wood-fired pizza service, and we're continuing our search for suitable options, will update you by Sunday.\n\nTasks we need your input on:\n1. Name change for the gas bill : We managed to get through to them after a few attempts. They’ve asked for a photo of the slip given during the name change process. Once we share the documents and affidavit, they’ll review the delay and try to expedite it.\n\nPlease send us a clear photo of the slip so we can proceed.\n2. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\n\nLet us know if there's anything else we can help you with?"
             }
         ]
@@ -660,11 +778,13 @@
     {
         "user_queries": [
             {
+                "message_id": "OgODcFA_Agl2OA-grwBq53kJuFsOg",
                 "message": "Leave Aadhar address change it’s done"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrAAXyt7Mi5rFdE-gqMBq53kJuFsOg",
                 "message": "Got it, we will close the task"
             }
         ]
@@ -672,12 +792,13 @@
     {
         "user_queries": [
             {
-                "message": "1. Expand search to non wood fired pizzas also",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PsofA7_k0PJtaqQ-wl0Bq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919619000208\", \"quoted_content\": {\"body\": \"Morning greetings from team faff 🌅\\n\\nCurrent tasks we're working on:\\n1. Find a caterer with wood fired pizza for a party : We've contacted multiple caterers including Soho Pizzeria and CherishX, found most don't offer wood-fired pizza service, and we're continuing our search for suitable options, will update you by Sunday.\\n\\nTasks we need your input on:\\n1. Name change for the gas bill : We managed to get through to them after a few attempts. They’ve asked for a photo of the slip given during the name change process. Once we share the documents and affidavit, they’ll review the delay and try to expedite it.\\n\\nPlease send us a clear photo of the slip so we can proceed.\\n2. Aadhar address change : We have requested the document to change the Aadhar address, waiting for your reply\\n\\nLet us know if there's anything else we can help you with?\"}, \"forwarding_score\": 0}"
+                "message_id": "Or0ssZpWGDmZaQ-ggQBq53kJuFsOg",
+                "message": "1. Expand search to non wood fired pizzas also"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrCNwbU8qu8yiG0-gvIBq53kJuFsOg",
                 "message": "Got it,we  will explore the other options as well and update you,"
             }
         ]
@@ -685,11 +806,13 @@
     {
         "user_queries": [
             {
+                "message_id": "Ok9Wipi7fxG1sg-gnkBq53kJuFsOg",
                 "message": "New task \nMy Toyota Camry service 2 nd free service to be picked on Tuesday pls thanks in gurgaon"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrAatsFFLB4NTvU-ghYBq53kJuFsOg",
                 "message": "Sure, could you please share the receipt or invoice which we can refer to."
             }
         ]
@@ -697,32 +820,37 @@
     {
         "user_queries": [
             {
-                "message": "Car number - HR26 EL 6360 \nName of Mj carbun8 technologies \nPick up and drop - home address ( you already have) \nSecond free service car has done 10k",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PrAatsFFLB4NTvU-ghYBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"Sure, could you please share the receipt or invoice which we can refer to.\"}, \"forwarding_score\": 0}"
+                "message_id": "OlcPC5QZdQekog-gl4Bq53kJuFsOg",
+                "message": "Car number - HR26 EL 6360 \nName of Mj carbun8 technologies \nPick up and drop - home address ( you already have) \nSecond free service car has done 10k"
             },
             {
-                "message": "These details are enough to book service",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OlcPC5QZdQekog-gl4Bq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919811897969\", \"quoted_content\": {\"body\": \"Car number - HR26 EL 6360 \\nName of Mj carbun8 technologies \\nPick up and drop - home address ( you already have) \\nSecond free service car has done 10k\"}, \"forwarding_score\": 0}"
+                "message_id": "OjViD.S8Ic0XLw-gsQBq53kJuFsOg",
+                "message": "These details are enough to book service"
             },
             {
-                "message": "Toyota Camry",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OlcPC5QZdQekog-gl4Bq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919811897969\", \"quoted_content\": {\"body\": \"Car number - HR26 EL 6360 \\nName of Mj carbun8 technologies \\nPick up and drop - home address ( you already have) \\nSecond free service car has done 10k\"}, \"forwarding_score\": 0}"
+                "message_id": "Ork8l.mQZ7_JQQ-gtYBq53kJuFsOg",
+                "message": "Toyota Camry"
             },
             {
+                "message_id": "OnTXVw.5acytRw-gnwBq53kJuFsOg",
                 "message": "Do it for Tuesday tomorrow"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OkPC8m4xB0IIcg-grgBq53kJuFsOg",
                 "message": "Sure, we will coordinate with the showroom and coordinate with them for the 2nd free service."
             },
             {
+                "message_id": "PsoWBgoggYZgsN4-wv0Bq53kJuFsOg",
                 "message": "Hope you have a nice day! We're always available to help you save your time and energy 😀\n\nCurrent tasks we're working on:\n1. Find a caterer with wood fired pizza for a party : We will expand our search beyond wood-fired pizza options, and we'll explore additional catering alternatives while continuing to look for wood-fired vendors. will update you with findings.\n2. Get Toyota Camry 2nd servicing done : We received your request for Toyota Camry's second free service in Gurgaon on Tuesday, awaiting the service receipt or invoice for reference.\n\nTasks we need your input on:\n1. Name change for the gas bill : We managed to get through to them after a few attempts. They’ve asked for a photo of the slip given during the name change process. Once we share the documents and affidavit, they’ll review the delay and try to expedite it.\n\nPlease send us a clear photo of the slip so we can proceed.\n\nLet us know if there's anything else we can help you with?"
             },
             {
+                "message_id": "PsopyT_R7MICdXg-wm0Bq53kJuFsOg",
                 "message": "Hi, we contacted the nearby Toyota service center. Here are the details:\n\nMGF Toyota: 9560395660 (https://maps.app.goo.gl/d1WLhiC52EqhxmGQ9)\nPickup Time Slot: Tomorrow at 2 PM\n\nHope this helps!"
             },
             {
+                "message_id": "Pso_g.td8QU0JfE-wtkBq53kJuFsOg",
                 "message": "Good morning 🌻\n\nHow can we help you today?\n\nCurrent tasks we're working on:\n1. Get Toyota Camry 2nd servicing done : We have found a Toyota service center nearby and shared the details. The pickup is scheduled for 29th July, 2 PM, we will coordinate with the pickup person and update you.\n2. Find a caterer with wood fired pizza for a party : We will expand our search beyond wood-fired pizza options, and we'll explore additional catering alternatives while continuing to look for wood-fired vendors. will update you with findings.\n\nTasks we need your input on:\n1. Name change for the gas bill : We managed to get through to them after a few attempts. They’ve asked for a photo of the slip given during the name change process. Once we share the documents and affidavit, they’ll review the delay and try to expedite it.\n\nPlease send us a clear photo of the slip so we can proceed.\n\nHope you have a nice day :)"
             }
         ]
@@ -730,26 +858,33 @@
     {
         "user_queries": [
             {
+                "message_id": "OtHRVZDK_9GuOg-gv4Bq53kJuFsOg",
                 "message": "When will Toyota drop the car back?"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrAmwGhLp_eEx.Q-gi0Bq53kJuFsOg",
                 "message": "We tried calling the person but we have not gotten any response, we will call them now and update you in 15 mins."
             },
             {
+                "message_id": "PsrOKp2R0hP9W3M-whMBq53kJuFsOg",
                 "message": "Sending good wishes for the new day, virtual coffee and a reminder that we're here to help with your chores :)\n\nCurrent tasks we're working on:\n1. Find a caterer with wood fired pizza for a party : We will expand our search beyond wood-fired pizza options, and we'll explore additional catering alternatives while continuing to look for wood-fired vendors. will update you with findings.\n2. Get Toyota Camry 2nd servicing done : We have found a Toyota service center nearby and shared the details. The pickup is scheduled for 29th July, 2 PM, we will coordinate with the pickup person and update you.\n\nTasks we need your input on:\n1. Name change for the gas bill : We managed to get through to them after a few attempts. They’ve asked for a photo of the slip given during the name change process. Once we share the documents and affidavit, they’ll review the delay and try to expedite it.\n\nPlease send us a clear photo of the slip so we can proceed.\n\nHope you have a nice day :)"
             },
             {
+                "message_id": "PsoZ5AQwfG.thwg-wtkBq53kJuFsOg",
                 "message": "Wohoooo! ✨✨ You have finished 20 tasks with faff. We hope we were able to save you some time and enabled you to do more. We are always here for you!"
             },
             {
+                "message_id": "OkX3w5wXLTpLGQ-gk4Bq53kJuFsOg",
                 "message": "Hey! Friendship Day is just around the corner 🌼 If you’d like to send something thoughtful to your friend, we’d be happy to share a few gift options. Just let us know! 💛"
             },
             {
+                "message_id": "PsrUnHHI.rGrvFo-wnkBq53kJuFsOg",
                 "message": "Morning greetings from team faff 🌅\n\nCurrent tasks we're working on:\n1. Find a caterer with wood fired pizza for a party : We will expand our search beyond wood-fired pizza options, and we'll explore additional catering alternatives while continuing to look for wood-fired vendors. will update you with findings.\n\nTasks we need your input on:\n1. Name change for the gas bill : We managed to get through to them after a few attempts. They’ve asked for a photo of the slip given during the name change process. Once we share the documents and affidavit, they’ll review the delay and try to expedite it.\n\nPlease send us a clear photo of the slip so we can proceed.\n\nLet us know if there's anything else we can help you with?"
             },
             {
+                "message_id": "PsrniAd7SeqooxQ-wuwBq53kJuFsOg",
                 "message": "Good morning 🌻\n\nHow can we help you today?\n\nCurrent tasks we're working on:\n1. Find a caterer with wood fired pizza for a party : We will share with you some options which we shortlisted by Friday evening, we are waiting for vendor to share the quotes.\n\nTasks we need your input on:\n1. Name change for the gas bill : We managed to get through to them after a few attempts. They’ve asked for a photo of the slip given during the name change process. Once we share the documents and affidavit, they’ll review the delay and try to expedite it.\n\nPlease send us a clear photo of the slip so we can proceed.\n\nHope you have a nice day :)"
             }
         ]
@@ -757,11 +892,13 @@
     {
         "user_queries": [
             {
+                "message_id": "OmrHi5Nflt.rzg-ghIBq53kJuFsOg",
                 "message": "Pls do seat selection for her on way back 1 row window preferred"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Oh.LHcGa2yi6xg-gl8Bq53kJuFsOg",
                 "message": "Sure, we will do the web check-in and share the boarding pass."
             }
         ]
@@ -769,15 +906,17 @@
     {
         "user_queries": [
             {
-                "message": "Not mine :)",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OrKlj311OAPkXw-giIBq53kJuFsOg\", \"quoted_type\": \"documentWithCaption\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"id\": \"media_init\", \"sha256\": \"p3IJaXIa0fPkhJzXnGkHAKTBJXoPoEPg/Yu6YfRM6KI=\", \"caption\": \"Hey, the seats were already selected and the boarding pass is generated for the flight as it is at 11AM. Sharing the BP here.\", \"preview\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wgARCABIADMDASIAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAAIBAwQF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAA+7Xi95cc+5s3BYPB6KwaBVBo4x0kxeis0oEZ5+Z7N8/Q6bzosGgYAGg//8QAFBEBAAAAAAAAAAAAAAAAAAAAQP/aAAgBAgEBPwAn/8QAFBEBAAAAAAAAAAAAAAAAAAAAQP/aAAgBAwEBPwAn/8QAJRAAAQMDBAICAwAAAAAAAAAAAQACEQMSIQQQMVETQVJhBSBi/9oACAEBAAE/ANRWLXBjHta4+imOq3C4i1FwjBCaahd6hekHSYnbWQdezC5plsFAP4hMEDIg7NbDydtVp6r9Wyo0C0coXTklSY5MpxxiVJPaY0x72qzdhA1IwFNXoKavQTS6MtyhkcRtWMO9oO+yrj/SBcfkvGfkU0QOZ2qEXZQcBleQdBXnpXnpNdPI2c5odBiUXMHMK9sSAIXkHS8jVd9bajRmrW8ge4YiAh+PJ5quWn0p09wuL7u08FsYVpMHCDZyhx+kAqAoG3///gADAP/Z\", \"filename\": \"boardingPass (1).pdf\", \"file_name\": \"boardingPass (1).pdf\", \"file_size\": 275817, \"mime_type\": \"application/pdf\", \"page_count\": 2}, \"forwarding_score\": 0}"
+                "message_id": "Oi9Y12HCSOolng-gnIBq53kJuFsOg",
+                "message": "Not mine :)"
             },
             {
+                "message_id": "OoUezMLcGiNijA-gpABq53kJuFsOg",
                 "message": "Also talking of the 3 rd August flight pls"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Oug8zs.yNbOKWQ-gjIBq53kJuFsOg",
                 "message": "Checking on this."
             }
         ]
@@ -785,16 +924,17 @@
     {
         "user_queries": [
             {
-                "message": "2F",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OoSdyOs5T5GZFw-ggQBq53kJuFsOg\", \"quoted_type\": \"image\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"id\": \"media_init\", \"width\": 1236, \"height\": 672, \"sha256\": \"Fv3JOk8WQJeJLVNEwJf+weevoJblsFtru5YEv/89ISU=\", \"caption\": \"Hey, there is no window seat available at 1st row. Please let us know which seat you would like to go ahead with the 4th row window seat would cost Rs. 660.\", \"preview\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wgARCABIAEgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAIBAwb/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAPR4WNwGabmgkG7Kblk1NSs0SpZSEtpFbz0tI1yLVTVzmUl59JLTMSRNdRcgAAAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAQP/aAAgBAgEBPwBP/8QAGREAAgMBAAAAAAAAAAAAAAAAESAAARAx/9oACAEDAQE/AFOXTjDOwP8A/8QAIRAAAwADAAIDAAMAAAAAAAAAAAERAhIhMWEDMEETMoH/2gAIAQEAAT8AnsnshCeyeyEJ7MV0yXRpwxTEumSdPwx8DTpgnsZp7C/r5h/tEuj6vMMvBihp0xTo06ThinOixexmneEepimdvfqxtMrTK6mF6K7GdvDuor+j2pjaOmd1PjsdMbuZOD8cMa/I9tv0xtO07r7Ff0V2Pkt4O/x+z47ej2v1f//+AAMA/9k=\", \"file_size\": 43139, \"mime_type\": \"image/jpeg\"}, \"forwarding_score\": 0}"
+                "message_id": "OjvhLH0MACnr7g-gj4Bq53kJuFsOg",
+                "message": "2F"
             },
             {
-                "message": "@919811907080",
-                "context": "{\"mentions\": [\"919811907080\"], \"forwarded\": false, \"quoted_id\": null, \"quoted_type\": null, \"quoted_author\": null, \"quoted_content\": null, \"forwarding_score\": 0}"
+                "message_id": "OsagE7PbrLLr_Q-gpYBq53kJuFsOg",
+                "message": "@919811907080"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Ohz0v_zDHUhKfw-gmUBq53kJuFsOg",
                 "message": "The 2F seat would cost Rs. 770. Please let us know if we can go ahead with the check-in."
             }
         ]
@@ -802,27 +942,33 @@
     {
         "user_queries": [
             {
+                "message_id": "Or1SGMOXxmV7mA-gpwBq53kJuFsOg",
                 "message": "Go ahead"
             },
             {
+                "message_id": "OpnaO96otTP2Fw-gpwBq53kJuFsOg",
                 "message": "But i am on 2c"
             },
             {
+                "message_id": "OtHn7fnRE5tCQg-gqkBq53kJuFsOg",
                 "message": "Already"
             },
             {
-                "message": "We are talking about return flight on 3rd August",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OpnaO96otTP2Fw-gpwBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919811907080\", \"quoted_content\": {\"body\": \"But i am on 2c\"}, \"forwarding_score\": 0}"
+                "message_id": "OoepMVpjrP5LSQ-gtQBq53kJuFsOg",
+                "message": "We are talking about return flight on 3rd August"
             },
             {
+                "message_id": "Oiu5R0.q2smv7g-gvUBq53kJuFsOg",
                 "message": "Oh sorry"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OhK_z.aZOml4jg-gisBq53kJuFsOg",
                 "message": "Got it. We will confirm the seat and share the boarding pass here."
             },
             {
+                "message_id": "Ot4TLL0gomr4HA-gpoBq53kJuFsOg",
                 "message": "Hey, we would also require the passport issue date for getting the boarding pass for this. Could you please help us with that?"
             }
         ]
@@ -830,12 +976,13 @@
     {
         "user_queries": [
             {
-                "message": "@919811907080 pls share passport copy",
-                "context": "{\"mentions\": [\"919811907080\"], \"forwarded\": false, \"quoted_id\": \"Ot4TLL0gomr4HA-gpoBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"Hey, we would also require the passport issue date for getting the boarding pass for this. Could you please help us with that?\"}, \"forwarding_score\": 0}"
+                "message_id": "OtWB4lsMfffcTA-gmYBq53kJuFsOg",
+                "message": "@919811907080 pls share passport copy"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PsrUkBd4E2MaJxQ-wnkBq53kJuFsOg",
                 "message": "Sending good wishes for the new day, virtual coffee and a reminder that we're here to help with your chores :)\n\nCurrent tasks we're working on:\n1. Find a caterer with wood fired pizza for a party : We will share with you some options which we shortlisted by Saturday evening, we are waiting for vendor to share the quotes.\n\nTasks we need your input on:\n1. Name change for the gas bill : We managed to get through to them after a few attempts. They’ve asked for a photo of the slip given during the name change process. Once we share the documents and affidavit, they’ll review the delay and try to expedite it.\n\nPlease send us a clear photo of the slip so we can proceed.\n\nHope you have a nice day :)"
             }
         ]
@@ -843,17 +990,21 @@
     {
         "user_queries": [
             {
+                "message_id": "Ouk4WcHTcCVmYg-gq8Bq53kJuFsOg",
                 "message": "Drop both tasks"
             },
             {
+                "message_id": "OgvtDzL1F_SByA-gnMBq53kJuFsOg",
                 "message": "New task"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrBgReqBknspQ48-gjUBq53kJuFsOg",
                 "message": "Sure, we will check and update you"
             },
             {
+                "message_id": "Psr7HgceBihYyxM-grIBq53kJuFsOg",
                 "message": "Hi! We tried calling them but couldn’t get through, so we’re emailing them the details and requesting an update on the order status. Let us know if you’d like to be included in the email loop."
             }
         ]
@@ -861,11 +1012,13 @@
     {
         "user_queries": [
             {
+                "message_id": "Og_8lu.YKdAAsw-gp0Bq53kJuFsOg",
                 "message": "Ok"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Psp_V.al.fh5ivc-wpQBq53kJuFsOg",
                 "message": "Hope you have a nice day! We're always available to help you save your time and energy 😀\n\nCurrent tasks we're working on:\n1. Check order status of Purple Orange order : We attempted to contact Purple Orange regarding order PO-SF-4368 by phone, have sent a follow-up email to hi@purpleorange.in requesting status update, and will keep you informed of their response.\n\nLet us know if there's anything else we can help you with?"
             }
         ]
@@ -873,18 +1026,21 @@
     {
         "user_queries": [
             {
-                "message": "India Accelerator \n5th Floor, The Iconic Corenthum Building,\n, Sector 62,\nNoida, Uttar Pradesh – 201301\n(Near Noida Electronic City Metro Station",
-                "context": "{\"mentions\": [], \"forwarded\": true, \"quoted_id\": null, \"quoted_type\": null, \"quoted_author\": null, \"quoted_content\": null, \"forwarding_score\": 1}"
+                "message_id": "OihCeLOxzg3Z.w-gjsBq53kJuFsOg",
+                "message": "India Accelerator \n5th Floor, The Iconic Corenthum Building,\n, Sector 62,\nNoida, Uttar Pradesh – 201301\n(Near Noida Electronic City Metro Station"
             },
             {
+                "message_id": "OmbbmoK9JWv6Pw-gtgBq53kJuFsOg",
                 "message": "Pls pick up my apple charger from above address and get dropped via porter to my house address"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrBOaEaQJFcp8jE-grABq53kJuFsOg",
                 "message": "Sure, we will book the porter and update you on the details."
             },
             {
+                "message_id": "PsqeYsAgqE.vmR8-grQBq53kJuFsOg",
                 "message": "Hi, we checked with Porter and updated the pickup and drop locations, but it showed that the service is unavailable due to the distance being too far. We’re attaching a screenshot for your reference.\n\nPlease let us know how you’d like us to assist further."
             }
         ]
@@ -892,11 +1048,13 @@
     {
         "user_queries": [
             {
+                "message_id": "OqBOM.rKKKgrmg-grQBq53kJuFsOg",
                 "message": "Do uber moto"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P4DGg289AK6egA-gr4Bq53kJuFsOg",
                 "message": "Sure, we will try with Uber Moto and update you."
             }
         ]
@@ -904,12 +1062,13 @@
     {
         "user_queries": [
             {
-                "message": "Any update",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"P4DGg289AK6egA-gr4Bq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"Sure, we will try with Uber Moto and update you.\"}, \"forwarding_score\": 0}"
+                "message_id": "OhNebsffzJHFcw-guYBq53kJuFsOg",
+                "message": "Any update"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Oirv4YCOhv8qgg-goQBq53kJuFsOg",
                 "message": "Apologies for the delay here. We had booked the uber and they had cancelled it and missed updating and checking for another driver. We are searching for drivers now. Apologies for overlooking this."
             }
         ]
@@ -917,18 +1076,21 @@
     {
         "user_queries": [
             {
-                "message": "Do it tom",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"Oirv4YCOhv8qgg-goQBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"Apologies for the delay here. We had booked the uber and they had cancelled it and missed updating and checking for another driver. We are searching for drivers now. Apologies for overlooking this.\"}, \"forwarding_score\": 0}"
+                "message_id": "Oivw3tMO4Y7hxA-gtsBq53kJuFsOg",
+                "message": "Do it tom"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Or_1Ci59KjPWUw-gkABq53kJuFsOg",
                 "message": "Got it. Please let us know when you would like us to coordinate for the porter and we will coordinate for the pickup tomorrow."
             },
             {
+                "message_id": "PsrTCtTdmkhm2Bg-gisBq53kJuFsOg",
                 "message": "Hi! We tried calling them, but the phone was switched off. We’ve sent them another email and will keep you informed as soon as we receive any update."
             },
             {
+                "message_id": "Pso9MVl5KzrN2xU-woQBq53kJuFsOg",
                 "message": "Good morning 🌻\n\nHow can we help you today?\n\nCurrent tasks we're working on:\n1. Check order status of Purple Orange order : We made another attempt to contact Purple Orange via phone but found it switched off, sent a second follow-up email regarding order PO-SF-4368, and will update you once we receive their response.\n\nHope you have a nice day :)"
             }
         ]
@@ -936,16 +1098,17 @@
     {
         "user_queries": [
             {
-                "message": "My charger from noida pls to my office",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"Pso9MVl5KzrN2xU-woQBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919619000208\", \"quoted_content\": {\"body\": \"Good morning 🌻\\n\\nHow can we help you today?\\n\\nCurrent tasks we're working on:\\n1. Check order status of Purple Orange order : We made another attempt to contact Purple Orange via phone but found it switched off, sent a second follow-up email regarding order PO-SF-4368, and will update you once we receive their response.\\n\\nHope you have a nice day :)\"}, \"forwarding_score\": 0}"
+                "message_id": "OuRVxkoCbmZVGw-ghsBq53kJuFsOg",
+                "message": "My charger from noida pls to my office"
             },
             {
-                "message": "This",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"Oivw3tMO4Y7hxA-gtsBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919811897969\", \"quoted_content\": {\"body\": \"Do it tom\"}, \"forwarding_score\": 0}"
+                "message_id": "Om0rqOnST_HVYQ-gl4Bq53kJuFsOg",
+                "message": "This"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OpQSQVWRgGP3BA-gl0Bq53kJuFsOg",
                 "message": "Can we book the porter now?"
             }
         ]
@@ -953,17 +1116,21 @@
     {
         "user_queries": [
             {
+                "message_id": "OnGUoe6t4lPRBQ-gpsBq53kJuFsOg",
                 "message": "Yes"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OpzgOmRc0lJTqA-gocBq53kJuFsOg",
                 "message": "Got it. Booking the porter now."
             },
             {
+                "message_id": "OnLsOARu_ODEKg-gjsBq53kJuFsOg",
                 "message": "The porter should reach your location by 12:20PM."
             },
             {
+                "message_id": "OtGJ4h.7InnYIg-gowBq53kJuFsOg",
                 "message": "Hope you have received the charger."
             }
         ]
@@ -971,11 +1138,13 @@
     {
         "user_queries": [
             {
+                "message_id": "OreOHYM9ir9OFw-gmgBq53kJuFsOg",
                 "message": "What address is it delivered to"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OjkspPkc7DOOUQ-gg8Bq53kJuFsOg",
                 "message": "Hey it was delivered to you home itself F 1702 la Lagune apartments golf course road gurgaon"
             }
         ]
@@ -983,17 +1152,21 @@
     {
         "user_queries": [
             {
+                "message_id": "OiFVJvym9xpVYA-ghoBq53kJuFsOg",
                 "message": "Ok"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Psr4Go7CUfUM2JI-guYBq53kJuFsOg",
                 "message": "Hi! We received the following response from Purple Orange:\n\n\"As mentioned on every product page of our website, we take two working weeks to dispatch customers. Your order is in production and you will receive email or tracking details on dispatch. Thank you.\"\n\nPlease let us know if you need any further assistance."
             },
             {
+                "message_id": "PspqXVo6noO_Scc-wn4Bq53kJuFsOg",
                 "message": "🥁🥁🥁You have finished 25 tasks with faff. We hope you are enjoying our service. Please consider referring us to your friends and family."
             },
             {
+                "message_id": "Oi7p7fd.5ttUxQ-grMBq53kJuFsOg",
                 "message": "Here’s how others have been getting things done with us this week:\n\n1. Plan your itinerary\n2. Find a cook/maid or driver\n3. Get your car serviced\n4. Plan your weekly/monthly meals\n\nLet us know how we can make your week easier too 🙂"
             }
         ]
@@ -1001,14 +1174,17 @@
     {
         "user_queries": [
             {
+                "message_id": "OscZ6YuekGltGw-gtMBq53kJuFsOg",
                 "message": "New task \nNeed to book box cricket at ambience mall gurgaon on 12th August from 5-8 pm"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrBCqXmfW3FJmo8-grYBq53kJuFsOg",
                 "message": "Sure, we will check for slots and book"
             },
             {
+                "message_id": "Psq_HDetRZnP5wY-ghIBq53kJuFsOg",
                 "message": "We reached out to Ambience Mall to inquire about box cricket bookings, but they confirmed that box cricket is not available at their location. We also checked Playo for any games listed on August 12th, but couldn’t find any relevant listings.\n\nPlease let us know if there’s a specific venue you’d like us to contact, or if you have any other preferences on how you’d like to proceed."
             }
         ]
@@ -1016,17 +1192,21 @@
     {
         "user_queries": [
             {
+                "message_id": "Oqr7cmB07l08gA-gtABq53kJuFsOg",
                 "message": "Drop the task pls"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrCi8V9q5q5uS.w-gnwBq53kJuFsOg",
                 "message": "Noted"
             },
             {
+                "message_id": "Om85ujuSkx95cA-gksBq53kJuFsOg",
                 "message": "Stay on top of your day with us:\n\n1. Track your health and hit your wellness goals\n2. Get a wake-up call to start your morning on time\n3. Book hourly drivers & cabs for smooth, flexible travel\n4. Plan a karaoke night for a fun-filled evening at home or out"
             },
             {
+                "message_id": "IE2QqYl6wJ0wthx1l07ogg-grgBq53kJuFsOg",
                 "message": "Hi, hope you’re having a relaxing Sunday! \n\nWe’re here to make your day easier—just tell us if you need help with any pending chores and we'll get it done 🌻"
             }
         ]
@@ -1034,14 +1214,17 @@
     {
         "user_queries": [
             {
+                "message_id": "OrLuC9o6wpOyjg-gg4Bq53kJuFsOg",
                 "message": "New task alert \nPls book a table for 6 people bizou bizou today at 730 pm"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OmSSkagPdk.2FQ-gjABq53kJuFsOg",
                 "message": "Sue, booking now."
             },
             {
+                "message_id": "PrD1JZEyTQKPYcQ-gscBq53kJuFsOg",
                 "message": "Here’s what faff can help you with today:\n\n1. Plan a weekend getaway for the long weekend\n2. Arrange Janmashtami pooja items & décor\n3. Find Independence Day events nearby\n4. Schedule home deep-cleaning\n\nTell us what to tackle first, and we’ll handle the rest."
             }
         ]
@@ -1049,14 +1232,17 @@
     {
         "user_queries": [
             {
+                "message_id": "OoN4xXkOTDwIOw-guMBq53kJuFsOg",
                 "message": "New task alert \nPls find termite resistance vendors in gurgaon ; kindly negotiate for best price after checking all reviews for a 5 bedroom house"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OsahONlpn5vDMQ-gpkBq53kJuFsOg",
                 "message": "Got it. Let us check on this with a few vendors and update you on this by 3:30 PM."
             },
             {
+                "message_id": "PsoYB6SkzdLpue0-gr8Bq53kJuFsOg",
                 "message": "Hi! We tried contacting some vendors near your location, but couldn’t get through as today is a national holiday. We’ll try again later today, and even if they don’t pick up, we’ll contact them tomorrow and share the vendor details with you."
             }
         ]
@@ -1064,20 +1250,25 @@
     {
         "user_queries": [
             {
+                "message_id": "OmW4v03raAqkvQ-gssBq53kJuFsOg",
                 "message": "No peovmem"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OvMGDAGmaRE9xQ-ggkBq53kJuFsOg",
                 "message": "Make the Most of Your Long Weekend with faff\nWhether you are catching up with friends or enjoying family time, faff takes care of the details so you can just enjoy:\n\n1. Plan a brunch outing- book the spot, arrange cabs, or order in\n2. Host a game night- games, snacks, drinks, even a winner’s prize\n3. Run a dinner party- menu, décor, music, guest transport\n4. Sort all your gifts- find, wrap, personalise & deliver on time\n\nJust tell us what you need, and we’ll make it happen."
             },
             {
+                "message_id": "Psp2UlWg.TuqWL8-wncBq53kJuFsOg",
                 "message": "Hope you have a nice day! We're always available to help you save your time and energy 😀\n\nCurrent tasks we're working on:\n1. Find termite resistance vendors in gurgaon : We attempted contacting termite resistance vendors near your Gurgaon location but couldn't reach them due to the national holiday, will try again today and share vendor details with you tomorrow.\n\nLet us know if there's anything else we can help you with?"
             },
             {
+                "message_id": "PsqboqXKsk3xkiY-grUBq53kJuFsOg",
                 "message": "Hi! We negotiated with some best termite pest control vendors and here are the prices:\n\n\n24x7 Pest Control Gurugram(Gurgaon)\n\nPrice: 6000\nPh no: 09810034344\nLocation: https://maps.app.goo.gl/i5sG2TYjpM899r2h9\n\nMaxcellent Integrated Solutions Pvt Ltd (Max Integrated Services - Pest Control Experts):\n\nPrice: 7500\nPh no: 09643910966\nLocation: https://links.faffit.com/cvAfhW\n\nCSAT PEST MANAGEMENT SERVICES PVT LTD:\n\nPrice: 10000\nPh no: 07071887188\nLocation: https://links.faffit.com/uw96t4\n\nAll these vendors offer a 2 year warranty.\n\n\nPlease let us know if you’d like us to book a slot with any of them for you."
             },
             {
+                "message_id": "PsoubTk36C14a40-wpIBq53kJuFsOg",
                 "message": "Good morning 🌻\n\nHow can we help you today?\n\nTasks we need your input on:\n1. Find termite resistance vendors in gurgaon : We negotiated with three termite control vendors in Gurgaon with prices ranging from ₹6,000 to ₹10,000 (all offering 2-year warranty), please let us know which vendor you'd prefer to proceed with for booking.\n\nHope you have a nice day :)"
             }
         ]
@@ -1085,11 +1276,13 @@
     {
         "user_queries": [
             {
+                "message_id": "Oh7mvGUmI9ESZA-ghIBq53kJuFsOg",
                 "message": "Hi new task \nPls book service for \n1. Bosch clothe dryer\n2. ⁠Kohler\nHome address and my number or ruchika number should be able to find the details"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OrQdzE4x_xYx2w-goMBq53kJuFsOg",
                 "message": "Sure, we will book the service and update you."
             }
         ]
@@ -1097,14 +1290,17 @@
     {
         "user_queries": [
             {
+                "message_id": "OmJlREpMeB5NwQ-gtABq53kJuFsOg",
                 "message": "Both r in warranty- both have been bought this year"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Ot3G3sHQJtB53Q-gqUBq53kJuFsOg",
                 "message": "Got it."
             },
             {
+                "message_id": "OiwL4.d1Qi108w-gqABq53kJuFsOg",
                 "message": "Can you please clarify what is the problem exactly so that we can coordinate with the vendor accordingly."
             }
         ]
@@ -1112,18 +1308,21 @@
     {
         "user_queries": [
             {
-                "message": "@919811907080",
-                "context": "{\"mentions\": [\"919811907080\"], \"forwarded\": false, \"quoted_id\": \"OiwL4.d1Qi108w-gqABq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"Can you please clarify what is the problem exactly so that we can coordinate with the vendor accordingly.\"}, \"forwarding_score\": 0}"
+                "message_id": "OmDxwM.PdcI.KA-gngBq53kJuFsOg",
+                "message": "@919811907080"
             },
             {
+                "message_id": "Otv5Q2zg2q2Ufw-gpIBq53kJuFsOg",
                 "message": "For kohler- water spout of toilet is not functioning well- button issue,\n\nBosch dryer- noise coming"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OgDhl4ofMdZSKw-gs4Bq53kJuFsOg",
                 "message": "Got it."
             },
             {
+                "message_id": "PsqQoBU6m5jAVQM-gtMBq53kJuFsOg",
                 "message": "Hi, here’s an update.\n\nBosch Dryer Service: We raised the request through Bosch Customer Care. The technician will contact you within 48 hours. They don’t share technician numbers, but the technician will call you directly. For smoother coordination, we’ve also given our number so we can assist if he doesn’t reach you first. Service charges will apply, and any repairs will be charged separately.\n\nKohler Product Service: Since multiple products are registered under your name, we raised a request for one product. The technician can check other products during the same visit. Charges: ₹200 per product, or ₹350 if only one product is serviced. You will receive a WhatsApp message with the Kohler Service ID and possibly the technician’s details.\nThe communication to you will be done on this number 9811897969"
             }
         ]
@@ -1131,16 +1330,17 @@
     {
         "user_queries": [
             {
-                "message": "In warranty shoukd be free pls update alternate number 9811907080",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PsqQoBU6m5jAVQM-gtMBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"Hi, here’s an update.\\n\\nBosch Dryer Service: We raised the request through Bosch Customer Care. The technician will contact you within 48 hours. They don’t share technician numbers, but the technician will call you directly. For smoother coordination, we’ve also given our number so we can assist if he doesn’t reach you first. Service charges will apply, and any repairs will be charged separately.\\n\\nKohler Product Service: Since multiple products are registered under your name, we raised a request for one product. The technician can check other products during the same visit. Charges: ₹200 per product, or ₹350 if only one product is serviced. You will receive a WhatsApp message with the Kohler Service ID and possibly the technician’s details.\\nThe communication to you will be done on this number 9811897969\"}, \"forwarding_score\": 0}"
+                "message_id": "Ok5Vu0wnCYm_NA-grsBq53kJuFsOg",
+                "message": "In warranty shoukd be free pls update alternate number 9811907080"
             }
         ],
         "team_replies": [
             {
-                "message": "Okay, got it. We will update the new number with them",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"Ok5Vu0wnCYm_NA-grsBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919811897969\", \"quoted_content\": {\"body\": \"In warranty shoukd be free pls update alternate number 9811907080\"}, \"forwarding_score\": 0}"
+                "message_id": "PrDNBQ4Eli5pP3s-gukBq53kJuFsOg",
+                "message": "Okay, got it. We will update the new number with them"
             },
             {
+                "message_id": "PsrzhZGUBWwJrQ0-ghIBq53kJuFsOg",
                 "message": "Hi, just checking with you — as you mentioned these are under warranty, service charges may not apply. Could you please clarify which product you are referring to — Kohler or Bosch? If it’s Kohler, kindly share the product name/code along with the date of purchase or invoice. This will help us coordinate with them and confirm the warranty status. We’ll update you once we have their response."
             }
         ]
@@ -1148,18 +1348,21 @@
     {
         "user_queries": [
             {
-                "message": "Bosch service charges can’t apply. It’s a new machine @919811897969 pls can u share bill here",
-                "context": "{\"mentions\": [\"919811897969\"], \"forwarded\": false, \"quoted_id\": null, \"quoted_type\": null, \"quoted_author\": null, \"quoted_content\": null, \"forwarding_score\": 0}"
+                "message_id": "OrGbKwXnV.sS3A-gloBq53kJuFsOg",
+                "message": "Bosch service charges can’t apply. It’s a new machine @919811897969 pls can u share bill here"
             },
             {
+                "message_id": "Oooycl4Eky5cyg-gosBq53kJuFsOg",
                 "message": "Also for kohler - they can’t charge"
             }
         ],
         "team_replies": [
             {
+                "message_id": "OqYzsBLF_a8p5Q-gvUBq53kJuFsOg",
                 "message": "Okay."
             },
             {
+                "message_id": "PspyTJGruW.EdlQ-wmsBq53kJuFsOg",
                 "message": "Morning greetings from team faff 🌅\n\nCurrent tasks we're working on:\n1. book bosch clothe dryer service : We've contacted both Bosch and Kohler service centers, scheduled technician visits for your dryer noise issue and toilet spout problem, with technicians expected to contact you within 48 hours, please keep your phone available for their call.\n2. book kohler service : We've initiated service requests for both Bosch dryer and Kohler toilet under warranty, waiting for customer to share product details and purchase bills to confirm warranty status.\n\nTasks we need your input on:\n1. Find termite resistance vendors in gurgaon : We negotiated with three termite control vendors in Gurgaon with prices ranging from ₹6,000 to ₹10,000 (all offering 2-year warranty), please let us know which vendor you'd prefer to proceed with for booking.\n\nLet us know if there's anything else we can help you with?"
             }
         ]
@@ -1167,19 +1370,21 @@
     {
         "user_queries": [
             {
-                "message": "Cancel termite task",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PspyTJGruW.EdlQ-wmsBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919619000208\", \"quoted_content\": {\"body\": \"Morning greetings from team faff 🌅\\n\\nCurrent tasks we're working on:\\n1. book bosch clothe dryer service : We've contacted both Bosch and Kohler service centers, scheduled technician visits for your dryer noise issue and toilet spout problem, with technicians expected to contact you within 48 hours, please keep your phone available for their call.\\n2. book kohler service : We've initiated service requests for both Bosch dryer and Kohler toilet under warranty, waiting for customer to share product details and purchase bills to confirm warranty status.\\n\\nTasks we need your input on:\\n1. Find termite resistance vendors in gurgaon : We negotiated with three termite control vendors in Gurgaon with prices ranging from ₹6,000 to ₹10,000 (all offering 2-year warranty), please let us know which vendor you'd prefer to proceed with for booking.\\n\\nLet us know if there's anything else we can help you with?\"}, \"forwarding_score\": 0}"
+                "message_id": "OvOm2dpW1S1B4g-gv0Bq53kJuFsOg",
+                "message": "Cancel termite task"
             }
         ],
         "team_replies": [
             {
-                "message": "Hi, kindly share the product name/code along with the date of purchase or invoice. This will help us coordinate with them and confirm the warranty status. We’ll update you once we have their response.",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"OrGbKwXnV.sS3A-gloBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919811907080\", \"quoted_content\": {\"body\": \"Bosch service charges can’t apply. It’s a new machine @919811897969 pls can u share bill here\"}, \"forwarding_score\": 0}"
+                "message_id": "PrDnBycNcFKtWe4-gjYBq53kJuFsOg",
+                "message": "Hi, kindly share the product name/code along with the date of purchase or invoice. This will help us coordinate with them and confirm the warranty status. We’ll update you once we have their response."
             },
             {
+                "message_id": "PrCyK8tvHjR6wXI-gqQBq53kJuFsOg",
                 "message": "Here’s how others are using faff this week:\n\n1. Book doctor & salon appointments\n2. Arrange grocery & essentials delivery\n3. Plan a quick getaway\n4. Organise home repairs & maintenance\n\nWhat can we take off your plate today? 🙂"
             },
             {
+                "message_id": "OvKfC5AKHY_xEw-grMBq53kJuFsOg",
                 "message": "Weekend check-in ✨\nHere are a few things we could sort out for you today:\n\n1. Look up interesting events or activities nearby\n2. Arrange a relaxing spa or self-care session at home\n3. Organise a surprise flower or dessert delivery\n4. Plan a quick outing for tomorrow\n\nWhat’s one thing you’d love to hand off right now?"
             }
         ]
@@ -1187,14 +1392,17 @@
     {
         "user_queries": [
             {
+                "message_id": "OiZSaNeG6AGozg-gkQBq53kJuFsOg",
                 "message": "New task \nPls add fast forward on My booking and also share boarding pass"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrBv46Uu9SdwsGU-gvsBq53kJuFsOg",
                 "message": "Sure, we will do the web-checkin with the fast forward and update you in 30 min."
             },
             {
+                "message_id": "PrDOc5BIxzgF0t0-grcBq53kJuFsOg",
                 "message": "Hey, the cost of fast forward would be Rs. 2080 would you like us to go ahead with the booking?"
             }
         ]
@@ -1202,19 +1410,21 @@
     {
         "user_queries": [
             {
-                "message": "For 1 person only",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PrDOc5BIxzgF0t0-grcBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"Hey, the cost of fast forward would be Rs. 2080 would you like us to go ahead with the booking?\"}, \"forwarding_score\": 0}"
+                "message_id": "Ot0As7yvwN8jfw-gsABq53kJuFsOg",
+                "message": "For 1 person only"
             },
             {
+                "message_id": "OpcTvz1A0.VD9A-gucBq53kJuFsOg",
                 "message": "Not all"
             },
             {
-                "message": "@919811907080 pls confirm if needed for all",
-                "context": "{\"mentions\": [\"919811907080\"], \"forwarded\": false, \"quoted_id\": null, \"quoted_type\": null, \"quoted_author\": null, \"quoted_content\": null, \"forwarding_score\": 0}"
+                "message_id": "OoY7XpaKew8h9A-gpkBq53kJuFsOg",
+                "message": "@919811907080 pls confirm if needed for all"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrBVFizDH2MGGyo-guQBq53kJuFsOg",
                 "message": "Please let us know and we will go ahead with the fast track booking."
             }
         ]
@@ -1222,11 +1432,13 @@
     {
         "user_queries": [
             {
+                "message_id": "OguydYE6BXZG9A-gpIBq53kJuFsOg",
                 "message": "Pls do web check-in for ruchika and share boarding pass"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrAlvrsdUWEGLk8-gnMBq53kJuFsOg",
                 "message": "Fast forward would be only for ruchika right?"
             }
         ]
@@ -1234,15 +1446,17 @@
     {
         "user_queries": [
             {
-                "message": "No fastforwaed",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PrAlvrsdUWEGLk8-gnMBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"Fast forward would be only for ruchika right?\"}, \"forwarding_score\": 0}"
+                "message_id": "Oked36BmJQR2xQ-gucBq53kJuFsOg",
+                "message": "No fastforwaed"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrBDjruCMAkm74Q-gmsBq53kJuFsOg",
                 "message": "Got it. Doing the web check-in and sharing the boarding pass here."
             },
             {
+                "message_id": "OiOVlOYQpFMFpw-gnUBq53kJuFsOg",
                 "message": "Wishing you a joyful Ganesh Chaturthi! 🙏🐘✨\nThings faff can help you with today:\n\n1. Create a festive Ganesh Chaturthi playlist \n2. Arrange eco-friendly décor & flowers \n3. Organise Prasad & sweet deliveries \n4. Book cabs for family & guests\n\n✨ What can we take off your plate today? 🙂"
             }
         ]
@@ -1250,14 +1464,17 @@
     {
         "user_queries": [
             {
+                "message_id": "Ok.LCCxZrudRTg-goUBq53kJuFsOg",
                 "message": "New task alert ; pls do boarding pass based on above tickets thank you"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P8dqbQArlk98mA-glgBq53kJuFsOg",
                 "message": "Sure, we will generate the boarding a pass and share it with you by tomorrow morning."
             },
             {
+                "message_id": "Psqd7zC0e_F78TQ-guYBq53kJuFsOg",
                 "message": "We have successfully generated your boarding pass for the 29th flight from Hyderabad to Delhi. We are sharing the PDF with you, kindly go through it."
             }
         ]
@@ -1265,15 +1482,17 @@
     {
         "user_queries": [
             {
+                "message_id": "OvLSWViHgdZBeA-grYBq53kJuFsOg",
                 "message": "Can you do if for for her friends also"
             },
             {
-                "message": "This ticket",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"Xs1eA.INjqK6.w-gjgBq53kJuFsOg\", \"quoted_type\": \"documentWithCaption\", \"quoted_author\": \"919811907080\", \"quoted_content\": {\"id\": \"media_init\", \"sha256\": \"U1lPdCtaU1g5TkhFSzB3bGNXc2xTUTZOSjFlYmtCeU5qUmY2c3RrOVRadz0=\", \"caption\": \"Ms. RUCHIKA GUPTA JAIN X4 DEL-HYD-DEL\", \"preview\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wgARCABIADMDASIAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAAECAwQG/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAA+is5nonHqSymgYvPxnv15+xnYaBjLxnvcepJsaBjn2yKEmqUEgAAaB//xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAECAQE/ACf/xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAEDAQE/ACf/xAAqEAABAwIGAQEJAAAAAAAAAAABAAIRAxIQITFBUWEEcRMUFVJTYoGR4f/aAAgBAQABPwCoXDNoJTHOOrYwPKv6KD5OhwqmAvadJrG333n0wIlAZ64PEhNAjQIgXZLZNJlA5YeTUNKkXhtxGyHmv+i5eLUdXYXOBaZVn3FBoHagYVAC3NCAP4gArQidiU0AHIk4eRVFGmXuBIHC+IM+V36XjVfeGFzZEcq13KDeVAGFRoc2DohSpjZp/Ca0AZQB0o7UkZSEJLpnAiVZ6KDyoPKtQaBtgTGyu6Ku6Ku6Ku6Kuz0w//4AAwD/2Q==\", \"filename\": \"Ms. RUCHIKA GUPTA JAIN X4 DEL-HYD-DEL.pdf\", \"file_name\": \"Ms. RUCHIKA GUPTA JAIN X4 DEL-HYD-DEL.pdf\", \"file_size\": 313545, \"mime_type\": \"application/pdf\", \"page_count\": 4}, \"forwarding_score\": 0}"
+                "message_id": "Ou2l9j6qg_d02A-gikBq53kJuFsOg",
+                "message": "This ticket"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P5l4QovU23Ig9Q-gjcBq53kJuFsOg",
                 "message": "Hey, the rest of it said that boarding passes are already generated."
             }
         ]
@@ -1281,20 +1500,25 @@
     {
         "user_queries": [
             {
+                "message_id": "On2esiqlEQsqmg-giwBq53kJuFsOg",
                 "message": "Ok gr8"
             },
             {
+                "message_id": "OjYZfj83sBV2oA-gowBq53kJuFsOg",
                 "message": "New task \nPls negotiate and get me a rare for karma Lakeland,taj dam dama, westin sohna for 4 rooms on double occupancy ; 15 th September check in 18th September check out"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrDqGkS7Htda_sk-gt8Bq53kJuFsOg",
                 "message": "Sure, could you confirm the number of people this is for?"
             },
             {
+                "message_id": "PrD_wmVON60DFO4-gsMBq53kJuFsOg",
                 "message": "Sure, we'll check with them and after negotiating, we'll get back to you by 10 PM"
             },
             {
+                "message_id": "PrBMtabRGCrASuk-gq0Bq53kJuFsOg",
                 "message": "✨ Hope your day’s going well!\nHere are a few things faff can sort for you today:\n\n1. Upgrade home setups with new furniture & décor\n2. Book fitness & wellness sessions to stay on track\n3. Plan quick getaways and festive weekend trips\n4. Get errands like dry-cleaning & repairs sorted hassle-free"
             }
         ]
@@ -1302,15 +1526,17 @@
     {
         "user_queries": [
             {
-                "message": "Awaiting",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PrD_wmVON60DFO4-gsMBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"Sure, we'll check with them and after negotiating, we'll get back to you by 10 PM\"}, \"forwarding_score\": 0}"
+                "message_id": "OrRjPbEJDXHOow-guMBq53kJuFsOg",
+                "message": "Awaiting"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P7FwVydBNNd5uQ-ggABq53kJuFsOg",
                 "message": "Hey, apologies for the delay. There was a glitch from our end(system). We had completed the task, but it was not shared with you. We are sharing it with you now."
             },
             {
+                "message_id": "P0K4Pwng63LNGg-gj0Bq53kJuFsOg",
                 "message": "Hi,\n\nHere are the best options we found for 15–18 Sept (4 rooms, 8 adults):\n\n1. Karma Lakeland – Not available for these dates.\n2. Taj Damdama Lake Resort & Spa – ?2,05,320 (for 4 rooms × 3 nights incl. taxes)\n- Breakfast included\n- Free cancellation before 12/13 Sept (depending on site)\n- No prepayment needed (MMT/Agoda/Booking.com)\n- Taj Official - https://links.faffit.com/cKFhB2\n- MMT - https://links.faffit.com/cM44xY\n- Agoda - https://links.faffit.com/9aRYaB\n1. The Westin Sohna Resort & Spa – ?1,84,080 – ?1,92,000 (for 4 rooms × 3 nights incl. taxes)\n- Breakfast included\n- Free cancellation till 13 Sept\n- Pay at property option available\n- Cleartrip - https://links.faffit.com/Xu2vtP\n- Booking.com - https://links.faffit.com/EsyWBH\n- *Best deal right now:* Westin Sohna (~?1.84L) since it’s cheaper than Taj and includes breakfast + cancellation flexibility."
             }
         ]
@@ -1318,17 +1544,21 @@
     {
         "user_queries": [
             {
+                "message_id": "OgDNWZKQ4cS.CQ-gocBq53kJuFsOg",
                 "message": "New tasks \n1. Reserve a 10 seator table for tom 7 pm at Oberoi gurgaon new Chinese restaurant ; any discounts that you can get here i am Amex platinum and Eo ggn member \n2. ⁠i want to upgrade my axis Vistara card to the top tier axis credit card pls tell me how tnis can be done"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P5IbmL4D3vhi0A-guMBq53kJuFsOg",
                 "message": "Okay, sure for task one we'll go ahead with the reservation."
             },
             {
+                "message_id": "P0DrHbVnnHl2ZQ-gh8Bq53kJuFsOg",
                 "message": "As for task 2, please allow us some time until 5:00 pm to check on this and get back to you."
             },
             {
+                "message_id": "PspArSeTwwOZEqk-gqIBq53kJuFsOg",
                 "message": "We have confirmed your reservation at Oberoi’s new Chinese restaurant for a *12-seater table* at *7 PM tomorrow* under the name Manu Jain, as they do not have a 10-seater option available.\n\nRegarding offers, they informed us that there is a *15% discount* with the *Amex Platinum card*. They were not aware of any EO Gurgaon membership offers, but mentioned that a supervisor will contact us if any such offers are available. Apart from this, the main offer currently available is the 15% discount on the Amex Platinum card."
             }
         ]
@@ -1336,12 +1566,13 @@
     {
         "user_queries": [
             {
-                "message": "Thanks do i need to book via Amex for discount ?",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PspArSeTwwOZEqk-gqIBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"We have confirmed your reservation at Oberoi’s new Chinese restaurant for a *12-seater table* at *7 PM tomorrow* under the name Manu Jain, as they do not have a 10-seater option available.\\n\\nRegarding offers, they informed us that there is a *15% discount* with the *Amex Platinum card*. They were not aware of any EO Gurgaon membership offers, but mentioned that a supervisor will contact us if any such offers are available. Apart from this, the main offer currently available is the 15% discount on the Amex Platinum card.\"}, \"forwarding_score\": 0}"
+                "message_id": "Otkd5bM3BrJzpw-guEBq53kJuFsOg",
+                "message": "Thanks do i need to book via Amex for discount ?"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P3uPQ_LR8KhovQ-gjkBq53kJuFsOg",
                 "message": "Hey, you don't need to book via Amex when you are paying the bill after the meal. You can just let them know about the Amex card and you will be receiving the discount."
             }
         ]
@@ -1349,11 +1580,13 @@
     {
         "user_queries": [
             {
+                "message_id": "OlT1HU5RfHYz8Q-gqUBq53kJuFsOg",
                 "message": "Awesome thanks"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PspVDbaDIT2WML4-wtYBq53kJuFsOg",
                 "message": "We're all celebrating here at faffHQ today because you have finished 30 tasks with faff. We are always keen to know how we can improve, so please feel free to share your feedback. We are glad to be serving you!"
             }
         ]
@@ -1361,18 +1594,21 @@
     {
         "user_queries": [
             {
-                "message": "What’s the name of the restaurant",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"PspArSeTwwOZEqk-gqIBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"We have confirmed your reservation at Oberoi’s new Chinese restaurant for a *12-seater table* at *7 PM tomorrow* under the name Manu Jain, as they do not have a 10-seater option available.\\n\\nRegarding offers, they informed us that there is a *15% discount* with the *Amex Platinum card*. They were not aware of any EO Gurgaon membership offers, but mentioned that a supervisor will contact us if any such offers are available. Apart from this, the main offer currently available is the 15% discount on the Amex Platinum card.\"}, \"forwarding_score\": 0}"
+                "message_id": "OsWeiOgZExmT.A-gpwBq53kJuFsOg",
+                "message": "What’s the name of the restaurant"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P44dxtSeQgp5Ug-grQBq53kJuFsOg",
                 "message": "Checking!"
             },
             {
+                "message_id": "P14YoSRAnEifrg-gsgBq53kJuFsOg",
                 "message": "The name of the restuaurant is Madam Chow."
             },
             {
+                "message_id": "PsqUawrNGa_xZxw-goYBq53kJuFsOg",
                 "message": "Hello, we contacted Axis Bank, and they mentioned that you need to call from the registered mobile number so they can check the existing offers available on your credit card and verify if any top-tier credit card facilities can be approved for you. Additionally, there is another option where you can use the Axis Bank mobile app to raise a request for a credit limit upgrade or request an upgrade for your card directly through the app.\n\nLet us know if you would like any further assistance."
             }
         ]
@@ -1380,12 +1616,13 @@
     {
         "user_queries": [
             {
-                "message": "Hi new task alert pls can you change the booking to 1 pm for lunch",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"P14YoSRAnEifrg-gsgBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"The name of the restuaurant is Madam Chow.\"}, \"forwarding_score\": 0}"
+                "message_id": "Olyc0TPqlQUX9g-gr8Bq53kJuFsOg",
+                "message": "Hi new task alert pls can you change the booking to 1 pm for lunch"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P9vT72WwreyrGg-gtABq53kJuFsOg",
                 "message": "Okay, sure, we will change your booking to 1 pm for lunch."
             }
         ]
@@ -1393,23 +1630,29 @@
     {
         "user_queries": [
             {
+                "message_id": "Oo_pEL3lO3A4Nw-guYBq53kJuFsOg",
                 "message": "And a private area if possible ; it is my mothers 70 th birthday so a cake would be nice"
             },
             {
+                "message_id": "Op2al6gHJjIVdw-gi8Bq53kJuFsOg",
                 "message": "Small"
             },
             {
+                "message_id": "OtaVqfU9W1YvrA-grMBq53kJuFsOg",
                 "message": "At the restaurant just inform them"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Pzdyt9Kp_0.NBQ-gu0Bq53kJuFsOg",
                 "message": "Sure, allow us half an hour to reach out to the restaurant and get back to you with an update."
             },
             {
+                "message_id": "PrCoDx5gpHA5CTo-gr8Bq53kJuFsOg",
                 "message": "We’re hosting an *online community garage sale* for our users. Take a look at the list of available items and let us know if you’d like to pick anything up—or if you’d like to add your own products to the list. We’ll be happy to help you sell them! : \n\nhttps://links.faffit.com/KEtfFN"
             },
             {
+                "message_id": "P4TgLhc3toqOVA-gncBq53kJuFsOg",
                 "message": "Hey, your reservation has been pre-poned to 1pm in the afternoon. We have informed them about the private space, and they have allotted us a private space of 12 people. Also, they will be providing you with a complimentary red velvet cake for the celebration."
             }
         ]
@@ -1417,11 +1660,13 @@
     {
         "user_queries": [
             {
+                "message_id": "OumngmKfJLrW5A-gu8Bq53kJuFsOg",
                 "message": "❤️"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P6aA6P_iMk_bJQ-gnIBq53kJuFsOg",
                 "message": "And as for the AMEX credit card discount, they just let us know this time that they'll be needing a concierge mail from the AMEX team. So you can inform the Amex team to get in touch with Mrs. Oberoi, and they will handle it from there. \nAnd if you want to go ahead with the EO Gurgaon discount, then you can just carry your ID card and they will provide you with the discount. \nAs both of the discounts are same, so we suggest you go ahead with the EO Gurgaon membership card. That way, it will be much more hassle-free."
             }
         ]
@@ -1429,15 +1674,17 @@
     {
         "user_queries": [
             {
-                "message": "Ok thanks",
-                "context": "{\"mentions\": [], \"forwarded\": false, \"quoted_id\": \"P6aA6P_iMk_bJQ-gnIBq53kJuFsOg\", \"quoted_type\": \"text\", \"quoted_author\": \"919108814709\", \"quoted_content\": {\"body\": \"And as for the AMEX credit card discount, they just let us know this time that they'll be needing a concierge mail from the AMEX team. So you can inform the Amex team to get in touch with Mrs. Oberoi, and they will handle it from there. \\nAnd if you want to go ahead with the EO Gurgaon discount, then you can just carry your ID card and they will provide you with the discount. \\nAs both of the discounts are same, so we suggest you go ahead with the EO Gurgaon membership card. That way, it will be much more hassle-free.\"}, \"forwarding_score\": 0}"
+                "message_id": "OgbbZqd37ZgoCg-ghwBq53kJuFsOg",
+                "message": "Ok thanks"
             },
             {
+                "message_id": "Ol2s9A1TSUCn5A-gsgBq53kJuFsOg",
                 "message": "Will carry eo gurgaon card"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P9tJ6LNwX36XmQ-gi8Bq53kJuFsOg",
                 "message": "Sure."
             }
         ]
@@ -1445,17 +1692,21 @@
     {
         "user_queries": [
             {
+                "message_id": "OiM2NJWhMLOimA-giUBq53kJuFsOg",
                 "message": "What’s the name of the person you spoke to"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P28.cV860hNuBw-giYBq53kJuFsOg",
                 "message": "Checking."
             },
             {
+                "message_id": "P97h7W.k6byxiw-gm4Bq53kJuFsOg",
                 "message": "Hey, the line is busy currently, and we have asked them to call back. Please allow us some time for them to reach out, and we'll share the update with you."
             },
             {
+                "message_id": "PxAgcrWiTlZ3jg-gsoBq53kJuFsOg",
                 "message": "Hey, your reservation was done by two people, Miss Dia and Miss Lisa."
             }
         ]
@@ -1463,14 +1714,17 @@
     {
         "user_queries": [
             {
+                "message_id": "OoZ_nFmsoI.3KQ-gm8Bq53kJuFsOg",
                 "message": "Thanks guys just move it to 130-145 pls whenever tom"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P9Lu6rNzkK_maw-goEBq53kJuFsOg",
                 "message": "Hey, we have postponed your reservation to 1:45 pm tomorrow."
             },
             {
+                "message_id": "Psqc3ajOoOkskRA-wmkBq53kJuFsOg",
                 "message": "Good morning 🌻\n\nHow can we help you today?\n\nTasks we need your input on:\n1. Credit card upgrade in Axis : We contacted Axis Bank and provided two options for your card upgrade: calling from your registered mobile number for personalized offers, or using the Axis Bank mobile app to raise an upgrade request, please let us know which option you prefer to proceed with.\n2. Hotel rate negotiation for Sohna stay for 8 People : We researched rates for your requested hotels and found Westin Sohna offers the best value at ₹1.84L for 4 rooms with breakfast included and flexible cancellation, while Karma Lakeland is unavailable and Taj Damdama is priced higher at ₹2.05L, please let us know if you'd like us to proceed with any booking.\n\nHope you have a nice day :)"
             }
         ]
@@ -1478,17 +1732,21 @@
     {
         "user_queries": [
             {
+                "message_id": "Ol0SxfBtKwKhxA-gqUBq53kJuFsOg",
                 "message": "Hi new task"
             },
             {
+                "message_id": "Oo7GTbhKUbZd5Q-grsBq53kJuFsOg",
                 "message": "Pls block good seats on both flights ; first row is awesome"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PrAe4Hiw.OHDTUU-gm8Bq53kJuFsOg",
                 "message": "Sure, we will call Vietjet and get block good seats  and update you by 11AM"
             },
             {
+                "message_id": "PrD8Itj0ipy6Ezo-gikBq53kJuFsOg",
                 "message": "Hi Manu,\n\nJust an update on the flight seats. We were unable to reach customer care as they're closed for the weekend. We've emailed them with your seat preferences and will let you know as soon as we hear back."
             }
         ]
@@ -1496,11 +1754,13 @@
     {
         "user_queries": [
             {
+                "message_id": "OitIs3AwP4acoQ-gqIBq53kJuFsOg",
                 "message": "Kk p"
             }
         ],
         "team_replies": [
             {
+                "message_id": "PsrANx1Hc8jaC14-guEBq53kJuFsOg",
                 "message": "Hi Manu,\n\nJust got a reply from VietJet. It turns out our ticket was booked through a GDS (Global Distribution System), so they can't help us with the seat selection. They said we need to contact the travel agency that booked the ticket or email their GDS department directly.\n\nW've already sent an email to the GDS department. We'll let you know as soon as we hear back."
             }
         ]
@@ -1508,14 +1768,17 @@
     {
         "user_queries": [
             {
+                "message_id": "Ojb2_qfy7WhBhQ-guIBq53kJuFsOg",
                 "message": "Reach out to MakeMyTrip"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P_9RjD1ESxtDaw-gj0Bq53kJuFsOg",
                 "message": "Sure, will reach out to make my trip regarding this and get back to you by 5pm."
             },
             {
+                "message_id": "Psr4Pfd7_uH1NtI-giABq53kJuFsOg",
                 "message": "Hi!\n\nWe've reached out to MakeMyTrip's customer care about your seats. They need an OTP sent to your number to access your booking. Could you please let us know a good time for you to be available to share it?"
             }
         ]
@@ -1523,39 +1786,47 @@
     {
         "user_queries": [
             {
+                "message_id": "OsnhVrxxfQFuzg-guoBq53kJuFsOg",
                 "message": "Now"
             }
         ],
         "team_replies": [
             {
+                "message_id": "Pw704AGQaFOHtw-grkBq53kJuFsOg",
                 "message": "Okay, sure. Allow us some time to connect with the customer care and check with you for the OTPs."
             },
             {
+                "message_id": "P86HBNIZlfSM9Q-ggcBq53kJuFsOg",
                 "message": "Hey, can you please share the OTP with us?"
             },
             {
-                "message": "@919811897969",
-                "context": "{\"mentions\": [\"919811897969\"], \"forwarded\": false, \"quoted_id\": null, \"quoted_type\": null, \"quoted_author\": null, \"quoted_content\": null, \"forwarding_score\": 0}"
+                "message_id": "P9hiUUpH6hj4xg-gncBq53kJuFsOg",
+                "message": "@919811897969"
             }
         ]
     },
     {
         "user_queries": [
             {
+                "message_id": "OsQE7CtM.IQr.g-gscBq53kJuFsOg",
                 "message": "Ok"
             },
             {
+                "message_id": "Opf8IHAgLuuiAw-gvEBq53kJuFsOg",
                 "message": "Do now"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P8mVrWrJoO666g-gpsBq53kJuFsOg",
                 "message": "Hey, can you please be available for the next 15 minutes so that we can get on a call and share the OTP with you?"
             },
             {
+                "message_id": "P40hIgq99qgpTw-gtMBq53kJuFsOg",
                 "message": "Thank you :)"
             },
             {
+                "message_id": "P7OrIVuQhy9iWA-gi0Bq53kJuFsOg",
                 "message": "Hi,\nJust spoke with MakeMyTrip's customer service. They said they can't select seats right now because the airline hasn't given them the seat map yet. They suggested we try calling again in 4-5 days."
             }
         ]
@@ -1563,23 +1834,29 @@
     {
         "user_queries": [
             {
+                "message_id": "OiHXQU_XZYNv5Q-gq4Bq53kJuFsOg",
                 "message": "Ok"
             },
             {
+                "message_id": "OlukP9bMH7wdXA-gg0Bq53kJuFsOg",
                 "message": "Pls book a table for 3 at Kheer Aerocity ; also I am eo member any discount or Amex plat; I can’t call Amex as driving table tonight for 815 pm"
             }
         ],
         "team_replies": [
             {
+                "message_id": "P_8YddpnM.yY6A-gt0Bq53kJuFsOg",
                 "message": "Sure, allow us some time till 7:45 to check with the restaurant and get you a reservation."
             },
             {
+                "message_id": "P5Ve.4Sh.Fqeeg-gl8Bq53kJuFsOg",
                 "message": "Hey, we just reached out to the Kheer Aerocity, and they informed us that they are fully occupied for tonight."
             },
             {
+                "message_id": "PsopuwvZJJlmGnM-wtQBq53kJuFsOg",
                 "message": "Hope you have a nice day! We're always available to help you save your time and energy 😀\n\nCurrent tasks we're working on:\n1. Get a reservation for 3 people at for 3 at Kheer Aerocity\n2. check with vietjets for seats\n\nTasks we need your input on:\n1. Credit card upgrade in Axis\n2. Hotel rate negotiation for Sohna stay for 8 People\n\nLet us know if there's anything else we can help you with?\n\nIf you want to know more about the exact status of each task, just send $tasks on the group!"
             },
             {
+                "message_id": "PsqtP9P.K0IBklw-gqgBq53kJuFsOg",
                 "message": "We've contacted MakeMyTrip regarding seat selection and need your OTP to proceed with the booking modification, please let us know when you'll be available to share the verification code."
             }
         ]

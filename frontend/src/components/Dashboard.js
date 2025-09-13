@@ -161,14 +161,21 @@ const Dashboard = () => {
               </Row>
               
               <Row>
-                <Col md={6}>
+                <Col md={8}>
                   <div className="text-center">
                     <h6>Process All Input JSONs</h6>
                     <p className="text-muted small">
                       Process all JSON files in input_jsons/ directory and extract memory facts
+                      <br />
+                      <strong>Files to process:</strong> AdityaShetty, Anurag, Gaurav-Sherlocksai, ManuJain, MonarkMoolchandani, RahulSingh
                     </p>
+                    {!forceReprocess && (
+                      <Alert variant="info" className="small mb-2">
+                        <strong>Note:</strong> Files already processed will be skipped. Enable "Force Reprocess" to reprocess all files.
+                      </Alert>
+                    )}
                     <Button
-                      variant="primary"
+                      variant={forceReprocess ? "warning" : "primary"}
                       size="lg"
                       onClick={handleProcessAllJsons}
                       disabled={processingLoading}
@@ -182,17 +189,17 @@ const Dashboard = () => {
                       ) : (
                         <>
                           <FaPlay className="me-2" />
-                          Process All JSONs
+                          {forceReprocess ? "Force Process All JSONs" : "Process All JSONs"}
                         </>
                       )}
                     </Button>
                   </div>
                 </Col>
-                <Col md={6}>
+                <Col md={4}>
                   <div className="text-center">
-                    <h6>Quick Process Individual User</h6>
+                    <h6>Quick Test</h6>
                     <p className="text-muted small">
-                      Process a single user for testing (AdityaShetty)
+                      Process AdityaShetty for testing
                     </p>
                     <Button
                       variant="outline-primary"
@@ -228,46 +235,86 @@ const Dashboard = () => {
                       {processingResult.details && processingResult.success && (
                         <div className="mt-2 small">
                           <strong>Details:</strong>
-                          <ul className="mb-0 mt-1">
-                            {processingResult.details.total_files_processed ? (
-                              <>
-                                <li>Files processed: {processingResult.details.total_files_processed}</li>
-                                <li>Total extractions: {Object.values(processingResult.details.results || {})
-                                  .reduce((sum, result) => sum + (result.total_nodes_extracted || 0), 0)}</li>
-                              </>
-                            ) : (
-                              <>
-                                <li>New facts extracted this iteration: {processingResult.details.total_nodes_extracted}</li>
-                                <li>By layer: {Object.entries(processingResult.details.layers || {})
-                                  .map(([layer, count]) => `${layer}: ${count}`)
-                                  .join(', ')}</li>
-                                {processingResult.details.note && (
-                                  <li className="text-muted">{processingResult.details.note}</li>
-                                )}
-                                {processingResult.details.extracted_data && Object.keys(processingResult.details.extracted_data).length > 0 && (
-                                  <li className="mt-2">
-                                    <strong>📋 Newly Processed Facts (Current Iteration Only):</strong>
-                                    <div className="mt-1" style={{maxHeight: '300px', overflowY: 'auto', fontSize: '0.85em'}}>
-                                      {Object.entries(processingResult.details.extracted_data).map(([layer, nodes]) => (
-                                        <div key={layer} className="mb-2">
-                                          <strong className="text-primary">{layer} ({nodes.length} facts):</strong>
-                                          <ul className="mb-1 ms-3">
-                                            {nodes.map((node, idx) => (
-                                              <li key={idx} className="mb-1">
-                                                <span className="badge bg-secondary me-1">{node.detail.type}</span>
-                                                <span>{node.detail.value}</span>
-                                                <small className="text-muted ms-1">(confidence: {(node.confidence * 100).toFixed(0)}%)</small>
-                                              </li>
-                                            ))}
-                                          </ul>
-                                        </div>
-                                      ))}
+                          {processingResult.details.total_files_processed !== undefined ? (
+                            // Multiple files processed
+                            <div className="mt-2">
+                              <div className="mb-2">
+                                <strong>📊 Summary:</strong>
+                                <ul className="mb-2">
+                                  <li>Files processed: {processingResult.details.total_files_processed}</li>
+                                  <li>Total extractions: {Object.values(processingResult.details.results || {})
+                                    .reduce((sum, result) => sum + (result.total_nodes_extracted || 0), 0)}</li>
+                                </ul>
+                              </div>
+                              
+                              <div style={{maxHeight: '400px', overflowY: 'auto'}}>
+                                <strong>📋 Per-File Results:</strong>
+                                {Object.entries(processingResult.details.results || {}).map(([userId, result]) => (
+                                  <div key={userId} className="border-start border-primary ps-2 ms-2 mb-2">
+                                    <div className="d-flex justify-content-between align-items-center">
+                                      <strong className="text-primary">{userId}</strong>
+                                      <span className={`badge ${
+                                        result.status === 'success' ? 'bg-success' : 
+                                        result.status === 'skipped' ? 'bg-warning' : 'bg-danger'
+                                      }`}>
+                                        {result.status.toUpperCase()}
+                                      </span>
                                     </div>
-                                  </li>
-                                )}
-                              </>
-                            )}
-                          </ul>
+                                    {result.status === 'success' && (
+                                      <div className="small text-muted">
+                                        {result.total_nodes_extracted} new facts extracted
+                                        {result.layers && ` (${Object.entries(result.layers)
+                                          .map(([layer, count]) => `${layer}: ${count}`)
+                                          .join(', ')})`}
+                                      </div>
+                                    )}
+                                    {result.status === 'skipped' && (
+                                      <div className="small text-muted">
+                                        {result.message}
+                                      </div>
+                                    )}
+                                    {result.status === 'error' && (
+                                      <div className="small text-danger">
+                                        Error: {result.error}
+                                      </div>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ) : (
+                            // Single file processed
+                            <ul className="mb-0 mt-1">
+                              <li>New facts extracted this iteration: {processingResult.details.total_nodes_extracted}</li>
+                              <li>By layer: {Object.entries(processingResult.details.layers || {})
+                                .map(([layer, count]) => `${layer}: ${count}`)
+                                .join(', ')}</li>
+                              {processingResult.details.note && (
+                                <li className="text-muted">{processingResult.details.note}</li>
+                              )}
+                              {processingResult.details.extracted_data && Object.keys(processingResult.details.extracted_data).length > 0 && (
+                                <li className="mt-2">
+                                  <strong>📋 Newly Processed Facts (Current Iteration Only):</strong>
+                                  <div className="mt-1" style={{maxHeight: '300px', overflowY: 'auto', fontSize: '0.85em'}}>
+                                    {Object.entries(processingResult.details.extracted_data).map(([layer, nodes]) => (
+                                      <div key={layer} className="mb-2">
+                                        <strong className="text-primary">{layer} ({nodes.length} facts):</strong>
+                                        <ul className="mb-1 ms-3">
+                                          {nodes.map((node, idx) => (
+                                            <li key={idx} className="mb-1">
+                                              <span className="badge bg-secondary me-1">{node.detail.type}</span>
+                                              <span>{node.detail.value}</span>
+                                              <small className="text-muted ms-1">(confidence: {(node.confidence * 100).toFixed(0)}%)</small>
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </li>
+                              )}
+                            </ul>
+                          )}
                         </div>
                       )}
                     </Alert>
