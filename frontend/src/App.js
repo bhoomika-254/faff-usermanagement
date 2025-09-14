@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import PendingUpdates from './components/PendingUpdates';
 import UserMemory from './components/UserMemory';
 import UsersOverview from './components/UsersOverview';
+import InformationGraph from './components/InformationGraph';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/pending" element={<PendingUpdates />} />
                 <Route path="/users" element={<UsersOverview />} />
                 <Route path="/users/:userId" element={<UserMemory />} />
+                <Route path="/information-graph" element={<InformationGraph />} />
               </Routes>
             </Col>
           </Row>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaClock, FaUsers, FaChartBar } from 'react-icons/fa';
+import { FaHome, FaClock, FaUsers, FaChartBar, FaSitemap } from 'react-icons/fa';
 
 const Sidebar = () => {
   const location = useLocation();
@@ -36,6 +36,15 @@ const Sidebar = () => {
         >
           <FaUsers className="me-2" />
           Users Overview
+        </Nav.Link>
+        
+        <Nav.Link 
+          as={Link} 
+          to="/information-graph" 
+          className={isActive('/information-graph') ? 'active' : ''}
+        >
+          <FaSitemap className="me-2" />
+          Information Graph
         </Nav.Link>
       </Nav>
     </div>
