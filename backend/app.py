@@ -95,10 +95,14 @@ def format_concluded_fact(node: Dict) -> str:
         
         # Layer 3 - Relations
         'family_member': f"{value} is a family member of {user_id}",
+        'spouse': f"{value} is the spouse of {user_id}",
+        'spouse_name': f"{user_id}'s spouse is {value}",
+        'spouse_phone': f"{user_id}'s spouse's phone number is {value}",
+        'spouse_email': f"{user_id}'s spouse's email is {value}",
         'friend': f"{value} is a friend of {user_id}",
         'colleague': f"{value} is a colleague of {user_id}",
         'contact_name': f"{value} is a contact of {user_id}",
-        'relationship_type': f"{user_id} has {value} relationship",
+        'relationship': f"{user_id} has relationship with {value}",
         'contact_phone': f"Contact phone number for {user_id}'s relation is {value}",
         
         # Layer 4 - Preferences

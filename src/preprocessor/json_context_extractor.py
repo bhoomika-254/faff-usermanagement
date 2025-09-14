@@ -112,32 +112,60 @@ INVALID PATTERNS TO REJECT:
 
 MEMORY LAYERS TO EXTRACT (ONLY IF CLEARLY OWNED BY {user_id}):
 
-LAYER 1 - Basic Personal Information:
-- Names, ages, addresses (ONLY if clearly stated as THEIR home/personal address)
+LAYER 1 - Basic Personal Information (HIGHEST PRIORITY):
+- Full names, ages, date of birth, nationality, gender, blood group (ONLY if about {user_id})
 - Phone numbers, email addresses (ONLY if stated as THEIR contact info)
-- Date of birth, nationality, gender, blood group (ONLY if about {user_id})
+- Home addresses (ONLY if clearly stated as THEIR home/personal address)
 - Relationship status, occupation, company details (ONLY if {user_id}'s info)
 
-LAYER 2 - Document Information:
+LAYER 2 - Document Information (HIGH PRIORITY):
 - Government IDs, certificates (ONLY if {user_id}'s documents)
-- Document numbers, policies (ONLY if belonging to {user_id})
+- Document numbers, policies, licenses (ONLY if belonging to {user_id})
+- Credit cards, bank details (ONLY if {user_id}'s financial info)
 
-LAYER 3 - Relationships & Contacts:
-- Family members, friends, colleagues (ONLY if {user_id}'s relationships)
-- Their names and contact details (ONLY if {user_id} is sharing about THEIR contacts)
+LAYER 3 - Relationships & Contacts (MEDIUM PRIORITY):
+- Family members, friends, colleagues (ONLY if {user_id}'s relationships AND names are mentioned)
+- Contact details of family/friends (ONLY if {user_id} is sharing about THEIR contacts)
+- IMPORTANT: Only extract relationship if SPECIFIC NAMES are mentioned
+- REJECT: Generic "my wife", "my husband" without names
+- ACCEPT: "my wife Sarah", "my husband John"
 
-LAYER 4 - Preferences & Instructions:
+LAYER 4 - Preferences & Instructions (LOWER PRIORITY):
 - Food preferences, allergies (ONLY if {user_id}'s preferences)
 - Favorite places, vendors (ONLY if {user_id}'s preferences)
 - Habits, routines (ONLY if {user_id}'s personal habits)
+- DO NOT put travel plans here unless they are long-term preferences
+
+STRICT LAYER 3 RELATIONSHIP RULES:
+✅ "My wife Sarah" → Extract: relationship="spouse", name="Sarah"
+✅ "My husband John works at..." → Extract: relationship="spouse", name="John"
+✅ "My brother Mike lives in..." → Extract: relationship="brother", name="Mike"
+❌ "My wife will come" → REJECT (no name mentioned)
+❌ "Thanks guys" → REJECT (not a relationship statement)
+❌ "I want to carry something for my 9 year old nephew" → REJECT (no name mentioned)
+
+TRAVEL INFORMATION RULES:
+- DO NOT put travel plans in Layer 1 (they are not basic personal info)
+- Travel plans go to Layer 4 only if they are ongoing preferences
+- One-time travel mentions should generally be avoided unless they're important preferences
 
 OWNERSHIP VALIDATION EXAMPLES:
 ✅ "My address is 402, Pinnacle Gold, Bandra" → Extract as {user_id}'s address
 ❌ "Let's meet at Pinnacle Gold, Bandra" → REJECT (meeting location, not personal address)
 ✅ "I live in Mumbai" → Extract as {user_id}'s address  
 ❌ "Mumbai has good restaurants" → REJECT (general comment, not personal info)
-✅ "My wife Priya" → Extract as {user_id}'s relationship
+✅ "My wife Sarah" → Extract as {user_id}'s spouse with name "Sarah"
+❌ "My wife will come" → REJECT (no specific name mentioned)
 ❌ "Priya is coming" → REJECT (unclear relationship/ownership)
+❌ "Thanks guys" → REJECT (not personal information)
+❌ "I want to carry something for my nephew" → REJECT (no name mentioned)
+
+CRITICAL EXTRACTION RULES:
+1. NEVER extract relationship information without specific names
+2. NEVER extract information from casual conversation phrases
+3. ALWAYS ensure the information directly belongs to {user_id}
+4. FOCUS ON Layer 1, 2, 3 - avoid putting travel plans in Layer 1
+5. For relationships: ONLY extract if both relationship type AND name are clear
 
 CONFIDENCE SCORING BASED ON OWNERSHIP:
 - 0.9-1.0: Direct personal claims with clear ownership ("My address is...")
@@ -167,8 +195,19 @@ FIELD VALUE SPECIFICATIONS:
 - relationship_status: Use "married" or "single". If mentions "wife"/"husband" use "married"
 - gender: Use "Male" or "Female" (capitalize first letter)
 - address: ONLY extract if clearly stated as personal/home address, NOT business/meeting locations
+- spouse/spouse_name: Use ONLY if specific name is mentioned (e.g., "My wife Sarah" → spouse_name: "Sarah")
+- family_member: Use ONLY if specific name is mentioned (e.g., "My brother Mike" → family_member: "Mike")
+- phone_number: Use exact format from message, include country code if present
+- email: Use exact email address as written
 
-REMEMBER: When in doubt about ownership, DO NOT extract. It's better to miss information than to incorrectly attribute someone else's details to {user_id}.
+PROHIBITED EXTRACTIONS:
+❌ Do NOT extract "wife", "husband", "nephew" as standalone values without names
+❌ Do NOT extract casual conversation phrases as personal information
+❌ Do NOT extract travel plans as Layer 1 information
+❌ Do NOT extract meeting locations as personal addresses
+❌ Do NOT extract third-party information as user's information
+
+REMEMBER: When in doubt about ownership or clarity, DO NOT extract. It's better to miss information than to incorrectly attribute someone else's details to {user_id}.
 
 Only return valid JSON. If no clearly owned information found for a layer, return empty array for that layer.
 """
@@ -189,7 +228,10 @@ Only return valid JSON. If no clearly owned information found for a layer, retur
             
             # Try to parse JSON response
             try:
-                return json.loads(response_text)
+                raw_data = json.loads(response_text)
+                # Apply validation to filter out bad extractions
+                validated_data = self._validate_extractions(raw_data)
+                return validated_data
             except json.JSONDecodeError:
                 print(f"Failed to parse LLM response as JSON: {response_text[:200]}...")
                 return {}
@@ -197,6 +239,73 @@ Only return valid JSON. If no clearly owned information found for a layer, retur
         except Exception as e:
             print(f"LLM API error: {e}")
             return {}
+
+    def _validate_extractions(self, raw_data: Dict) -> Dict:
+        """Validate and filter out bad extractions"""
+        validated_data = {}
+        
+        # Invalid values that should never be extracted
+        invalid_relationship_values = {
+            'wife', 'husband', 'nephew', 'niece', 'son', 'daughter', 'brother', 'sister',
+            'mother', 'father', 'aunt', 'uncle', 'cousin', 'friend', 'colleague'
+        }
+        
+        # Invalid evidence snippets that indicate bad extraction
+        invalid_evidence_patterns = [
+            'thanks guys', 'thank you', 'thanks', 'ok', 'okay', 'yes', 'no',
+            'sure', 'great', 'perfect', 'sounds good', 'alright'
+        ]
+        
+        for layer, nodes in raw_data.items():
+            validated_nodes = []
+            
+            for node in nodes:
+                if not isinstance(node, dict) or 'detail' not in node:
+                    continue
+                    
+                detail = node['detail']
+                fact_type = detail.get('type', '')
+                fact_value = detail.get('value', '').lower().strip()
+                evidence = node.get('evidence', [])
+                
+                # Skip invalid extractions
+                skip_node = False
+                
+                # Check for invalid relationship extractions
+                if fact_type in ['relationship', 'family_member', 'spouse'] and fact_value in invalid_relationship_values:
+                    print(f"⚠️  Skipping invalid {fact_type}: '{fact_value}' (no specific name)")
+                    skip_node = True
+                
+                # Check for invalid evidence snippets
+                for ev in evidence:
+                    snippet = ev.get('message_snippet', '').lower().strip()
+                    if snippet in invalid_evidence_patterns:
+                        print(f"⚠️  Skipping extraction from invalid evidence: '{snippet}'")
+                        skip_node = True
+                        break
+                
+                # Check for travel plans in Layer 1
+                if layer == 'Layer1' and fact_type in ['travel_plan', 'flight_number', 'travel_date']:
+                    print(f"⚠️  Moving {fact_type} from Layer1 to Layer4 (travel plans don't belong in basic info)")
+                    # Move to Layer4 instead of rejecting
+                    if 'Layer4' not in validated_data:
+                        validated_data['Layer4'] = []
+                    validated_data['Layer4'].append(node)
+                    continue
+                
+                # Check confidence threshold
+                confidence = node.get('confidence', 0)
+                if confidence < 0.75:
+                    print(f"⚠️  Skipping low confidence ({confidence}) extraction: {fact_type} = {fact_value}")
+                    skip_node = True
+                
+                if not skip_node:
+                    validated_nodes.append(node)
+            
+            if validated_nodes:
+                validated_data[layer] = validated_nodes
+        
+        return validated_data
 
     async def store_in_db(self, extracted_nodes: Dict, user_id: str):
         """Store extracted nodes in Supabase DB using SupabaseManager
@@ -515,16 +624,23 @@ INSTRUCTIONS:
 1. PHONE NUMBER DEDUPLICATION: If there are multiple phone numbers for the same person, keep ONLY the one with the highest confidence score. Different formats of the same number (+91 prefix vs without) should be considered duplicates.
 2. ADDRESS DEDUPLICATION: If there are multiple addresses for the same person, keep ONLY the one with the highest confidence score. Similar addresses should be considered duplicates.
 3. EMAIL DEDUPLICATION: If there are multiple emails, keep all distinct email addresses as people often have multiple emails.
-4. GENERAL RULE: For all other fact types, remove duplicates keeping only the highest confidence version for each unique fact.
-5. If duplicates have identical confidence scores, merge their evidence lists into one comprehensive fact.
-6. Maintain the 4-layer structure (Layer1: Basic Personal Info, Layer2: Documents, Layer3: Relationships, Layer4: Preferences).
-7. Do not add, remove, or modify any actual data values - simply reorganize and deduplicate.
-8. CRITICAL: Preserve ALL evidence snippets exactly as given in the input. DO NOT replace snippets with "No snippet available" or any placeholder text.
-9. Return ONLY a valid JSON with no additional text or explanation.
+4. RELATIONSHIP DEDUPLICATION: Remove any relationship entries that are just generic terms like "wife", "husband", "nephew" without specific names. Only keep relationships with actual names.
+5. GENERAL RULE: For all other fact types, remove duplicates keeping only the highest confidence version for each unique fact.
+6. If duplicates have identical confidence scores, merge their evidence lists into one comprehensive fact.
+7. Maintain the 4-layer structure (Layer1: Basic Personal Info, Layer2: Documents, Layer3: Relationships, Layer4: Preferences).
+8. Do not add, remove, or modify any actual data values - simply reorganize and deduplicate.
+9. CRITICAL: Preserve ALL evidence snippets exactly as given in the input. DO NOT replace snippets with "No snippet available" or any placeholder text.
+10. Return ONLY a valid JSON with no additional text or explanation.
 
 IMPORTANT: Your response must be ONLY the deduplicated JSON data with nothing else. Do not include any explanations, markdown formatting, or text outside the JSON. Return the JSON directly with all evidence snippets preserved exactly as provided.
 
 When processing evidence, maintain the exact field names as provided in input (message_id and either 'snippet' or 'message_snippet').
+
+RELATIONSHIP FILTERING RULES:
+- REMOVE: "relationship": "wife" (no name specified)
+- REMOVE: "family_member": "nephew" (no name specified)  
+- KEEP: "spouse": "Sarah" (specific name provided)
+- KEEP: "family_member": "Mike Johnson" (specific name provided)
 
 PHONE NUMBER DEDUPLICATION EXAMPLE:
 These are 3 different phone numbers for the same person. Keep ONLY the highest confidence one: "9870781578" (confidence: 0.95)
