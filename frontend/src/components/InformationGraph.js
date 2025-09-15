@@ -8,6 +8,7 @@ const InformationGraph = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isInitialized, setIsInitialized] = useState(false);
+  const [refreshTimeout, setRefreshTimeout] = useState(null);
 
   useEffect(() => {
     // Prevent duplicate calls in React StrictMode during development
@@ -15,9 +16,38 @@ const InformationGraph = () => {
       setIsInitialized(true);
       fetchAcceptedInformation();
     }
-  }, [isInitialized]);
 
-  const fetchAcceptedInformation = useCallback(async () => {
+    // Listen for memory status changes (approve/reject actions)
+    const handleMemoryStatusChange = (event) => {
+      console.log('🔄 Information Graph received memory status change:', event.detail);
+      console.log('📊 Refreshing Information Graph due to approve/reject action...');
+      
+      // Clear any existing timeout to debounce rapid successive changes
+      if (refreshTimeout) {
+        clearTimeout(refreshTimeout);
+      }
+      
+      // Set a small delay to batch multiple rapid changes
+      const newTimeout = setTimeout(() => {
+        fetchAcceptedInformation();
+      }, 500); // 500ms delay to batch multiple changes
+      
+      setRefreshTimeout(newTimeout);
+    };
+
+    window.addEventListener('memoryStatusChanged', handleMemoryStatusChange);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('memoryStatusChanged', handleMemoryStatusChange);
+      // Clear any pending refresh timeout
+      if (refreshTimeout) {
+        clearTimeout(refreshTimeout);
+      }
+    };
+  }, [isInitialized]); // Remove fetchAcceptedInformation from dependency array
+
+  const fetchAcceptedInformation = async () => {
     try {
       setLoading(true);
       setError(null);
@@ -81,7 +111,7 @@ const InformationGraph = () => {
     } finally {
       setLoading(false);
     }
-  }, []);
+  };
 
   const processUserFacts = (userId, facts) => {
     console.log(`Processing ${facts.length} facts for ${userId}:`, facts);
@@ -504,6 +534,12 @@ const InformationGraph = () => {
       <h2 className="info-graph-header">
         <FaUser className="me-3" />
         Information Graph
+        {loading && (
+          <small className="ms-2 text-muted">
+            <Spinner animation="border" size="sm" className="me-1" />
+            Refreshing...
+          </small>
+        )}
       </h2>
       
       {userSummaries.length === 0 ? (

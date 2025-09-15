@@ -12,7 +12,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Add project root to path
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_dir)
+sys.path.insert(0, project_root)
 
 from database.supabase_manager import supabase_manager
 from src.preprocessor.json_context_extractor import JSONContextExtractor
@@ -27,7 +29,12 @@ app = FastAPI(
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],  # React dev server
+    allow_origins=[
+        "http://localhost:3000", 
+        "http://127.0.0.1:3000",  # React dev server
+        "https://*.hf.space",     # Hugging Face Spaces
+        "*"                       # Allow all origins (for deployment flexibility)
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -35,8 +42,20 @@ app.add_middleware(
 
 # Serve static files (React build) - only if build directory exists
 static_dir = "frontend/build/static"
+print(f"🔍 Checking static directory: {static_dir}")
+print(f"🔍 Static directory exists: {os.path.exists(static_dir)}")
+print(f"🔍 Current working directory: {os.getcwd()}")
+print(f"🔍 Directory contents: {os.listdir('.')}")
+if os.path.exists("frontend"):
+    print(f"🔍 Frontend directory contents: {os.listdir('frontend')}")
+    if os.path.exists("frontend/build"):
+        print(f"🔍 Frontend/build directory contents: {os.listdir('frontend/build')}")
+
 if os.path.exists(static_dir):
     app.mount("/static", StaticFiles(directory=static_dir), name="static")
+    print(f"✅ Static files mounted from {static_dir}")
+else:
+    print(f"❌ Static directory not found: {static_dir}")
 
 # Global instances
 # Note: Supabase manager is initialized in supabase_manager.py
@@ -69,9 +88,25 @@ class UserSummary(BaseModel):
 
 def format_concluded_fact(node: Dict) -> str:
     """Convert raw extracted data into human-readable concluded facts"""
-    user_id = node['user_id']
-    node_type = node['node_type']
-    value = node['value'].get('value', 'N/A') if isinstance(node['value'], dict) else str(node['value'])
+    try:
+        user_id = node.get('user_id', 'Unknown User')
+        node_type = node.get('node_type', 'unknown')
+        
+        # Handle different possible value structures
+        if 'value' in node:
+            if isinstance(node['value'], dict):
+                value = node['value'].get('value', 'N/A')
+            else:
+                value = str(node['value'])
+        elif 'raw_value' in node:
+            value = str(node['raw_value'])
+        else:
+            value = 'N/A'
+            print(f"⚠️  Warning: No value field found in node: {node}")
+    except Exception as e:
+        print(f"❌ Error in format_concluded_fact: {str(e)}")
+        print(f"❌ Node structure: {node}")
+        return f"Error formatting fact: {str(e)}"
     
     # Format different types of facts
     fact_templates = {
@@ -79,6 +114,19 @@ def format_concluded_fact(node: Dict) -> str:
         'phone': f"Phone number of {user_id} is {value}",
         'email': f"Email address of {user_id} is {value}",
         'address': f"Address of {user_id} is {value}",
+        'age': f"Age of {user_id} is {value} years old",
+        'dob': f"Date of birth of {user_id} is {value}",
+        'nationality': f"Nationality of {user_id} is {value}",
+        'gender': f"Gender of {user_id} is {value}",
+        'blood_group': f"Blood group of {user_id} is {value}",
+        'relationship_status': f"Relationship status of {user_id} is {value}",
+        
+        # ID documents
+        'aadhaar_number': f"Aadhaar number of {user_id} is {value}",
+        'pan_number': f"PAN number of {user_id} is {value}",
+        'license_number': f"Driving license number of {user_id} is {value}",
+        'voter_id': f"Voter ID of {user_id} is {value}",
+        'document_type': f"{user_id} has shared {value} document",
         'age': f"Age of {user_id} is {value} years old",
         'dob': f"Date of birth of {user_id} is {value}",
         'nationality': f"Nationality of {user_id} is {value}",
@@ -130,6 +178,7 @@ async def serve_frontend():
 @app.get("/api/health")
 async def health_check():
     """Health check endpoint"""
+    print("🔍 /api/health endpoint called")
     try:
         supabase_status = supabase_manager.is_connected()
         
@@ -300,10 +349,14 @@ async def reject_update(update_id: str, action: UpdateAction):
 @app.get("/api/stats")
 async def get_system_stats():
     """Get overall system statistics"""
+    print("🔍 /api/stats endpoint called")
     try:
+        print("📊 Attempting to get system stats from Supabase...")
         stats = await supabase_manager.get_system_stats()
+        print(f"✅ Stats retrieved successfully: {stats}")
         return stats
     except Exception as e:
+        print(f"❌ Error in get_system_stats: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/api/process/all-jsons")
@@ -384,7 +437,16 @@ async def process_single_json(user_id: str, force_reprocess: bool = False):
             json_data = json.load(f)
         
         # Process with extractor (now passing force_reprocess parameter)
-        extracted_data = await extractor.process_json(json_data, user_id, force_reprocess)
+        print(f"🔍 Starting processing for user: {user_id}")
+        try:
+            extracted_data = await extractor.process_json(json_data, user_id, force_reprocess)
+            print(f"✅ Successfully processed {user_id}")
+        except Exception as extract_error:
+            print(f"❌ Error during extraction for {user_id}: {str(extract_error)}")
+            print(f"❌ Extract error type: {type(extract_error).__name__}")
+            import traceback
+            print(f"❌ Full traceback: {traceback.format_exc()}")
+            raise extract_error
         
         # Handle skipped files
         if extracted_data.get("skipped"):
@@ -474,6 +536,17 @@ async def get_reprocessing_candidates():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+# Serve React app for all non-API routes
+# Serve React app for root route
+@app.get("/")
+async def serve_react_root():
+    """Serve React app's index.html for root route"""
+    index_path = "frontend/build/index.html"
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
+    else:
+        raise HTTPException(status_code=404, detail="React app not found")
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run(app, host="0.0.0.0", port=3000, reload=True)

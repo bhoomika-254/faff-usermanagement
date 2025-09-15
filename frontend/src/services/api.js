@@ -1,6 +1,17 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
+// API base URL - works for both local development and Hugging Face Spaces
+const API_BASE_URL = process.env.REACT_APP_API_URL || (
+  window.location.hostname === 'localhost' 
+    ? 'http://localhost:8000/api' 
+    : `${window.location.protocol}//${window.location.host}/api`
+);
+
+console.log('🔍 API Configuration Debug:');
+console.log('- window.location.hostname:', window.location.hostname);
+console.log('- window.location.protocol:', window.location.protocol);
+console.log('- window.location.host:', window.location.host);
+console.log('- Resolved API_BASE_URL:', API_BASE_URL);
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -9,11 +20,41 @@ const api = axios.create({
   },
 });
 
+// Request interceptor for debugging
+api.interceptors.request.use(
+  (config) => {
+    console.log('🚀 Making API request:', {
+      method: config.method?.toUpperCase(),
+      url: config.url,
+      fullURL: `${config.baseURL}${config.url}`,
+      headers: config.headers
+    });
+    return config;
+  },
+  (error) => {
+    console.error('❌ Request setup error:', error);
+    return Promise.reject(error);
+  }
+);
+
 // Response interceptor for error handling
 api.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    console.log('✅ API response received:', {
+      status: response.status,
+      url: response.config.url,
+      data: response.data
+    });
+    return response;
+  },
   (error) => {
-    console.error('API Error:', error);
+    console.error('❌ API Error:', {
+      message: error.message,
+      status: error.response?.status,
+      statusText: error.response?.statusText,
+      url: error.config?.url,
+      responseData: error.response?.data
+    });
     return Promise.reject(error);
   }
 );

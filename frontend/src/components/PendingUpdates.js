@@ -84,6 +84,12 @@ const PendingUpdates = () => {
       setActionLoading(prev => ({ ...prev, [updateId]: 'approving' }));
       await memoryAPI.approveUpdate(updateId);
       await fetchPendingUpdates(); // Refresh the list
+      
+      // Emit custom event to notify InformationGraph to refresh
+      console.log('✅ Fact approved, notifying Information Graph to refresh...');
+      window.dispatchEvent(new CustomEvent('memoryStatusChanged', { 
+        detail: { action: 'approve', updateId } 
+      }));
     } catch (err) {
       console.error('Error approving update:', err);
       alert('Failed to approve update');
@@ -97,6 +103,12 @@ const PendingUpdates = () => {
       setActionLoading(prev => ({ ...prev, [updateId]: 'rejecting' }));
       await memoryAPI.rejectUpdate(updateId);
       await fetchPendingUpdates(); // Refresh the list
+      
+      // Emit custom event to notify InformationGraph to refresh
+      console.log('❌ Fact rejected, notifying Information Graph to refresh...');
+      window.dispatchEvent(new CustomEvent('memoryStatusChanged', { 
+        detail: { action: 'reject', updateId } 
+      }));
     } catch (err) {
       console.error('Error rejecting update:', err);
       alert('Failed to reject update');

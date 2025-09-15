@@ -337,29 +337,42 @@ Only return valid JSON. If no clearly owned information found for a layer, retur
                         print(f"  ⚠️  Rejected low confidence {detail['type']}: {detail['value']} (confidence: {confidence:.2f})")
                         continue
                     
-                    # Format concluded fact for human readability
-                    concluded_fact = self._format_concluded_fact(user_id, detail["type"], detail["value"])
-                    
-                    # Store memory node directly in Supabase
-                    node_id = await supabase_manager.store_memory_node(
-                        user_phone=user_id,
-                        layer=layer_number,
-                        fact_type=detail["type"],
-                        content=detail["value"],
-                        concluded_fact=concluded_fact,
-                        confidence=confidence,
-                        evidence=evidence
-                    )
-                    
-                    if node_id:
-                        stored_nodes += 1
-                        ownership_reason = node.get('ownership_reason', 'Ownership validated')
-                        print(f"  ✅ Stored {detail['type']}: {detail['value']} (confidence: {confidence:.2f}) - {ownership_reason}")
-                        # Add to newly stored nodes for this iteration
-                        newly_stored_nodes[layer].append(node)
-                    else:
-                        duplicate_nodes += 1
-                        print(f"  ⚠️  Failed to store {detail['type']}: {detail['value']}")
+                    # Safely extract required fields
+                    try:
+                        fact_type = detail.get("type", "unknown")
+                        fact_value = detail.get("value", "N/A")
+                        
+                        if fact_value == "N/A":
+                            print(f"⚠️  Warning: Missing 'value' field in detail: {detail}")
+                        
+                        # Format concluded fact for human readability
+                        concluded_fact = self._format_concluded_fact(user_id, fact_type, fact_value)
+                        
+                        # Store memory node directly in Supabase
+                        node_id = await supabase_manager.store_memory_node(
+                            user_phone=user_id,
+                            layer=layer_number,
+                            fact_type=fact_type,
+                            content=fact_value,
+                            concluded_fact=concluded_fact,
+                            confidence=confidence,
+                            evidence=evidence
+                        )
+                        
+                        if node_id:
+                            stored_nodes += 1
+                            ownership_reason = node.get('ownership_reason', 'Ownership validated')
+                            print(f"  ✅ Stored {fact_type}: {fact_value} (confidence: {confidence:.2f}) - {ownership_reason}")
+                            # Add to newly stored nodes for this iteration
+                            newly_stored_nodes[layer].append(node)
+                        else:
+                            duplicate_nodes += 1
+                            print(f"  ⚠️  Failed to store {fact_type}: {fact_value}")
+                            
+                    except Exception as detail_error:
+                        print(f"❌ Error processing detail: {str(detail_error)}")
+                        print(f"❌ Detail structure: {detail}")
+                        continue  # Skip this detail and continue with next one
             
             # Print summary
             print(f"\n📊 Database Summary for {user_id}:")
@@ -498,16 +511,28 @@ Only return valid JSON. If no clearly owned information found for a layer, retur
                 messages=[
                     {"role": "user", "content": prompt}
                 ],
-                system="""You are a memory system deduplication expert. Your ONLY job is to return a valid JSON with deduplicated facts.
-IMPORTANT: 
+                system="""You are a memory system deduplication and validation expert. Your job is to return a valid JSON with deduplicated facts AND validate that all facts make sense.
+
+DEDUPLICATION RULES:
 - REMOVE ANY DUPLICATE VALUES THAT ARE PRESENT, OR ANYTHING THAT LOOKS REPEATED.
 - IF THERE ARE 2 SAME KEYS, WITH DIFFERENT VALUES, MAKE SURE YOU ONLY ALLOW ONE INSTANCE WITH THE HIGHEST CONFIDENCE SCORE.
 For example, if the same phone number/address is present multiple times, keep only one instance with the highest confidence.
+
+VALIDATION & SENSE-CHECKING RULES:
+- REMOVE any facts that don't make logical sense (e.g., "age": "blue", "phone": "happy", "name": "12345")
+- REMOVE any facts with impossible values (e.g., age over 150, phone numbers with letters, invalid email formats)
+- REMOVE any facts that are clearly nonsensical or corrupted data
+- REMOVE any facts that contain only special characters, random symbols, or gibberish
+- REMOVE any facts where the value doesn't match the fact type (e.g., an address in a phone number field)
+- REMOVE any facts with extremely low confidence scores (below 0.3) that also seem questionable
+- KEEP facts that make sense even if they seem unusual (e.g., uncommon names, foreign addresses)
+
+FORMATTING RULES:
 1. Return ONLY the JSON data with NO explanatory text, NO markdown formatting, and NO code blocks
 2. Your entire response must be parseable as JSON
 3. Maintain the exact same structure as the input JSON
 4. CRITICAL: Preserve ALL evidence snippets exactly as given in the input. DO NOT change snippets to "No snippet available" or any placeholder text.
-5. Never add new facts or modify existing data beyond merging duplicates
+5. Never add new facts or modify existing valid data beyond merging duplicates and removing nonsensical entries
 6. If duplicates have different confidence scores, keep the one with higher confidence
 7. If duplicates have the same confidence, merge their evidence lists completely with no loss of information"""
             )
@@ -608,23 +633,39 @@ For example, if the same phone number/address is present multiple times, keep on
                 }
                 facts_by_layer[layer].append(fact)
         
-        # Create prompt for LLM deduplication
+        # Create prompt for LLM deduplication and validation
         prompt = f"""
-Review and deduplicate the following memory facts for user {user_id}.
+Review, validate, and deduplicate the following memory facts for user {user_id}.
 
-INSTRUCTIONS:
+DEDUPLICATION INSTRUCTIONS:
 1. PHONE NUMBER DEDUPLICATION: If there are multiple phone numbers for the same person, keep ONLY the one with the highest confidence score. Different formats of the same number (+91 prefix vs without) should be considered duplicates.
 2. ADDRESS DEDUPLICATION: If there are multiple addresses for the same person, keep ONLY the one with the highest confidence score. Similar addresses should be considered duplicates.
 3. EMAIL DEDUPLICATION: If there are multiple emails, keep all distinct email addresses as people often have multiple emails.
 4. RELATIONSHIP DEDUPLICATION: Remove any relationship entries that are just generic terms like "wife", "husband", "nephew" without specific names. Only keep relationships with actual names.
 5. GENERAL RULE: For all other fact types, remove duplicates keeping only the highest confidence version for each unique fact.
-6. If duplicates have identical confidence scores, merge their evidence lists into one comprehensive fact.
-7. Maintain the 4-layer structure (Layer1: Basic Personal Info, Layer2: Documents, Layer3: Relationships, Layer4: Preferences).
-8. Do not add, remove, or modify any actual data values - simply reorganize and deduplicate.
-9. CRITICAL: Preserve ALL evidence snippets exactly as given in the input. DO NOT replace snippets with "No snippet available" or any placeholder text.
-10. Return ONLY a valid JSON with no additional text or explanation.
 
-IMPORTANT: Your response must be ONLY the deduplicated JSON data with nothing else. Do not include any explanations, markdown formatting, or text outside the JSON. Return the JSON directly with all evidence snippets preserved exactly as provided.
+VALIDATION & SENSE-CHECKING INSTRUCTIONS:
+6. DATA TYPE VALIDATION: Remove facts where the value doesn't match the expected data type:
+   - Names should be text, not numbers or symbols
+   - Phone numbers should contain only digits, spaces, +, -, (, )
+   - Ages should be reasonable numbers (0-150)
+   - Emails should have valid email format
+   - Addresses should be coherent location text
+7. LOGICAL SENSE CHECK: Remove facts that are clearly nonsensical:
+   - Random character combinations (e.g., "asdfgh", "123!@#")
+   - Values that are clearly system errors or corrupted data
+   - Facts with impossible combinations (e.g., age: "red", name: "999999")
+8. CONFIDENCE FILTERING: Remove facts with very low confidence (<0.3) that also seem questionable or corrupted
+9. PRESERVE UNUSUAL BUT VALID: Keep facts that seem unusual but are logically valid (foreign names, uncommon addresses, etc.)
+
+STRUCTURAL RULES:
+10. If duplicates have identical confidence scores, merge their evidence lists into one comprehensive fact.
+11. Maintain the 4-layer structure (Layer1: Basic Personal Info, Layer2: Documents, Layer3: Relationships, Layer4: Preferences).
+12. Do not add, remove, or modify any actual data values that are valid - simply reorganize, deduplicate, and remove nonsensical entries.
+13. CRITICAL: Preserve ALL evidence snippets exactly as given in the input. DO NOT replace snippets with "No snippet available" or any placeholder text.
+14. Return ONLY a valid JSON with no additional text or explanation.
+
+IMPORTANT: Your response must be ONLY the cleaned and deduplicated JSON data with nothing else. Do not include any explanations, markdown formatting, or text outside the JSON. Return the JSON directly with all evidence snippets preserved exactly as provided.
 
 When processing evidence, maintain the exact field names as provided in input (message_id and either 'snippet' or 'message_snippet').
 
@@ -895,9 +936,14 @@ Input facts: {json.dumps(facts_by_layer, indent=2)}
                 if nodes:
                     print(f"  {layer}: {len(nodes)} nodes")
             
-            # NEW STEP: Apply LLM deduplication to get a refined version with no duplicates
+            # Apply LLM deduplication to get a refined version with no duplicates
             print("\n🧹 Applying LLM deduplication to remove duplicates and merge evidence...")
-            deduplicated_data = await self.deduplicate_with_llm(merged_data, user_id)
+            try:
+                deduplicated_data = await self.deduplicate_with_llm(merged_data, user_id)
+                print("✅ LLM deduplication completed successfully")
+            except Exception as dedup_error:
+                print(f"❌ Error during LLM deduplication: {str(dedup_error)}")
+                raise dedup_error
             
             # Print deduplication summary
             dedup_total_nodes = sum(len(nodes) for nodes in deduplicated_data.values())
@@ -907,11 +953,23 @@ Input facts: {json.dumps(facts_by_layer, indent=2)}
                     print(f"  {layer}: {len(nodes)} nodes")
             
             # Store deduplicated data in database
-            storage_result = await self.store_in_db(deduplicated_data, user_id)
+            print(f"\n💾 Storing {dedup_total_nodes} deduplicated nodes in database...")
+            try:
+                storage_result = await self.store_in_db(deduplicated_data, user_id)
+                print("✅ Database storage completed successfully")
+            except Exception as storage_error:
+                print(f"❌ Error during database storage: {str(storage_error)}")
+                raise storage_error
             
             # Mark file as processed
             if self.db_enabled:
-                await supabase_manager.mark_file_processed(user_id, dedup_total_nodes)
+                print(f"\n📝 Marking file as processed for user {user_id}...")
+                try:
+                    await supabase_manager.mark_file_processed(user_id, dedup_total_nodes)
+                    print("✅ File marked as processed successfully")
+                except Exception as mark_error:
+                    print(f"❌ Error marking file as processed: {str(mark_error)}")
+                    raise mark_error
             
             # Return only the newly stored facts from this iteration
             newly_stored_facts = storage_result.get("newly_stored_nodes", {})
@@ -1070,27 +1128,40 @@ Only return JSON. If no clear "{fact_type}" information is found, return empty a
                     confidence = node["confidence"]
                     evidence = node["evidence"]
                     
-                    # Format concluded fact for human readability
-                    concluded_fact = self._format_concluded_fact(user_id, detail["type"], detail["value"])
+                    # Safely extract required fields  
+                    try:
+                        fact_type = detail.get("type", "unknown")
+                        fact_value = detail.get("value", "N/A")
+                        
+                        if fact_value == "N/A":
+                            print(f"⚠️  Warning: Missing 'value' field in detail: {detail}")
                     
-                    # Store reprocessed memory node with link to original
-                    node_id = await supabase_manager.store_memory_node(
-                        user_phone=user_id,
-                        layer=layer_number,
-                        fact_type=detail["type"],
-                        content=detail["value"],
-                        concluded_fact=concluded_fact,
-                        confidence=confidence,
-                        evidence=evidence,
-                        extraction_method='reprocess',
-                        parent_update_id=original_node_id
-                    )
-                    
-                    if node_id:
-                        stored_nodes += 1
-                        print(f"  ✅ Stored reprocessed {detail['type']}: {detail['value']} (Node ID: {node_id})")
-                    else:
-                        print(f"  ⚠️  Failed to store reprocessed {detail['type']}: {detail['value']}")
+                        # Format concluded fact for human readability
+                        concluded_fact = self._format_concluded_fact(user_id, fact_type, fact_value)
+                        
+                        # Store reprocessed memory node with link to original
+                        node_id = await supabase_manager.store_memory_node(
+                            user_phone=user_id,
+                            layer=layer_number,
+                            fact_type=fact_type,
+                            content=fact_value,
+                            concluded_fact=concluded_fact,
+                            confidence=confidence,
+                            evidence=evidence,
+                            extraction_method='reprocess',
+                            parent_update_id=original_node_id
+                        )
+                        
+                        if node_id:
+                            stored_nodes += 1
+                            print(f"  ✅ Stored reprocessed {fact_type}: {fact_value} (Node ID: {node_id})")
+                        else:
+                            print(f"  ⚠️  Failed to store reprocessed {fact_type}: {fact_value}")
+                            
+                    except Exception as detail_error:
+                        print(f"❌ Error processing detail: {str(detail_error)}")
+                        print(f"❌ Detail structure: {detail}")
+                        continue  # Skip this detail and continue with next one
             
             # Mark original node as reprocessed
             if stored_nodes > 0:
