@@ -161,7 +161,7 @@ const Dashboard = () => {
               </Row>
               
               <Row>
-                <Col md={8}>
+                <Col md={12}>
                   <div className="text-center">
                     <h6>Process All Input JSONs</h6>
                     <p className="text-muted small">
@@ -190,33 +190,6 @@ const Dashboard = () => {
                         <>
                           <FaPlay className="me-2" />
                           {forceReprocess ? "Force Process All JSONs" : "Process All JSONs"}
-                        </>
-                      )}
-                    </Button>
-                  </div>
-                </Col>
-                <Col md={4}>
-                  <div className="text-center">
-                    <h6>Quick Test</h6>
-                    <p className="text-muted small">
-                      Process AdityaShetty for testing
-                    </p>
-                    <Button
-                      variant="outline-primary"
-                      size="lg"
-                      onClick={() => handleProcessSingleJson('AdityaShetty')}
-                      disabled={processingLoading}
-                      className="mb-2"
-                    >
-                      {processingLoading ? (
-                        <>
-                          <Spinner size="sm" animation="border" className="me-2" />
-                          Processing...
-                        </>
-                      ) : (
-                        <>
-                          <FaRedo className="me-2" />
-                          Process AdityaShetty
                         </>
                       )}
                     </Button>

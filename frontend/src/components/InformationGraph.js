@@ -1,27 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Card, Row, Col, Spinner, Alert, Badge } from 'react-bootstrap';
-import { FaUser, FaPhone, FaEnvelope, FaMapMarkerAlt, FaHeart, FaIdCard, FaPlane, FaStar } from 'react-icons/fa';
+import { FaUser, FaHeart, FaIdCard, FaStar } from 'react-icons/fa';
 import { memoryAPI } from '../services/api';
 
 const InformationGraph = () => {
   const [userSummaries, setUserSummaries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    fetchAcceptedInformation();
-  }, []);
+    // Prevent duplicate calls in React StrictMode during development
+    if (!isInitialized) {
+      setIsInitialized(true);
+      fetchAcceptedInformation();
+    }
+  }, [isInitialized]);
 
-  const fetchAcceptedInformation = async () => {
+  const fetchAcceptedInformation = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
       
       // Get all users first
-      console.log('Fetching users...');
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Fetching users...');
+      }
       const usersResponse = await memoryAPI.getUsers();
       const users = usersResponse.data; // This is already an array of user IDs
-      console.log('Users fetched:', users);
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Users fetched:', users);
+      }
       
       if (!users || users.length === 0) {
         setError('No users found in the system');
@@ -33,17 +42,22 @@ const InformationGraph = () => {
       // For each user, get their accepted information
       for (const userId of users) {
         try {
-          console.log(`Fetching memory for user: ${userId}`);
+          if (process.env.NODE_ENV === 'development') {
+            console.log(`Fetching memory for user: ${userId}`);
+          }
           const memoryResponse = await memoryAPI.getUserMemory(userId);
           const concludedFacts = memoryResponse.data || []; // API returns array directly
-          console.log(`Facts for ${userId}:`, concludedFacts);
           
           // Filter only approved facts
           const approvedFacts = concludedFacts.filter(fact => fact.status === 'approved');
-          console.log(`Approved facts for ${userId}:`, approvedFacts);
+          
+          console.log(`User ${userId} - Total facts: ${concludedFacts.length}, Approved facts: ${approvedFacts.length}`);
+          console.log(`User ${userId} - Layer 4+ approved facts:`, approvedFacts.filter(f => f.layer === 'Layer4'));
           
           if (approvedFacts.length > 0) {
             const summary = processUserFacts(userId, approvedFacts);
+            console.log(`User ${userId} - Final summary preferences:`, summary.preferences);
+            console.log(`User ${userId} - Final summary interests:`, summary.interests);
             summaries.push(summary);
           }
         } catch (err) {
@@ -52,7 +66,9 @@ const InformationGraph = () => {
         }
       }
       
-      console.log('Final summaries:', summaries);
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Final summaries:', summaries);
+      }
       setUserSummaries(summaries);
       
       if (summaries.length === 0) {
@@ -65,27 +81,85 @@ const InformationGraph = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   const processUserFacts = (userId, facts) => {
+    console.log(`Processing ${facts.length} facts for ${userId}:`, facts);
+    
+    // Create a dynamic structure to hold all fact types
+    const factsByType = {};
+    const mobileNumbers = [];
+    const emails = [];
+    
+    facts.forEach(fact => {
+      const factType = fact.fact_type || 'unknown';
+      const conclusion = fact.conclusion || '';
+      const rawValue = fact.raw_value || '';
+      
+      // Extract value after "is" from conclusion or use raw_value
+      let value = '';
+      if (rawValue && rawValue !== 'N/A') {
+        value = rawValue.trim();
+      } else {
+        // Extract from conclusion - find text after "is"
+        const match = conclusion.match(/.*\s+is\s+(.+)/i);
+        if (match) {
+          value = match[1].trim();
+        } else {
+          // Fallback - use the whole conclusion if no "is" pattern
+          value = conclusion.trim();
+        }
+      }
+      
+      // Skip empty or meaningless values
+      if (!value || value === 'N/A' || value.length <= 1) {
+        return;
+      }
+      
+      // Group by fact type for dynamic display
+      if (!factsByType[factType]) {
+        factsByType[factType] = [];
+      }
+      
+      // Avoid duplicates
+      if (!factsByType[factType].includes(value)) {
+        factsByType[factType].push(value);
+      }
+      
+      // Special handling for UI compatibility - populate existing structure
+      if (factType === 'phone_number' || factType === 'phone' || factType === 'mobile') {
+        if (!mobileNumbers.includes(value)) {
+          mobileNumbers.push(value);
+        }
+      }
+      
+      if (factType === 'email') {
+        if (!emails.includes(value)) {
+          emails.push(value);
+        }
+      }
+    });
+    
+    // Build the summary structure that matches existing UI expectations
     const summary = {
       userId,
       basicInfo: {
-        userName: '',
-        fullName: '',
-        homeAddress: '',
-        officeAddress: '',
-        dob: '',
-        gender: '',
-        bloodGroup: '',
-        mobileNumbers: [],
-        relationshipStatus: '',
-        nationality: '',
-        placeOfBirth: '',
-        email: ''
+        userName: factsByType['name']?.[0] || '',
+        fullName: factsByType['full_name']?.[0] || '',
+        homeAddress: factsByType['address']?.[0] || factsByType['home_address']?.[0] || '',
+        officeAddress: factsByType['office_address']?.[0] || '',
+        dob: factsByType['date_of_birth']?.[0] || factsByType['dob']?.[0] || '',
+        gender: factsByType['gender']?.[0] || '',
+        bloodGroup: factsByType['blood_group']?.[0] || '',
+        mobileNumbers: mobileNumbers,
+        relationshipStatus: factsByType['relationship_status']?.[0] || factsByType['marital_status']?.[0] || '',
+        nationality: factsByType['nationality']?.[0] || '',
+        placeOfBirth: factsByType['place_of_birth']?.[0] || '',
+        email: emails[0] || '',
+        additionalEmails: emails.slice(1)
       },
       spouse: {
-        fullName: '',
+        fullName: factsByType['spouse_name']?.[0] || factsByType['spouse']?.[0] || factsByType['wife']?.[0] || factsByType['husband']?.[0] || '',
         homeAddress: '',
         officeAddress: '',
         dob: '',
@@ -97,10 +171,11 @@ const InformationGraph = () => {
         placeOfBirth: ''
       },
       documents: {
-        aadhaarCard: '',
-        panCard: '',
-        drivingLicense: '',
-        voterID: '',
+        aadhaarCard: factsByType['aadhaar']?.[0] || '',
+        panCard: factsByType['pan']?.[0] || '',
+        drivingLicense: factsByType['driving_license']?.[0] || '',
+        voterID: factsByType['voter_id']?.[0] || '',
+        passport: factsByType['passport']?.[0] || '',
         birthCertificate: '',
         healthInsurance: '',
         marriageCertificate: '',
@@ -108,224 +183,72 @@ const InformationGraph = () => {
         utilityBill: ''
       },
       relations: {
-        mother: {},
-        father: {},
-        sibling: {},
-        flatmate: {},
-        partner: {},
-        friend: {},
-        boss: {},
-        maid: {},
-        cook: {},
-        driver: {}
+        mother: { fullName: factsByType['mother']?.[0] || '' },
+        father: { fullName: factsByType['father']?.[0] || '' },
+        sibling: { fullName: factsByType['sibling']?.[0] || '' },
+        flatmate: { fullName: factsByType['flatmate']?.[0] || '' },
+        partner: { fullName: factsByType['partner']?.[0] || '' },
+        friend: { fullName: factsByType['friend']?.[0] || '' },
+        boss: { fullName: factsByType['boss']?.[0] || '' },
+        maid: { fullName: factsByType['maid']?.[0] || '' },
+        cook: { fullName: factsByType['cook']?.[0] || '' },
+        driver: { fullName: factsByType['driver']?.[0] || '' }
       },
+      // Dynamic preferences - include ALL fact types that aren't in basic categories
+      preferences: [],
+      interests: [],
+      // Dynamic fact display - show ALL fact types
+      allFacts: factsByType,
+      financial: factsByType['credit_card_last_digits'] ? {
+        creditCardLastDigits: factsByType['credit_card_last_digits'][0]
+      } : null,
       stats: {
         totalFacts: facts.length,
         layerDistribution: { Layer1: 0, Layer2: 0, Layer3: 0, Layer4: 0 }
       }
     };
 
-    facts.forEach(fact => {
-      const layer = fact.layer;
-      summary.stats.layerDistribution[layer]++;
-
-      const conclusion = fact.conclusion || '';
-      const factType = fact.fact_type || '';
-      const rawValue = fact.raw_value || '';
-      
-      // Debug logging to understand the data structure
-      console.log('Processing fact:', {
-        factType,
-        conclusion,
-        rawValue,
-        layer
-      });
-      
-      // Basic Information Processing
-      if (factType === 'phone' || conclusion.includes('Phone number') || conclusion.includes('mobile')) {
-        const phoneMatch = conclusion.match(/(\+?\d[\d\s\-()]+)/) || 
-                          (rawValue !== 'N/A' ? rawValue.match(/(\+?\d[\d\s\-()]+)/) : null);
-        if (phoneMatch && !summary.basicInfo.mobileNumbers.includes(phoneMatch[1].trim())) {
-          summary.basicInfo.mobileNumbers.push(phoneMatch[1].trim());
-        }
-      }
-      
-      if (factType === 'email' || conclusion.includes('Email') || conclusion.includes('email')) {
-        const emailMatch = conclusion.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/) || 
-                           (rawValue !== 'N/A' ? rawValue.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/) : null);
-        if (emailMatch) summary.basicInfo.email = emailMatch[1];
-      }
-      
-      if (factType === 'address' || conclusion.includes('address') || conclusion.includes('Address')) {
-        const addressMatch = conclusion.match(/address of .* is (.+)/i) || 
-                            conclusion.match(/Address:?\s*(.+)/i);
-        if (addressMatch) {
-          const address = addressMatch[1].trim();
-          // Don't confuse email with address and filter out "N/A"
-          if (!address.includes('@') && address !== 'N/A') {
-            if (conclusion.includes('home') || conclusion.includes('Home')) {
-              summary.basicInfo.homeAddress = address;
-            } else if (conclusion.includes('office') || conclusion.includes('Office')) {
-              summary.basicInfo.officeAddress = address;
-            } else {
-              summary.basicInfo.homeAddress = address;
-            }
-          }
-        }
-      }
-      
-      if (factType === 'name' || conclusion.includes('Full name') || conclusion.includes('Name')) {
-        // First try to use raw_value if it's cleaner and not "N/A"
-        if (rawValue && rawValue.length > 1 && rawValue !== 'N/A' && !rawValue.includes('Name of')) {
-          if (conclusion.includes('Full name') || conclusion.includes('full name')) {
-            summary.basicInfo.fullName = rawValue.trim();
-          } else {
-            summary.basicInfo.userName = rawValue.trim();
-          }
-        } else {
-          // Fall back to parsing conclusion
-          const nameMatch = conclusion.match(/Full name of .* is (.+)/i) || 
-                           conclusion.match(/Name of .* is (.+)/i) ||
-                           conclusion.match(/Name:?\s*(.+)/i);
-          if (nameMatch) {
-            const name = nameMatch[1].trim();
-            // Don't include the conclusion template, just the actual name
-            if (!name.includes('Name of') && name.length > 0) {
-              if (conclusion.includes('Full name') || conclusion.includes('full name')) {
-                summary.basicInfo.fullName = name;
-              } else {
-                summary.basicInfo.userName = name;
-              }
-            }
-          }
-        }
-      }
-      
-      if (factType === 'age' || conclusion.includes('age') || conclusion.includes('Age')) {
-        const ageMatch = conclusion.match(/age of .* is (\d+)/i) || rawValue.match(/(\d+)/);
-        if (ageMatch) summary.basicInfo.age = ageMatch[1];
-      }
-      
-      if (factType === 'dob' || conclusion.includes('date of birth') || conclusion.includes('DOB')) {
-        const dobMatch = conclusion.match(/date of birth of .* is (.+)/i) || 
-                        conclusion.match(/DOB:?\s*(.+)/i);
-        if (dobMatch) summary.basicInfo.dob = dobMatch[1].trim();
-      }
-      
-      if (factType === 'gender' || conclusion.includes('gender') || conclusion.includes('Gender')) {
-        const genderMatch = conclusion.match(/gender of .* is (.+)/i) || 
-                           conclusion.match(/Gender:?\s*(.+)/i);
-        if (genderMatch) summary.basicInfo.gender = genderMatch[1].trim();
-      }
-      
-      if (factType === 'blood_group' || conclusion.includes('blood group') || conclusion.includes('Blood Group')) {
-        const bloodMatch = conclusion.match(/blood group of .* is (.+)/i) || 
-                          conclusion.match(/Blood Group:?\s*(.+)/i);
-        if (bloodMatch) summary.basicInfo.bloodGroup = bloodMatch[1].trim();
-      }
-      
-      if (factType === 'nationality' || conclusion.includes('nationality') || conclusion.includes('Nationality')) {
-        const nationalityMatch = conclusion.match(/nationality of .* is (.+)/i) || 
-                                conclusion.match(/Nationality:?\s*(.+)/i);
-        if (nationalityMatch) summary.basicInfo.nationality = nationalityMatch[1].trim();
-      }
-      
-      if (factType === 'place_of_birth' || conclusion.includes('place of birth') || conclusion.includes('born in')) {
-        const birthPlaceMatch = conclusion.match(/place of birth of .* is (.+)/i) || 
-                               conclusion.match(/born in (.+)/i);
-        if (birthPlaceMatch) summary.basicInfo.placeOfBirth = birthPlaceMatch[1].trim();
-      }
-
-      // Document Processing
-      if (factType === 'pan' || conclusion.includes('PAN') || conclusion.includes('pan')) {
-        const panMatch = conclusion.match(/PAN.*is ([A-Z0-9]+)/i) || rawValue.match(/([A-Z0-9]{10})/);
-        if (panMatch) summary.documents.panCard = panMatch[1];
-      }
-      
-      if (factType === 'aadhaar' || conclusion.includes('Aadhaar') || conclusion.includes('aadhaar')) {
-        const aadhaarMatch = conclusion.match(/Aadhaar.*is (\d+)/i) || rawValue.match(/(\d{12})/);
-        if (aadhaarMatch) summary.documents.aadhaarCard = aadhaarMatch[1];
-      }
-      
-      if (factType === 'passport' || conclusion.includes('Passport') || conclusion.includes('passport')) {
-        const passportMatch = conclusion.match(/Passport.*is ([A-Z0-9]+)/i) || rawValue.match(/([A-Z]\d{7})/);
-        if (passportMatch) summary.documents.passport = passportMatch[1];
-      }
-      
-      if (factType === 'driving_license' || conclusion.includes('driving license') || conclusion.includes('DL')) {
-        const dlMatch = conclusion.match(/driving license.*is ([A-Z0-9]+)/i) || rawValue.match(/([A-Z0-9]{15})/);
-        if (dlMatch) summary.documents.drivingLicense = dlMatch[1];
-      }
-      
-      if (factType === 'voter_id' || conclusion.includes('voter') || conclusion.includes('EPIC')) {
-        const voterMatch = conclusion.match(/voter.*is ([A-Z0-9]+)/i) || rawValue.match(/([A-Z]{3}\d{7})/);
-        if (voterMatch) summary.documents.voterID = voterMatch[1];
-      }
-
-      // Relationship Processing
-      if (factType.includes('relationship') || conclusion.includes('relationship') || 
-          factType.includes('spouse') || conclusion.includes('spouse') || 
-          factType.includes('family') || conclusion.includes('family') ||
-          conclusion.includes('wife') || conclusion.includes('husband') ||
-          conclusion.includes('mother') || conclusion.includes('father') ||
-          conclusion.includes('friend') || conclusion.includes('partner')) {
+    // Categorize fact types dynamically
+    const basicInfoTypes = ['name', 'full_name', 'address', 'home_address', 'office_address', 'date_of_birth', 'dob', 'gender', 'blood_group', 'phone_number', 'phone', 'mobile', 'email', 'relationship_status', 'marital_status', 'nationality', 'place_of_birth'];
+    const documentTypes = ['aadhaar', 'pan', 'driving_license', 'voter_id', 'passport'];
+    const relationTypes = ['spouse_name', 'spouse', 'wife', 'husband', 'mother', 'father', 'sibling', 'flatmate', 'partner', 'friend', 'boss', 'maid', 'cook', 'driver'];
+    const financialTypes = ['credit_card_last_digits'];
+    
+    // Only add fact types that contain "preference" or "interest" to the dedicated sections
+    Object.keys(factsByType).forEach(factType => {
+      if (factType.includes('preference') && !basicInfoTypes.includes(factType) && 
+          !documentTypes.includes(factType) && !relationTypes.includes(factType) && 
+          !financialTypes.includes(factType)) {
         
-        // First try raw_value if it's cleaner and not just a single letter or "N/A"
-        if (rawValue && rawValue.length > 1 && rawValue !== 'N/A' && !rawValue.match(/^[a-z]$/i)) {
-          if (factType.includes('spouse') || factType.includes('wife') || factType.includes('husband') || 
-              conclusion.includes('wife') || conclusion.includes('husband') || conclusion.includes('spouse')) {
-            summary.spouse.fullName = rawValue.trim();
-          } else if (factType.includes('partner') || conclusion.includes('partner')) {
-            summary.relations.partner.fullName = rawValue.trim();
-          } else if (factType.includes('mother') || conclusion.includes('mother')) {
-            summary.relations.mother.fullName = rawValue.trim();
-          } else if (factType.includes('father') || conclusion.includes('father')) {
-            summary.relations.father.fullName = rawValue.trim();
-          } else if (factType.includes('friend') || conclusion.includes('friend')) {
-            summary.relations.friend.fullName = rawValue.trim();
+        factsByType[factType].forEach(value => {
+          if (!summary.preferences.includes(value)) {
+            summary.preferences.push(value);
           }
-        } else {
-          // Fall back to parsing conclusion with more precise patterns
-          const relationshipMatch = conclusion.match(/(wife|husband|spouse) of .* is (.+)/i) ||
-                                   conclusion.match(/(mother|father|sibling|friend|partner|boss|driver|cook|maid|flatmate) of .* is (.+)/i) ||
-                                   conclusion.match(/(Wife|Husband|Spouse|Mother|Father|Sibling|Friend|Partner|Boss|Driver|Cook|Maid|Flatmate):?\s*(.+)/i) ||
-                                   conclusion.match(/(wife|husband|spouse|mother|father|sibling|friend|partner|boss|driver|cook|maid|flatmate)\s*:\s*(.+)/i);
-          
-          if (relationshipMatch) {
-            const relationType = relationshipMatch[1].toLowerCase();
-            let relationName = relationshipMatch[2].trim();
-            
-            // Clean up the name - remove any remaining template text
-            relationName = relationName.replace(/^(name of|is)\s*/i, '');
-            relationName = relationName.replace(/\s*(of\s+\w+)?$/i, '');
-            
-            // Only process if we have a valid name (not just single letters, "N/A", or template remnants)
-            if (relationName && relationName.length > 1 && relationName !== 'N/A' && !relationName.match(/^[a-z]$/i)) {
-              // Map to our structure
-              if (relationType === 'wife' || relationType === 'husband' || relationType === 'spouse') {
-                summary.spouse.fullName = relationName;
-              } else if (summary.relations[relationType]) {
-                summary.relations[relationType].fullName = relationName;
-              }
-            }
+        });
+      } else if (factType.includes('interest') || factType.includes('hobby')) {
+        factsByType[factType].forEach(value => {
+          if (!summary.interests.includes(value)) {
+            summary.interests.push(value);
           }
-        }
-      }
-      
-      // Relationship Status
-      if (factType === 'relationship_status' || conclusion.includes('relationship status') || 
-          conclusion.includes('marital status') || conclusion.includes('married') || 
-          conclusion.includes('single')) {
-        const statusMatch = conclusion.match(/relationship status of .* is (.+)/i) || 
-                           conclusion.match(/marital status.*is (.+)/i) ||
-                           conclusion.match(/(married|single|divorced|widowed)/i);
-        if (statusMatch) summary.basicInfo.relationshipStatus = statusMatch[1].trim();
+        });
       }
     });
 
+    // Count layer distribution for existing UI
+    facts.forEach(fact => {
+      const layer = fact.layer;
+      if (summary.stats.layerDistribution[layer] !== undefined) {
+        summary.stats.layerDistribution[layer]++;
+      }
+    });
+
+    // Debug output to see what we extracted
+    console.log(`Processing user facts - Extracted preferences:`, summary.preferences);
+    console.log(`Processing user facts - Extracted interests:`, summary.interests);
+    console.log(`Processing user facts - All fact types:`, Object.keys(factsByType));
+
     return summary;
   };
-
   const renderBasicInformation = (basicInfo) => {
     const fields = [
       { label: 'User Name', value: basicInfo.userName },
@@ -333,6 +256,7 @@ const InformationGraph = () => {
       { label: 'Home Address', value: basicInfo.homeAddress },
       { label: 'Office Address', value: basicInfo.officeAddress },
       { label: 'Email', value: basicInfo.email },
+      { label: 'Additional Emails', value: basicInfo.additionalEmails?.join(', ') },
       { label: 'Date of Birth', value: basicInfo.dob },
       { label: 'Gender', value: basicInfo.gender },
       { label: 'Blood Group', value: basicInfo.bloodGroup },
@@ -465,6 +389,98 @@ const InformationGraph = () => {
     );
   };
 
+  const renderPreferences = (preferences) => {
+    if (!preferences || preferences.length === 0) return null;
+
+    return (
+      <div className="info-category">
+        <div className="info-category-title">
+          <FaHeart className="me-2" />
+          Preferences
+        </div>
+        {preferences.map((preference, index) => (
+          <div key={index} className="info-item">
+            • {preference}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  const renderInterests = (interests) => {
+    if (!interests || interests.length === 0) return null;
+
+    return (
+      <div className="info-category">
+        <div className="info-category-title">
+          <FaStar className="me-2" />
+          Interests & Hobbies
+        </div>
+        {interests.map((interest, index) => (
+          <div key={index} className="info-item">
+            • {interest}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  const renderAllFacts = (allFacts) => {
+    if (!allFacts || Object.keys(allFacts).length === 0) return null;
+
+    // Filter out fact types that are already displayed in other sections
+    const basicInfoTypes = ['name', 'full_name', 'address', 'home_address', 'office_address', 'date_of_birth', 'dob', 'gender', 'blood_group', 'phone_number', 'phone', 'mobile', 'email', 'relationship_status', 'marital_status', 'nationality', 'place_of_birth'];
+    const documentTypes = ['aadhaar', 'pan', 'driving_license', 'voter_id', 'passport'];
+    const relationTypes = ['spouse_name', 'spouse', 'wife', 'husband', 'mother', 'father', 'sibling', 'flatmate', 'partner', 'friend', 'boss', 'maid', 'cook', 'driver'];
+    const financialTypes = ['credit_card_last_digits'];
+    const preferenceTypes = []; // Collect all preference-related fact types
+    const interestTypes = []; // Collect all interest-related fact types
+
+    // Identify preference and interest fact types
+    Object.keys(allFacts).forEach(factType => {
+      if (factType.includes('preference')) {
+        preferenceTypes.push(factType);
+      } else if (factType.includes('interest') || factType.includes('hobby')) {
+        interestTypes.push(factType);
+      }
+    });
+
+    const dynamicFacts = {};
+    Object.keys(allFacts).forEach(factType => {
+      if (!basicInfoTypes.includes(factType) && 
+          !documentTypes.includes(factType) && 
+          !relationTypes.includes(factType) && 
+          !financialTypes.includes(factType) &&
+          !preferenceTypes.includes(factType) &&
+          !interestTypes.includes(factType)) {
+        dynamicFacts[factType] = allFacts[factType];
+      }
+    });
+
+    if (Object.keys(dynamicFacts).length === 0) return null;
+
+    return (
+      <div className="info-category mt-3">
+        <div className="info-category-title">
+          <FaStar className="me-2" />
+          Additional Information
+        </div>
+        {Object.entries(dynamicFacts).map(([factType, values]) => (
+          <div key={factType} className="mb-2">
+            <strong>{factType.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}:</strong>
+            <div>
+              {values.map((value, index) => (
+                <div key={index} className="info-item">
+                  • {value}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   if (loading) {
     return (
       <div className="info-graph-container">
@@ -520,24 +536,30 @@ const InformationGraph = () => {
                   {/* Documents */}
                   {renderDocuments(summary.documents)}
 
+                  {/* Financial Information */}
+                  {summary.financial && (
+                    <div className="info-category mt-3">
+                      <div className="info-category-title">Financial Information</div>
+                      {summary.financial.creditCardLastDigits && (
+                        <div className="info-item">
+                          <span className="info-label">Credit Card Last 4 Digits:</span>
+                          <span className="info-value">****{summary.financial.creditCardLastDigits}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   {/* Relations */}
                   {renderRelations(summary.relations)}
 
-                  {/* Layer Distribution */}
-                  <div className="info-category mt-3">
-                    <div className="info-category-title">Layer Distribution</div>
-                    <Row className="text-center">
-                      {Object.entries(summary.stats.layerDistribution).map(([layer, count]) => (
-                        count > 0 && (
-                          <Col key={layer} xs={6} className="mb-2">
-                            <Badge className={`layer-badge layer-${layer.slice(-1)}`}>
-                              {layer}: {count}
-                            </Badge>
-                          </Col>
-                        )
-                      ))}
-                    </Row>
-                  </div>
+                  {/* Preferences */}
+                  {renderPreferences(summary.preferences)}
+
+                  {/* Interests & Hobbies */}
+                  {renderInterests(summary.interests)}
+
+                  {/* All Dynamic Facts */}
+                  {renderAllFacts(summary.allFacts)}
                 </Card.Body>
               </Card>
             </Col>

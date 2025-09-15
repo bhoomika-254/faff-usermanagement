@@ -1,10 +1,3 @@
-####################################################################
-####################################################################
-####################################################################
-####################################################################
-####################################################################
-#CLAUDE
-
 import json
 import re
 import os
@@ -117,15 +110,17 @@ LAYER 1 - Basic Personal Information (HIGHEST PRIORITY):
 - Phone numbers, email addresses (ONLY if stated as THEIR contact info)
 - Home addresses (ONLY if clearly stated as THEIR home/personal address)
 - Relationship status, occupation, company details (ONLY if {user_id}'s info)
+- Work location, car model, Work Address comes under LAYER 1
 
 LAYER 2 - Document Information (HIGH PRIORITY):
+- DONT EXTRACT INFORMATION IF IT IS NOT CLEARLY DESCRIBED. For example, user mentions about the aadhar card, but doesn't have any aadhar card ID/details, Then DONT EXTRACT
 - Government IDs, certificates (ONLY if {user_id}'s documents)
 - Document numbers, policies, licenses (ONLY if belonging to {user_id})
 - Credit cards, bank details (ONLY if {user_id}'s financial info)
 
 LAYER 3 - Relationships & Contacts (MEDIUM PRIORITY):
 - Family members, friends, colleagues (ONLY if {user_id}'s relationships AND names are mentioned)
-- Contact details of family/friends (ONLY if {user_id} is sharing about THEIR contacts)
+- CONTACT DETAILS OF FAMILY/FRIENDS (ONLY if {user_id} is sharing about THEIR contacts)
 - IMPORTANT: Only extract relationship if SPECIFIC NAMES are mentioned
 - REJECT: Generic "my wife", "my husband" without names
 - ACCEPT: "my wife Sarah", "my husband John"
@@ -135,8 +130,10 @@ LAYER 4 - Preferences & Instructions (LOWER PRIORITY):
 - Favorite places, vendors (ONLY if {user_id}'s preferences)
 - Habits, routines (ONLY if {user_id}'s personal habits)
 - DO NOT put travel plans here unless they are long-term preferences
+- DO NOT CONSIDER EVERYTHING AS A PREFERENCE, UNTIL {user_id} SAYS OR LIKES IT. 
 
 STRICT LAYER 3 RELATIONSHIP RULES:
+- ONLY extract relationships if SPECIFIC NAMES are mentioned.
 ✅ "My wife Sarah" → Extract: relationship="spouse", name="Sarah"
 ✅ "My husband John works at..." → Extract: relationship="spouse", name="John"
 ✅ "My brother Mike lives in..." → Extract: relationship="brother", name="Mike"
@@ -144,34 +141,28 @@ STRICT LAYER 3 RELATIONSHIP RULES:
 ❌ "Thanks guys" → REJECT (not a relationship statement)
 ❌ "I want to carry something for my 9 year old nephew" → REJECT (no name mentioned)
 
-TRAVEL INFORMATION RULES:
-- DO NOT put travel plans in Layer 1 (they are not basic personal info)
-- Travel plans go to Layer 4 only if they are ongoing preferences
-- One-time travel mentions should generally be avoided unless they're important preferences
 
 OWNERSHIP VALIDATION EXAMPLES:
 ✅ "My address is 402, Pinnacle Gold, Bandra" → Extract as {user_id}'s address
-❌ "Let's meet at Pinnacle Gold, Bandra" → REJECT (meeting location, not personal address)
+❌ "Let's meet at Pinnacle Gold, Bandra" → REJECT (not personal address)
 ✅ "I live in Mumbai" → Extract as {user_id}'s address  
 ❌ "Mumbai has good restaurants" → REJECT (general comment, not personal info)
 ✅ "My wife Sarah" → Extract as {user_id}'s spouse with name "Sarah"
 ❌ "My wife will come" → REJECT (no specific name mentioned)
 ❌ "Priya is coming" → REJECT (unclear relationship/ownership)
-❌ "Thanks guys" → REJECT (not personal information)
-❌ "I want to carry something for my nephew" → REJECT (no name mentioned)
 
 CRITICAL EXTRACTION RULES:
-1. NEVER extract relationship information without specific names
+1. NEVER extract relationship information without specific names.
 2. NEVER extract information from casual conversation phrases
 3. ALWAYS ensure the information directly belongs to {user_id}
 4. FOCUS ON Layer 1, 2, 3 - avoid putting travel plans in Layer 1
 5. For relationships: ONLY extract if both relationship type AND name are clear
+6. IF THE USER MENTIONS THE CONTACT OR DETAILS OF A FAMILY MEMBER/FRIEND, ONLY EXTRACT IF IT IS CLEAR THAT THE DETAILS BELONG TO {user_id}(For e.g., "My wife's number is..." then save it as spouse phone number)
 
 CONFIDENCE SCORING BASED ON OWNERSHIP:
 - 0.9-1.0: Direct personal claims with clear ownership ("My address is...")
 - 0.8-0.9: Clear attribution to {user_id} ("I live at...")  
-- 0.7-0.8: Reasonably clear personal information
-- Below 0.7: REJECT (unclear ownership)
+- Below 0.8: REJECT (unclear ownership)
 
 RESPONSE FORMAT (JSON only):
 {{
@@ -193,17 +184,15 @@ RESPONSE FORMAT (JSON only):
 
 FIELD VALUE SPECIFICATIONS:
 - relationship_status: Use "married" or "single". If mentions "wife"/"husband" use "married"
-- gender: Use "Male" or "Female" (capitalize first letter)
-- address: ONLY extract if clearly stated as personal/home address, NOT business/meeting locations
+- gender: Use "Male" or "Female" 
+- address: ONLY extract if clearly stated as personal/home address, NOT business/meeting locations or anything other than personal.
 - spouse/spouse_name: Use ONLY if specific name is mentioned (e.g., "My wife Sarah" → spouse_name: "Sarah")
 - family_member: Use ONLY if specific name is mentioned (e.g., "My brother Mike" → family_member: "Mike")
-- phone_number: Use exact format from message, include country code if present
-- email: Use exact email address as written
+- phone_number: Use exact format from message,
+- email: Use exact email address as written.
 
 PROHIBITED EXTRACTIONS:
-❌ Do NOT extract "wife", "husband", "nephew" as standalone values without names
-❌ Do NOT extract casual conversation phrases as personal information
-❌ Do NOT extract travel plans as Layer 1 information
+❌ Do NOT extract relationships (e.g., "wife", "husband", "nephew") as standalone values without names
 ❌ Do NOT extract meeting locations as personal addresses
 ❌ Do NOT extract third-party information as user's information
 
@@ -511,6 +500,9 @@ Only return valid JSON. If no clearly owned information found for a layer, retur
                 ],
                 system="""You are a memory system deduplication expert. Your ONLY job is to return a valid JSON with deduplicated facts.
 IMPORTANT: 
+- REMOVE ANY DUPLICATE VALUES THAT ARE PRESENT, OR ANYTHING THAT LOOKS REPEATED.
+- IF THERE ARE 2 SAME KEYS, WITH DIFFERENT VALUES, MAKE SURE YOU ONLY ALLOW ONE INSTANCE WITH THE HIGHEST CONFIDENCE SCORE.
+For example, if the same phone number/address is present multiple times, keep only one instance with the highest confidence.
 1. Return ONLY the JSON data with NO explanatory text, NO markdown formatting, and NO code blocks
 2. Your entire response must be parseable as JSON
 3. Maintain the exact same structure as the input JSON
